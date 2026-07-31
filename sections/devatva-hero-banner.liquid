@@ -1,26 +1,29 @@
 {% comment %}
-  DEVATVA.IN - SACRED HERO BANNER SECTION (OS 2.0 - LIGHT PREMIUM EDITION)
+  DEVATVA.IN - SACRED HERO BANNER SECTION WITH CUSTOM BACKGROUND BANNER (OS 2.0)
 {% endcomment %}
 
-<div class="devatva-hero-container" style="position: relative; background: linear-gradient(180deg, #fdfbf7 0%, #f6f0e4 100%); padding: 85px 20px; border-bottom: 1px solid var(--dev-gold-border); overflow: hidden;">
-  <!-- Light Golden Aura background element -->
-  <div style="position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: 500px; background: radial-gradient(circle, rgba(245,158,11,0.18) 0%, rgba(255,255,255,0) 70%); pointer-events: none;"></div>
+<div class="devatva-hero-container" style="position: relative; background: url('{{ 'devatva_hero_bg.png' | asset_url }}') center/cover no-repeat; padding: 90px 20px 85px 20px; border-bottom: 1.5px solid var(--dev-gold-border); overflow: hidden;">
+  <!-- Subtle Soft Light Overlay for maximum text contrast -->
+  <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(252,250,245,0.85) 0%, rgba(247,242,230,0.88) 100%); backdrop-filter: blur(2px); z-index: 1;"></div>
 
-  <div style="max-width: 1100px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
-    <div class="devatva-badge" style="margin-bottom: 18px; padding: 7px 18px; font-size: 0.88rem; box-shadow: 0 4px 12px rgba(217,119,6,0.1);">
+  <!-- Radial Aura Effect -->
+  <div style="position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); width: 550px; height: 550px; background: radial-gradient(circle, rgba(245,158,11,0.22) 0%, rgba(255,255,255,0) 70%); pointer-events: none; z-index: 1;"></div>
+
+  <div style="max-width: 1120px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
+    <div class="devatva-badge devatva-badge-glowing" style="margin-bottom: 20px; padding: 8px 20px; font-size: 0.9rem;">
       ✨ {{ section.settings.subheading | default: '100% Authentic • Lab Certified • Kashi Vedic Priest Energized' }}
     </div>
 
-    <h1 class="devatva-heading" style="font-size: clamp(2.3rem, 5.2vw, 4rem); font-weight: 800; line-height: 1.22; margin-bottom: 22px; color: #1c1917;">
+    <h1 class="devatva-heading" style="font-size: clamp(2.4rem, 5.4vw, 4.2rem); font-weight: 800; line-height: 1.2; margin-bottom: 22px; color: #1c1917; text-shadow: 0 2px 10px rgba(255,255,255,0.8);">
       {{ section.settings.heading_line1 | default: 'Unlock Divine Energies with' }} <br/>
       <span class="devatva-gold-text">{{ section.settings.heading_gold | default: 'Authentic Sacred Rudraksha & Gems' }}</span>
     </h1>
 
-    <p style="font-size: clamp(1.05rem, 2vw, 1.28rem); color: #57534e; max-width: 780px; margin: 0 auto 36px auto; line-height: 1.65; font-weight: 400;">
+    <p style="font-size: clamp(1.05rem, 2vw, 1.28rem); color: #44403c; max-width: 800px; margin: 0 auto 38px auto; line-height: 1.65; font-weight: 500;">
       {{ section.settings.description | default: 'Sacred beads, Panchdhatu abundance rings, and raw crystals sanctified via Kashi Vedic rituals (Pran Pratishtha) for wealth, protection, and spiritual aura.' }}
     </p>
 
-    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 52px;">
+    <div style="display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 56px;">
       <a href="{{ section.settings.primary_btn_link | default: '/collections/all' }}" class="devatva-gold-btn">
         🕉️ {{ section.settings.primary_btn_text | default: 'Explore Sacred Catalog' }}
       </a>
@@ -30,22 +33,22 @@
     </div>
 
     <!-- Sacred Statistics Counters (Light Glass Card) -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); border: 1.5px solid var(--dev-gold-border); border-radius: 18px; padding: 26px; box-shadow: 0 10px 30px rgba(180, 83, 9, 0.08);">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(12px); border: 1.5px solid var(--dev-gold-main); border-radius: 20px; padding: 28px; box-shadow: 0 15px 40px rgba(217, 119, 6, 0.12);">
       <div>
-        <div style="font-family: var(--dev-font-serif); font-size: 2.2rem; font-weight: 800; color: var(--dev-gold-dark);">50,000+</div>
-        <div style="font-size: 0.88rem; color: #57534e; font-weight: 600;">Happy Devotees</div>
+        <div style="font-family: var(--dev-font-serif); font-size: 2.3rem; font-weight: 800; color: var(--dev-gold-dark);">50,000+</div>
+        <div style="font-size: 0.9rem; color: #44403c; font-weight: 600;">Happy Devotees</div>
       </div>
       <div>
-        <div style="font-family: var(--dev-font-serif); font-size: 2.2rem; font-weight: 800; color: var(--dev-gold-dark);">100%</div>
-        <div style="font-size: 0.88rem; color: #57534e; font-weight: 600;">Lab Certified Authentic</div>
+        <div style="font-family: var(--dev-font-serif); font-size: 2.3rem; font-weight: 800; color: var(--dev-gold-dark);">100%</div>
+        <div style="font-size: 0.9rem; color: #44403c; font-weight: 600;">Lab Certified Authentic</div>
       </div>
       <div>
-        <div style="font-family: var(--dev-font-serif); font-size: 2.2rem; font-weight: 800; color: var(--dev-gold-dark);">Kashi</div>
-        <div style="font-size: 0.88rem; color: #57534e; font-weight: 600;">Vedic Priest Energized</div>
+        <div style="font-family: var(--dev-font-serif); font-size: 2.3rem; font-weight: 800; color: var(--dev-gold-dark);">Kashi</div>
+        <div style="font-size: 0.9rem; color: #44403c; font-weight: 600;">Vedic Priest Energized</div>
       </div>
       <div>
-        <div style="font-family: var(--dev-font-serif); font-size: 2.2rem; font-weight: 800; color: var(--dev-gold-dark);">150+</div>
-        <div style="font-size: 0.88rem; color: #57534e; font-weight: 600;">Countries Delivered</div>
+        <div style="font-family: var(--dev-font-serif); font-size: 2.3rem; font-weight: 800; color: var(--dev-gold-dark);">150+</div>
+        <div style="font-size: 0.9rem; color: #44403c; font-weight: 600;">Countries Delivered</div>
       </div>
     </div>
   </div>
