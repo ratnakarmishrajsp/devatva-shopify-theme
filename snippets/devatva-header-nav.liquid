@@ -1,0 +1,154 @@
+{% comment %}
+  DEVATVA.IN - SACRED NAVIGATION MENU BAR (MATCHING AUMCHAKRA.COM)
+{% endcomment %}
+
+<nav class="devatva-header-nav" aria-label="Main Navigation">
+  <ul class="devatva-main-menu">
+    <li>
+      <a href="/" class="devatva-menu-link">Home</a>
+    </li>
+
+    <!-- Rudraksha & Karungali Dropdown -->
+    <li class="devatva-has-dropdown">
+      <a href="{{ routes.all_products_collection_url }}/rudraksha" class="devatva-menu-link">
+        Rudraksha & Karungali <span class="devatva-arrow">▾</span>
+      </a>
+      <ul class="devatva-dropdown">
+        <li><a href="{{ routes.all_products_collection_url }}/silver-rudraksha">5 Mukhi Silver Capped Bracelets</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/1-14-mukhi">1 to 14 Mukhi Siddha Beads</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/gauri-shankar">Gauri Shankar & Ganesh Rudraksha</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/karungali">Karungali Wood Malas & Items</a></li>
+      </ul>
+    </li>
+
+    <!-- Sacred Rings & Kadas Dropdown -->
+    <li class="devatva-has-dropdown">
+      <a href="{{ routes.all_products_collection_url }}/rings" class="devatva-menu-link">
+        Rings & Kadas <span class="devatva-arrow">▾</span>
+      </a>
+      <ul class="devatva-dropdown">
+        <li><a href="{{ routes.all_products_collection_url }}/pixiu-ring">Panchdhatu Pixiu Wealth Ring</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/sri-yantra-ring">Sri Yantra Abundance Ring</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/turtle-ring">Turtle (Kachua) Wealth Ring</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/mahadev-kada">Pure Copper Om Trishul Kada</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/panchdhatu-kada">Panchdhatu Bio Energy Kada</a></li>
+      </ul>
+    </li>
+
+    <!-- Healing Crystals Dropdown -->
+    <li class="devatva-has-dropdown">
+      <a href="{{ routes.all_products_collection_url }}/gemstones" class="devatva-menu-link">
+        Healing Crystals <span class="devatva-arrow">▾</span>
+      </a>
+      <ul class="devatva-dropdown">
+        <li><a href="{{ routes.all_products_collection_url }}/7-chakra">7 Chakra Balancing Bracelets</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/black-tourmaline">Black Tourmaline Nazar Shield</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/pyrite">Pyrite Money & Prosperity Bracelet</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/zodiac-bracelet">Zodiac & Numerology Crystals</a></li>
+      </ul>
+    </li>
+
+    <!-- Pyramids, Yantras & Pooja Dropdown -->
+    <li class="devatva-has-dropdown">
+      <a href="{{ routes.all_products_collection_url }}/pooja-yantras" class="devatva-menu-link">
+        Yantras & Pyramids <span class="devatva-arrow">▾</span>
+      </a>
+      <ul class="devatva-dropdown">
+        <li><a href="{{ routes.all_products_collection_url }}/yantra">Shree & Kubera Brass Yantras</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/pyramid">Orgone Crystal Pyramids</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/sphatik">Sphatik & Sandalwood Malas</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/pooja">Sanctified God Idols & Pooja Items</a></li>
+      </ul>
+    </li>
+
+    <!-- Astro Matchmaker CTA -->
+    <li>
+      <a href="#devatva-astro-quiz-section" class="devatva-menu-link" style="color: var(--dev-saffron-accent); font-weight: 700;">
+        🔮 Astro Matchmaker
+      </a>
+    </li>
+
+    <!-- Track Order -->
+    <li>
+      <a href="javascript:void(0)" onclick="DevatvaChatbot.toggle()" class="devatva-menu-link">
+        📦 Track Order
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+.devatva-header-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.devatva-main-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 24px;
+  align-items: center;
+}
+.devatva-menu-link {
+  font-family: var(--dev-font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #1c1917;
+  text-decoration: none;
+  padding: 8px 4px;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.devatva-menu-link:hover {
+  color: var(--dev-gold-dark);
+}
+.devatva-has-dropdown {
+  position: relative;
+}
+.devatva-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 240px;
+  background: #ffffff;
+  border: 1.5px solid var(--dev-gold-border);
+  border-radius: 12px;
+  padding: 10px 0;
+  margin: 4px 0 0 0;
+  list-style: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  z-index: 99;
+}
+.devatva-has-dropdown:hover .devatva-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.devatva-dropdown li a {
+  display: block;
+  padding: 8px 18px;
+  font-size: 0.86rem;
+  color: #292524;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.devatva-dropdown li a:hover {
+  background: #fff8e6;
+  color: var(--dev-gold-dark);
+  font-weight: 600;
+}
+@media (max-width: 989px) {
+  .devatva-header-nav {
+    display: none;
+  }
+}
+</style>
