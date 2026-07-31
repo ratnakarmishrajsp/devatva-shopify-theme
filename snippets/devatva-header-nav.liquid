@@ -1,90 +1,73 @@
 {% comment %}
-  DEVATVA.IN - SACRED NAVIGATION MENU BAR (ALL AUMCHAKRA.COM MENUS GROUPED UNDER 5 PARENT CATEGORIES)
+  DEVATVA.IN - SACRED NAVIGATION MENU BAR (EXACT 20 AUMCHAKRA ITEMS MAPPED INTO 4 MAIN CATEGORIES)
 {% endcomment %}
 
 <nav class="devatva-header-nav" aria-label="Main Navigation">
   <ul class="devatva-main-menu">
     <li>
-      <a href="/" class="devatva-menu-link">Home</a>
+      <a href="/" class="devatva-menu-link">HOME</a>
     </li>
 
-    <!-- 1. BRACELETS (Parent Category for all aumchakra.com bracelet menus) -->
+    <!-- 1. BRACELETS & PI-XIU ▾ (Contains: Bracelets, Zodiac, Numerology, Pi-Xiu Bracelets, Daily Essentials, Best Seller) -->
     <li class="devatva-has-dropdown">
       <a href="{{ routes.all_products_collection_url }}/bracelets" class="devatva-menu-link">
-        Bracelets <span class="devatva-arrow">▾</span>
+        BRACELETS & PI-XIU <span class="devatva-arrow">▾</span>
       </a>
       <ul class="devatva-dropdown">
-        <li><a href="{{ routes.all_products_collection_url }}/all-bracelets">📿 All Spiritual Bracelets</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/zodiac-bracelets">✨ Zodiac & Rashi Bracelets</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/numerology-bracelets">🔢 Numerology Lucky Bracelets</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/healing-crystal-bracelets">🔮 Healing Crystal Bracelets</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/rudraksha-bracelets">🔱 Rudraksha & Silver Bracelets</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/karungali-bracelets">🪵 Karungali Wood Bracelets</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/pixiu-wealth-bracelets">🐉 Pi-Xiu Feng Shui Wealth Bracelets</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/nazar-evil-eye-bracelets">🛡️ Black Tourmaline Nazar Shield</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/tiger-eye-bracelets">🐅 Tiger Eye Confidence Bracelets</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/pyrite-wealth-bracelets">💰 Pyrite Prosperity & Money Bracelets</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/amethyst-rose-quartz">💖 Amethyst & Rose Quartz Love Bracelets</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/bracelets">BRACELETS</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/zodiac-bracelets">ZODIAC BRACELETS</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/numerology-bracelets">NUMEROLOGY BRACELETS</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/pi-xiu-bracelets">PI-XIU BRACELETS</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/daily-essentials">DAILY ESSENTIALS</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/best-seller">BEST SELLER</a></li>
       </ul>
     </li>
 
-    <!-- 2. RUDRAKSHA & KARUNGALI (Parent Category for all aumchakra.com Rudraksha & Karungali menus) -->
+    <!-- 2. RINGS & PENDANTS ▾ (Contains: Crystal Rings, Pi-Xiu Rings, Gem Rings, Pendants) -->
     <li class="devatva-has-dropdown">
-      <a href="{{ routes.all_products_collection_url }}/rudraksha-karungali" class="devatva-menu-link">
-        Rudraksha & Karungali <span class="devatva-arrow">▾</span>
+      <a href="{{ routes.all_products_collection_url }}/rings" class="devatva-menu-link">
+        RINGS & PENDANTS <span class="devatva-arrow">▾</span>
       </a>
       <ul class="devatva-dropdown">
-        <li><a href="{{ routes.all_products_collection_url }}/1-14-mukhi-rudraksha">📿 1 to 14 Mukhi Siddha Rudraksha</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/5-mukhi-silver-bracelets">✨ 5 Mukhi Silver Capped Bracelets</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/rudraksha-malas">🪔 Rudraksha 108 Jaap Malas</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/gauri-shankar-rudraksha">🕉️ Gauri Shankar & Ganesh Rudraksha</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/karungali-malas">🪵 Karungali Wood Malas & Beads</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/karungali-sticks-idols">🪵 Karungali Sticks & Sacred Artifacts</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/crystal-rings">CRYSTAL RINGS</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/pi-xiu-rings">PI-XIU RINGS</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/gem-rings">GEM RINGS</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/pendants">PENDANTS</a></li>
       </ul>
     </li>
 
-    <!-- 3. RINGS & KADAS (Parent Category for all aumchakra.com Rings & Kadas menus) -->
+    <!-- 3. RUDRAKSHA & MALAS ▾ (Contains: Rudraksha & Karungalis, Jaap Malas, Gemstones) -->
     <li class="devatva-has-dropdown">
-      <a href="{{ routes.all_products_collection_url }}/rings-kadas" class="devatva-menu-link">
-        Rings & Kadas <span class="devatva-arrow">▾</span>
+      <a href="{{ routes.all_products_collection_url }}/rudraksha" class="devatva-menu-link">
+        RUDRAKSHA & MALAS <span class="devatva-arrow">▾</span>
       </a>
       <ul class="devatva-dropdown">
-        <li><a href="{{ routes.all_products_collection_url }}/panchdhatu-pixiu-ring">💰 Panchdhatu Pixiu Wealth Ring</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/sri-yantra-ring">☸️ Sri Yantra Abundance Ring</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/turtle-kachua-ring">🐢 Turtle (Kachua) Abundance Ring</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/navratna-energy-ring">🌈 Navratna Planetary Energy Ring</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/pure-copper-trishul-kada">⚡ Pure Copper Om Trishul Kada</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/panchdhatu-bio-kada">🔱 Panchdhatu Bio Energy Kada</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/brass-engraved-kada">🔱 Heavy Brass Engraved Kadas</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/rudraksha-karungalis">RUDRAKSHA & KARUNGALIS</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/jaap-malas">JAAP MALAS</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/gemstones">GEMSTONES</a></li>
       </ul>
     </li>
 
-    <!-- 4. PYRAMIDS, YANTRAS & POOJA (Parent Category for all aumchakra.com Pyramids, Yantras & Pooja menus) -->
+    <!-- 4. PYRAMIDS, TREES & POOJA ▾ (Contains: Pyramid & Rows, Pyrite Frames, Roller & Guashas, Crystal Trees, God Divine Idols, Crystal Water Bottles) -->
     <li class="devatva-has-dropdown">
-      <a href="{{ routes.all_products_collection_url }}/pyramids-yantras" class="devatva-menu-link">
-        Pyramids & Yantras <span class="devatva-arrow">▾</span>
+      <a href="{{ routes.all_products_collection_url }}/pyramids-pooja" class="devatva-menu-link">
+        PYRAMIDS, TREES & POOJA <span class="devatva-arrow">▾</span>
       </a>
       <ul class="devatva-dropdown">
-        <li><a href="{{ routes.all_products_collection_url }}/brass-yantras">🪔 Shree & Kubera Brass Yantras</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/orgone-crystal-pyramids">🔺 Orgone Crystal Energy Pyramids</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/sphatik-malas">🤍 Sphatik Quartz 108 Jaap Malas</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/sandalwood-malas">🪵 Sacred Sandalwood 108 Malas</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/gemstone-trees">🌳 Gemstone Prosperity Trees</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/guasha-rollers">💆 Gemstone Guasha & Facial Rollers</a></li>
-        <li><a href="{{ routes.all_products_collection_url }}/pooja-essentials">🙏 Sanctified God Idols & Pooja Essentials</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/pyramid-rows">PYRAMID & ROWS</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/pyrite-frames">PYRITE FRAMES</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/crystal-trees">CRYSTAL TREES</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/roller-guashas">ROLLER & GUASHAS</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/god-divine-idols">GOD DIVINE IDOLS</a></li>
+        <li><a href="{{ routes.all_products_collection_url }}/crystal-water-bottles">CRYSTAL WATER BOTTLES</a></li>
       </ul>
     </li>
 
-    <!-- 5. ASTRO & DEVOTION SERVICES -->
-    <li class="devatva-has-dropdown">
+    <!-- ASTRO QUIZ CTA -->
+    <li>
       <a href="#devatva-astro-quiz-section" class="devatva-menu-link devatva-highlight-link">
-        🔮 Astro & Services <span class="devatva-arrow">▾</span>
+        🔮 ASTRO QUIZ
       </a>
-      <ul class="devatva-dropdown">
-        <li><a href="#devatva-astro-quiz-section">🔮 Take Astro Matchmaker Quiz</a></li>
-        <li><a href="javascript:void(0)" onclick="DevatvaChatbot.toggle()">📦 Track Order Status</a></li>
-        <li><a href="javascript:void(0)" onclick="DevatvaChatbot.setTab('callback'); DevatvaChatbot.toggle()">📞 Request Vedic Priest Call</a></li>
-      </ul>
     </li>
   </ul>
 </nav>
@@ -95,22 +78,23 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 6px 0;
+  padding: 8px 0;
 }
 .devatva-main-menu {
   display: flex;
   list-style: none;
   margin: 0 auto;
   padding: 0;
-  gap: 18px;
+  gap: 22px;
   align-items: center;
   flex-wrap: nowrap;
   white-space: nowrap;
 }
 .devatva-menu-link {
   font-family: var(--dev-font-sans);
-  font-size: 0.94rem;
-  font-weight: 700;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
   color: #1c1917;
   text-decoration: none;
   padding: 8px 14px;
@@ -118,7 +102,7 @@
   transition: all 0.25s ease;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   white-space: nowrap;
 }
 .devatva-menu-link:hover {
@@ -146,29 +130,33 @@
 .devatva-dropdown {
   position: absolute;
   top: 100%;
-  left: 0;
-  min-width: 280px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  min-width: 250px;
   background: #ffffff;
   border: 1.5px solid var(--dev-gold-border);
   border-radius: 14px;
   padding: 10px 0;
   margin: 6px 0 0 0;
   list-style: none;
-  box-shadow: 0 15px 35px rgba(217, 119, 6, 0.15);
+  box-shadow: 0 15px 35px rgba(217, 119, 6, 0.16);
   opacity: 0;
   pointer-events: none;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 999;
+  text-align: left;
 }
 .devatva-has-dropdown:hover .devatva-dropdown {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
 }
 .devatva-dropdown li a {
   display: block;
-  padding: 10px 20px;
-  font-size: 0.88rem;
+  padding: 10px 22px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
   color: #292524;
   text-decoration: none;
   white-space: nowrap;
@@ -177,8 +165,7 @@
 .devatva-dropdown li a:hover {
   background: #fff8e6;
   color: var(--dev-gold-dark);
-  font-weight: 700;
-  padding-left: 24px;
+  padding-left: 26px;
 }
 @media (max-width: 989px) {
   .devatva-header-nav {
