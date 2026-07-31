@@ -15,8 +15,8 @@
   --dev-gold-main: #d97706;
   --dev-gold-light: #f59e0b;
   --dev-gold-dark: #b45309;
-  --dev-gold-glow: rgba(217, 119, 6, 0.2);
-  --dev-gold-border: rgba(217, 119, 6, 0.22);
+  --dev-gold-glow: rgba(217, 119, 6, 0.25);
+  --dev-gold-border: rgba(217, 119, 6, 0.25);
   
   --dev-saffron-accent: #c2410c;
   --dev-crimson-accent: #991b1b;
@@ -108,31 +108,123 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
   box-shadow: var(--dev-shadow-soft);
 }
 
-/* Metafield Tags & Badges */
+/* Metafield Tags & Badges with Animated Glow Effect */
 .devatva-badge {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 5px 12px;
+  gap: 6px;
+  padding: 6px 14px;
   border-radius: 20px;
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   background: #fff8e6;
   color: var(--dev-gold-dark);
-  border: 1px solid var(--dev-gold-border);
+  border: 1.5px solid var(--dev-gold-main);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(217, 119, 6, 0.25);
+  animation: devatvaBadgeGlow 2.5s infinite ease-in-out;
+}
+
+.devatva-badge-glowing {
+  background: linear-gradient(135deg, #fffbf0 0%, #fff3d6 100%);
+  color: #9a3412;
+  border: 1.5px solid #d97706;
+  box-shadow: 0 0 16px rgba(217, 119, 6, 0.4);
+  animation: devatvaBadgeGlow 2s infinite ease-in-out;
+}
+
+@keyframes devatvaBadgeGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(217, 119, 6, 0.3), inset 0 0 6px rgba(245, 158, 11, 0.15);
+    border-color: rgba(217, 119, 6, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(217, 119, 6, 0.65), inset 0 0 12px rgba(245, 158, 11, 0.35);
+    border-color: #d97706;
+  }
 }
 
 .devatva-badge-crimson {
   background: #fff1f2;
   color: #9f1239;
   border-color: #fecdd3;
+  animation: none;
 }
 
 .devatva-badge-green {
   background: #ecfdf5;
   color: #047857;
   border-color: #a7f3d0;
+  animation: none;
+}
+
+/* Marquee Scrolling Ticker Announcement Bar */
+.devatva-marquee-wrapper {
+  background: linear-gradient(90deg, #9a3412 0%, #d97706 50%, #78350f 100%);
+  color: #ffffff;
+  padding: 10px 0;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 4px 15px rgba(154, 52, 18, 0.25);
+}
+
+.devatva-marquee-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 32px;
+  animation: devatvaMarquee 28s linear infinite;
+}
+
+.devatva-marquee-wrapper:hover .devatva-marquee-track {
+  animation-play-state: paused;
+}
+
+.devatva-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@keyframes devatvaMarquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Header Overrides */
+.header-wrapper, header.header {
+  background: var(--dev-bg-glass) !important;
+  backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid #efe9dc !important;
+}
+
+.header__heading-link {
+  font-family: var(--dev-font-serif) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  color: var(--dev-text-heading) !important;
+}
+
+.header__menu-item {
+  font-family: var(--dev-font-sans) !important;
+  font-weight: 600 !important;
+  color: var(--dev-text-main) !important;
+  transition: color 0.2s ease !important;
+}
+
+.header__menu-item:hover {
+  color: var(--dev-gold-dark) !important;
 }
 
 /* Product Card Styling (Light & Clean) */
