@@ -1,12 +1,51 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-404",
+      "disabled": true,
+      "settings": {}
+    },
+    "devatva_hero_banner_FcPNgw": {
+      "type": "devatva-hero-banner",
+      "name": "Devatva Hero Banner",
       "settings": {
+        "subheading": "100% Authentic • Lab Certified • Vedic Priest Energized",
+        "heading_line1": "Unlock Divine Energies with",
+        "heading_gold": "Authentic Sacred Rudraksha & Gems",
+        "description": "Sacred beads, Panchdhatu abundance rings, and raw crystals sanctified via Kashi Vedic rituals (Pran Pratishtha) for wealth, protection, and spiritual aura.",
+        "primary_btn_text": "Explore Sacred Catalog",
+        "primary_btn_link": "",
+        "secondary_btn_text": "Take Astro Matchmaker Quiz"
       }
+    },
+    "devatva_featured_grid_gjJHgd": {
+      "type": "devatva-featured-grid",
+      "name": "Devatva Featured Grid",
+      "settings": {
+        "heading": "Featured Energized Collections",
+        "collection": "",
+        "products_to_show": 8
+      }
+    },
+    "devatva_trust_badges_pbjDBb": {
+      "type": "devatva-trust-badges",
+      "name": "Devatva Trust Badges",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "devatva_hero_banner_FcPNgw",
+    "devatva_featured_grid_gjJHgd",
+    "devatva_trust_badges_pbjDBb"
   ]
 }
