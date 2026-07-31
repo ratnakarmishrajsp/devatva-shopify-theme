@@ -1,0 +1,13 @@
+{% comment %}
+  DEVATVA.IN - QUICK VIEW MODAL TEMPLATE
+  Modal backdrop overlay for rendering dynamic Ajax product previews
+{% endcomment %}
+
+<div id="devatva-quick-view-modal" class="devatva-modal-backdrop">
+  <div class="devatva-modal-box">
+    <button type="button" onclick="Devatva.closeQuickView()" class="devatva-modal-close">✕</button>
+    <div id="devatva-quick-view-content">
+      <!-- Dynamically filled by Devatva.openQuickView(handle) -->
+    </div>
+  </div>
+</div>

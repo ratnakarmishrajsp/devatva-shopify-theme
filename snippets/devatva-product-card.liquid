@@ -1,0 +1,106 @@
+{% comment %}
+  DEVATVA.IN - SACRED PRODUCT CARD SNIPPET
+  Displays product with custom metafield badges, gold border glow, Quick View & Compare triggers
+{% endcomment %}
+
+{%- liquid
+  assign mukhi = product.metafields.custom.mukhi_count.value | default: product.metafields.custom.mukhi_count
+  assign planet = product.metafields.custom.ruling_planet.value | default: product.metafields.custom.ruling_planet
+  assign deity = product.metafields.custom.ruling_deity.value | default: product.metafields.custom.ruling_deity
+-%}
+
+<div class="devatva-card" data-product-handle="{{ product.handle }}">
+  <div class="devatva-card-img-wrapper">
+    {%- if product.featured_image != blank -%}
+      <img
+        src="{{ product.featured_image | image_url: width: 600 }}"
+        alt="{{ product.title | escape }}"
+        class="devatva-card-img"
+        loading="lazy"
+        width="600"
+        height="600"
+      >
+    {%- else -%}
+      {{ 'product-1' | placeholder_svg_tag: 'devatva-card-img' }}
+    {%- endif -%}
+
+    <div style="position: absolute; top: 10px; left: 10px; display: flex; flex-direction: column; gap: 6px; z-index: 2;">
+      {%- if mukhi != blank -%}
+        <span class="devatva-badge">🔱 {{ mukhi }} Mukhi Siddha</span>
+      {%- endif -%}
+      {%- if planet != blank -%}
+        <span class="devatva-badge devatva-badge-crimson">🪐 Planet: {{ planet }}</span>
+      {%- endif -%}
+    </div>
+
+    <!-- Quick View Trigger Overlay -->
+    <button
+      class="devatva-outline-btn"
+      data-devatva-quickview="{{ product.handle }}"
+      style="position: absolute; bottom: 10px; right: 10px; padding: 6px 12px; font-size: 0.75rem; background: rgba(0,0,0,0.85); backdrop-filter: blur(4px);"
+      title="Quick View"
+    >
+      👁️ Quick View
+    </button>
+  </div>
+
+  <div class="devatva-card-content">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+      <span style="font-size: 0.75rem; color: var(--dev-gold-light); font-weight: 600;">✨ Lab Certified</span>
+      <div style="color: #fbbf24; font-size: 0.8rem;">★★★★★ <span style="color: var(--dev-text-muted);">(4.9)</span></div>
+    </div>
+
+    <h3 class="devatva-card-title">
+      <a href="{{ product.url }}" style="color: inherit; text-decoration: none;">
+        {{ product.title }}
+      </a>
+    </h3>
+
+    {%- if deity != blank -%}
+      <div style="font-size: 0.78rem; color: var(--dev-text-muted); margin-bottom: 8px;">
+        Blessing Deity: <strong style="color: var(--dev-text-main);">{{ deity }}</strong>
+      </div>
+    {%- endif -%}
+
+    <div class="devatva-card-price" style="margin-top: auto;">
+      <span>{{ product.price | money }}</span>
+      {%- if product.compare_at_price > product.price -%}
+        <span class="devatva-compare-price">{{ product.compare_at_price | money }}</span>
+      {%- endif -%}
+    </div>
+
+    <div class="devatva-card-actions">
+      <button
+        type="button"
+        onclick="Devatva.addToCart('{{ product.first_available_variant.id }}', 1)"
+        class="devatva-gold-btn"
+        style="flex: 1; padding: 10px; font-size: 0.85rem;"
+      >
+        🛒 Add to Cart
+      </button>
+
+      {%- capture compare_json -%}
+        {
+          "handle": {{ product.handle | json }},
+          "title": {{ product.title | json }},
+          "price": {{ product.price | money | json }},
+          "image": {{ product.featured_image | image_url: width: 300 | json }},
+          "mukhi": {{ mukhi | json }},
+          "deity": {{ deity | json }},
+          "planet": {{ planet | json }},
+          "lab": true
+        }
+      {%- endcapture -%}
+
+      <button
+        type="button"
+        class="devatva-outline-btn"
+        data-devatva-compare='{{ compare_json | escape }}'
+        style="padding: 10px; font-size: 0.85rem;"
+        title="Compare Item"
+      >
+        ⚖️
+      </button>
+    </div>
+  </div>
+</div>

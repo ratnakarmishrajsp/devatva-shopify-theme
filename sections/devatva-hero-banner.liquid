@@ -1,0 +1,106 @@
+{% comment %}
+  DEVATVA.IN - SACRED HERO BANNER SECTION (OS 2.0)
+{% endcomment %}
+
+<div class="devatva-hero-container" style="position: relative; background: linear-gradient(180deg, #120e0e 0%, #09090b 100%); padding: 80px 20px; border-bottom: 1px solid var(--dev-gold-border); overflow: hidden;">
+  <!-- Aura glow background element -->
+  <div style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); width: 450px; height: 450px; background: radial-gradient(circle, rgba(245,158,11,0.15) 0%, rgba(0,0,0,0) 70%); pointer-events: none;"></div>
+
+  <div style="max-width: 1100px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
+    <div class="devatva-badge" style="margin-bottom: 16px; padding: 6px 16px; font-size: 0.85rem;">
+      ✨ {{ section.settings.subheading | default: '100% Authentic • Lab Certified • Vedic Priest Energized' }}
+    </div>
+
+    <h1 class="devatva-heading" style="font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.2; margin-bottom: 20px;">
+      {{ section.settings.heading_line1 | default: 'Unlock Divine Energies with' }} <br/>
+      <span class="devatva-gold-text">{{ section.settings.heading_gold | default: 'Authentic Sacred Rudraksha & Gems' }}</span>
+    </h1>
+
+    <p style="font-size: clamp(1rem, 2vw, 1.25rem); color: var(--dev-text-muted); max-width: 760px; margin: 0 auto 32px auto; line-height: 1.6;">
+      {{ section.settings.description | default: 'Sacred beads, Panchdhatu abundance rings, and raw crystals sanctified via Kashi Vedic rituals (Pran Pratishtha) for wealth, protection, and spiritual aura.' }}
+    </p>
+
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px;">
+      <a href="{{ section.settings.primary_btn_link | default: '/collections/all' }}" class="devatva-gold-btn">
+        🕉️ {{ section.settings.primary_btn_text | default: 'Explore Sacred Catalog' }}
+      </a>
+      <a href="#devatva-astro-quiz-section" class="devatva-outline-btn">
+        🔮 {{ section.settings.secondary_btn_text | default: 'Take Astro Matchmaker Quiz' }}
+      </a>
+    </div>
+
+    <!-- Sacred Statistics Counters -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; background: rgba(24, 19, 19, 0.7); backdrop-filter: blur(10px); border: 1px solid var(--dev-gold-border); border-radius: 16px; padding: 24px;">
+      <div>
+        <div style="font-family: var(--dev-font-serif); font-size: 2rem; font-weight: 800; color: var(--dev-gold-light);">50,000+</div>
+        <div style="font-size: 0.85rem; color: var(--dev-text-muted); font-weight: 500;">Happy Devotees</div>
+      </div>
+      <div>
+        <div style="font-family: var(--dev-font-serif); font-size: 2rem; font-weight: 800; color: var(--dev-gold-light);">100%</div>
+        <div style="font-size: 0.85rem; color: var(--dev-text-muted); font-weight: 500;">Lab Certified Authentic</div>
+      </div>
+      <div>
+        <div style="font-family: var(--dev-font-serif); font-size: 2rem; font-weight: 800; color: var(--dev-gold-light);">Kashi</div>
+        <div style="font-size: 0.85rem; color: var(--dev-text-muted); font-weight: 500;">Vedic Priest Energized</div>
+      </div>
+      <div>
+        <div style="font-family: var(--dev-font-serif); font-size: 2rem; font-weight: 800; color: var(--dev-gold-light);">150+</div>
+        <div style="font-size: 0.85rem; color: var(--dev-text-muted); font-weight: 500;">Countries Delivered</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Devatva Hero Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading Badge",
+      "default": "100% Authentic • Lab Certified • Vedic Priest Energized"
+    },
+    {
+      "type": "text",
+      "id": "heading_line1",
+      "label": "Heading Line 1",
+      "default": "Unlock Divine Energies with"
+    },
+    {
+      "type": "text",
+      "id": "heading_gold",
+      "label": "Heading Gold Text",
+      "default": "Authentic Sacred Rudraksha & Gems"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description Text",
+      "default": "Sacred beads, Panchdhatu abundance rings, and raw crystals sanctified via Kashi Vedic rituals (Pran Pratishtha) for wealth, protection, and spiritual aura."
+    },
+    {
+      "type": "text",
+      "id": "primary_btn_text",
+      "label": "Primary Button Text",
+      "default": "Explore Sacred Catalog"
+    },
+    {
+      "type": "url",
+      "id": "primary_btn_link",
+      "label": "Primary Button Link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_btn_text",
+      "label": "Secondary Button Text",
+      "default": "Take Astro Matchmaker Quiz"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Devatva Hero Banner"
+    }
+  ]
+}
+{% endschema %}

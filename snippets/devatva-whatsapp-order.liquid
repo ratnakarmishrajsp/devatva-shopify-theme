@@ -1,0 +1,25 @@
+{% comment %}
+  DEVATVA.IN - DIRECT WHATSAPP ORDER BUTTON SNIPPET
+  Allows immediate order inquiry via WhatsApp with pre-filled product details
+{% endcomment %}
+
+{%- liquid
+  assign whatsapp_number = section.settings.whatsapp_number | default: '919891099545'
+  assign product_title = product.title | escape
+  assign product_url = shop.url | append: product.url
+  assign message = 'Pranam Devatva team, I want to order the energized product: ' | append: product_title | append: ' - Link: ' | append: product_url
+  assign wa_url = 'https://wa.me/' | append: whatsapp_number | append: '?text=' | append: message | url_encode
+-%}
+
+<a
+  href="https://wa.me/{{ whatsapp_number }}?text=Pranam%20Devatva%20Team%2C%20I%20want%20to%20order%20the%20energized%20item%3A%20{{ product.title | url_encode }}%20({{ shop.url }}{{ product.url }})"
+  target="_blank"
+  rel="noopener"
+  class="devatva-outline-btn"
+  style="width: 100%; justify-content: center; background: rgba(37, 211, 102, 0.15); border-color: rgba(37, 211, 102, 0.4); color: #25D366; font-weight: 600;"
+>
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.758.459 3.474 1.33 4.982l-1.412 5.161 5.283-1.386c1.455.794 3.099 1.213 4.786 1.214h.004c5.507 0 9.99-4.478 9.99-9.985 0-2.667-1.037-5.176-2.923-7.062a9.923 9.923 0 0 0-7.068-2.928zm0 18.257h-.003c-1.488 0-2.947-.4-4.22-1.156l-.303-.18-3.136.822.837-3.057-.197-.313a8.27 8.27 0 0 1-1.266-4.389c.001-4.56 3.71-8.269 8.274-8.269 2.209 0 4.285.861 5.848 2.426 1.562 1.565 2.421 3.642 2.42 5.852 0 4.561-3.71 8.27-8.274 8.27z"/>
+  </svg>
+  Order Instantly via WhatsApp
+</a>

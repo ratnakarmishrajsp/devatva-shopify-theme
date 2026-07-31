@@ -1,0 +1,85 @@
+{% comment %}
+  DEVATVA.IN - SACRED FEATURED COLLECTION GRID (OS 2.0)
+{% endcomment %}
+
+<div style="padding: 70px 20px; background: var(--dev-bg-obsidian); border-bottom: 1px solid var(--dev-gold-border);">
+  <div style="max-width: 1250px; margin: 0 auto;">
+    
+    <div style="text-align: center; margin-bottom: 40px;">
+      <span class="devatva-badge" style="margin-bottom: 8px;">✨ Most Sanctified Spiritual Items</span>
+      <h2 class="devatva-heading" style="font-size: clamp(1.8rem, 4vw, 2.6rem); color: #ffffff;">
+        {{ section.settings.heading | default: 'Featured Energized Collections' }}
+      </h2>
+      <p style="color: var(--dev-text-muted); font-size: 1rem; max-width: 650px; margin: 8px auto 0 auto;">
+        Handpicked Rudraksha bracelets, Panchdhatu rings, and sacred kadas blessed by authentic Vedic rituals.
+      </p>
+    </div>
+
+    {%- assign collection = collections[section.settings.collection] -%}
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 24px;">
+      {%- if collection != blank and collection.products.size > 0 -%}
+        {%- for product in collection.products limit: section.settings.products_to_show -%}
+          {% render 'devatva-product-card', product: product %}
+        {%- endfor -%}
+      {%- else -%}
+        {% comment %} Fallback items when no collection selected in theme editor {% endcomment %}
+        {% for i in (1..4) %}
+          <div class="devatva-card">
+            <div class="devatva-card-img-wrapper">
+              {{ 'product-1' | placeholder_svg_tag: 'devatva-card-img' }}
+              <span class="devatva-badge" style="position: absolute; top: 10px; left: 10px;">🔱 5 Mukhi Siddha</span>
+            </div>
+            <div class="devatva-card-content">
+              <div class="devatva-badge" style="width: fit-content; margin-bottom: 6px;">100% Lab Certified</div>
+              <h3 class="devatva-card-title">Authentic Energized Sacred Rudraksha Item #{{ i }}</h3>
+              <div class="devatva-card-price">
+                <span>₹1,499</span>
+                <span class="devatva-compare-price">₹2,999</span>
+              </div>
+              <div class="devatva-card-actions">
+                <button type="button" class="devatva-gold-btn" style="flex:1; padding: 10px; font-size: 0.85rem;">
+                  🛒 Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {%- endif -%}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Devatva Featured Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Featured Energized Collections"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 4,
+      "max": 12,
+      "step": 4,
+      "default": 8,
+      "label": "Products to Show"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Devatva Featured Grid"
+    }
+  ]
+}
+{% endschema %}

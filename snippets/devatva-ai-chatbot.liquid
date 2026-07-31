@@ -1,0 +1,64 @@
+{% comment %}
+  DEVATVA.IN - GEMINI AI DIVINE GURU CHATBOT WIDGET TEMPLATE
+  Floating button and chat window interface
+{% endcomment %}
+
+<!-- Floating Trigger Button -->
+<button
+  type="button"
+  class="devatva-chatbot-trigger"
+  onclick="DevatvaChatbot.toggle()"
+  title="Ask Divine Guru AI"
+>
+  🕉️
+</button>
+
+<!-- Floating Chat Window -->
+<div id="devatva-chatbot-window" class="devatva-chatbot-window">
+  <div class="devatva-chatbot-header">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--dev-gold-main); color: #000; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold;">
+        🕉️
+      </div>
+      <div>
+        <h4 style="margin: 0; color: #ffffff; font-size: 0.95rem; font-family: var(--dev-font-serif);">
+          Devatva Divine AI Guru
+        </h4>
+        <span style="font-size: 0.72rem; color: #6ee7b7; display: flex; align-items: center; gap: 4px;">
+          <span style="width: 6px; height: 6px; background: #10b981; border-radius: 50%;"></span> Online • Kashi Ashram Knowledge
+        </span>
+      </div>
+    </div>
+    <button type="button" onclick="DevatvaChatbot.toggle()" class="devatva-modal-close" style="position: static; width: 30px; height: 30px; font-size: 1rem;">✕</button>
+  </div>
+
+  <div class="devatva-chatbot-tabs">
+    <div class="devatva-chat-tab active" data-tab="advice" onclick="DevatvaChatbot.setTab('advice')">
+      ✨ Spiritual Advice
+    </div>
+    <div class="devatva-chat-tab" data-tab="tracking" onclick="DevatvaChatbot.setTab('tracking')">
+      📦 Order Status
+    </div>
+    <div class="devatva-chat-tab" data-tab="callback" onclick="DevatvaChatbot.setTab('callback')">
+      📞 Priest Call
+    </div>
+  </div>
+
+  <div id="devatva-chat-messages" class="devatva-chat-messages">
+    <div class="devatva-chat-msg bot">
+      🙏 Pranam! I am your <strong>Devatva AI Divine Guru</strong>. Ask me anything about Rudraksha Mukhis, Panchdhatu rings, Nazar protection, or zodiac remedies!
+    </div>
+  </div>
+
+  <div id="devatva-chat-input-area" class="devatva-chat-input-row">
+    <input
+      type="text"
+      id="devatva-chat-input-field"
+      placeholder="Type your question or #Order ID..."
+      class="devatva-chat-input"
+    />
+    <button type="button" onclick="DevatvaChatbot.sendMessage()" class="devatva-chat-send">
+      ➔
+    </button>
+  </div>
+</div>
