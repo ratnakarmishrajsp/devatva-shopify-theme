@@ -1,37 +1,69 @@
 {% comment %}
-  DEVATVA.IN - SACRED COLLECTIONS MENU & DYNAMIC CATEGORY GRID (OS 2.0)
-  Supports both Shopify Admin Collections & Pre-mapped Spiritual Categories
+  DEVATVA.IN - SACRED COLLECTIONS CATALOG (AUMCHAKRA INSPIRED)
+  Organized collection cards matching aumchakra.com product taxonomy
 {% endcomment %}
 
 <div style="padding: 70px 20px; background: #fffcf7; border-bottom: 1.5px solid var(--dev-gold-border);">
   <div style="max-width: 1250px; margin: 0 auto;">
     
     <div style="text-align: center; margin-bottom: 44px;">
-      <span class="devatva-badge devatva-badge-glowing" style="margin-bottom: 10px;">📿 Divine Catalog Categories</span>
+      <span class="devatva-badge devatva-badge-glowing" style="margin-bottom: 10px;">📿 Divine Catalog Collections</span>
       <h2 class="devatva-heading" style="font-size: clamp(1.8rem, 4vw, 2.7rem); color: #1c1917;">
-        {{ section.settings.heading | default: 'Shop by Sacred Category' }}
+        Shop by <span class="devatva-gold-text">Sacred Collection</span>
       </h2>
       <p style="color: #57534e; font-size: 1rem; max-width: 650px; margin: 8px auto 0 auto;">
-        {{ section.settings.subtext | default: 'Explore lab-certified Rudraksha, Panchdhatu wealth rings, copper kadas, and energized crystal gemstones.' }}
+        Explore lab-certified Rudraksha, Zodiac & Numerology crystal bracelets, Panchdhatu wealth rings, and brass Yantras.
       </p>
     </div>
 
-    <!-- Category Grid -->
+    <!-- Category Grid matching aumchakra.com -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px;">
       
-      {%- if section.blocks.size > 0 -%}
-        {%- for block in section.blocks -%}
-          {%- assign collection = collections[block.settings.collection] -%}
-          <div style="background: #ffffff; border: 1.5px solid var(--dev-gold-border); border-radius: 18px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column;" {{ block.shopify_attributes }}>
-            <div style="font-size: 2.8rem; margin-bottom: 12px; line-height: 1;">
-              {{ block.settings.icon | default: '🔱' }}
-            </div>
-            <h3 class="devatva-heading" style="font-size: 1.25rem; color: #1c1917; margin-bottom: 8px;">
-              {%- if collection != blank -%}{{ collection.title }}{%- else -%}{{ block.settings.title }}{%- endif -%}
-            </h3>
-            <p style="font-size: 0.84rem; color: #57534e; line-height: 1.45; margin-bottom: 16px;">
-              {{ block.settings.description }}
-            </p>
+      <!-- Collection 1: Zodiac & Numerology Bracelets -->
+      <div style="background: #ffffff; border: 1.5px solid var(--dev-gold-border); border-radius: 18px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column;">
+        <div style="font-size: 2.8rem; margin-bottom: 12px; line-height: 1;">✨</div>
+        <h3 class="devatva-heading" style="font-size: 1.25rem; color: #1c1917; margin-bottom: 8px;">Zodiac & Numerology</h3>
+        <p style="font-size: 0.84rem; color: #57534e; line-height: 1.45; margin-bottom: 16px;">Rashi & birth-number specific lucky crystal bracelets energized for personal destiny.</p>
+        
+        <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.85rem; color: var(--dev-gold-dark); display: flex; flex-direction: column; gap: 6px;">
+          <li><a href="{{ routes.all_products_collection_url }}/zodiac-bracelets" style="color: inherit; text-decoration: none;">▸ 12 Rashi Zodiac Bracelets</a></li>
+          <li><a href="{{ routes.all_products_collection_url }}/numerology-bracelets" style="color: inherit; text-decoration: none;">▸ Numerology Lucky Bracelets</a></li>
+          <li><a href="{{ routes.all_products_collection_url }}/rashi-gemstones" style="color: inherit; text-decoration: none;">▸ Planetary Alignment Gems</a></li>
+        </ul>
+
+        <a href="{{ routes.all_products_collection_url }}/zodiac-bracelets" class="devatva-gold-btn" style="margin-top: auto; padding: 10px; font-size: 0.85rem;">
+          Explore Zodiac ➔
+        </a>
+      </div>
+
+      <!-- Collection 2: Healing Crystal & Nazar Bracelets -->
+      <div style="background: #ffffff; border: 1.5px solid var(--dev-gold-border); border-radius: 18px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column;">
+        <div style="font-size: 2.8rem; margin-bottom: 12px; line-height: 1;">🔮</div>
+        <h3 class="devatva-heading" style="font-size: 1.25rem; color: #1c1917; margin-bottom: 8px;">Healing & Nazar Shields</h3>
+        <p style="font-size: 0.84rem; color: #57534e; line-height: 1.45; margin-bottom: 16px;">7 Chakra balancing, Black Tourmaline Nazar Protection, and Pyrite Money bracelets.</p>
+
+        <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.85rem; color: var(--dev-gold-dark); display: flex; flex-direction: column; gap: 6px;">
+          <li><a href="{{ routes.all_products_collection_url }}/7-chakra" style="color: inherit; text-decoration: none;">▸ 7 Chakra Balancing Bracelets</a></li>
+          <li><a href="{{ routes.all_products_collection_url }}/black-tourmaline" style="color: inherit; text-decoration: none;">▸ Black Tourmaline Nazar Shield</a></li>
+          <li><a href="{{ routes.all_products_collection_url }}/pyrite" style="color: inherit; text-decoration: none;">▸ Pyrite Prosperity Bracelets</a></li>
+        </ul>
+
+        <a href="{{ routes.all_products_collection_url }}/healing-bracelets" class="devatva-gold-btn" style="margin-top: auto; padding: 10px; font-size: 0.85rem;">
+          Explore Crystals ➔
+        </a>
+      </div>
+
+      <!-- Collection 3: Rudraksha & Karungali -->
+      <div style="background: #ffffff; border: 1.5px solid var(--dev-gold-border); border-radius: 18px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column;">
+        <div style="font-size: 2.8rem; margin-bottom: 12px; line-height: 1;">🔱</div>
+        <h3 class="devatva-heading" style="font-size: 1.25rem; color: #1c1917; margin-bottom: 8px;">Rudraksha & Karungali</h3>
+        <p style="font-size: 0.84rem; color: #57534e; line-height: 1.45; margin-bottom: 16px;">1 to 14 Mukhi Siddha Rudraksha, Silver Capped Bracelets, and Karungali Wood Malas.</p>
+
+        <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.85rem; color: var(--dev-gold-dark); display: flex; flex-direction: column; gap: 6px;">
+          <li><a href="{{ routes.all_products_collection_url }}/rudraksha-bracelets" style="color: inherit; text-decoration: none;">▸ 5 Mukhi Silver Bracelets</a></li>
+          <li><a href="{{ routes.all_products_collection_url }}/1-14-mukhi-rudraksha" style="color: inherit; text-decoration: none;">▸ 1-14 Mukhi Siddha Beads</a></li>
+          <li><a href="{{ routes.all_products_collection_url }}/karungali-malas" style="color: inherit; text-decoration: none;">▸ Karungali Wood Malas</a></li>
+        </ul>
 
             <a href="{% if collection != blank %}{{ collection.url }}{% else %}{{ block.settings.link }}{% endif %}" class="devatva-gold-btn" style="margin-top: auto; padding: 10px; font-size: 0.85rem;">
               Explore Collection ➔
@@ -40,58 +72,39 @@
         {%- endfor -%}
       {%- else -%}
 
-        <!-- Default Preset Categories (Fallback when no blocks added in Theme Editor) -->
-        <!-- Category 1: Rudraksha & Karungali -->
-        <div style="background: #ffffff; border: 1.5px solid var(--dev-gold-border); border-radius: 18px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column;">
-          <div style="font-size: 2.8rem; margin-bottom: 12px; line-height: 1;">🔱</div>
-          <h3 class="devatva-heading" style="font-size: 1.25rem; color: #1c1917; margin-bottom: 8px;">Rudraksha & Karungali</h3>
-          <p style="font-size: 0.84rem; color: #57534e; line-height: 1.45; margin-bottom: 16px;">1 to 14 Mukhi Siddha Rudraksha, 108 Jaap Malas, and Silver Capped Bracelets.</p>
-          <a href="/collections/rudraksha" class="devatva-gold-btn" style="margin-top: auto; padding: 10px; font-size: 0.85rem;">
-            Explore Rudraksha ➔
-          </a>
-        </div>
+      <!-- Collection 4: Panchdhatu Rings & Copper Kadas -->
+      <div style="background: #ffffff; border: 1.5px solid var(--dev-gold-border); border-radius: 18px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column;">
+        <div style="font-size: 2.8rem; margin-bottom: 12px; line-height: 1;">💰</div>
+        <h3 class="devatva-heading" style="font-size: 1.25rem; color: #1c1917; margin-bottom: 8px;">Rings & Kadas</h3>
+        <p style="font-size: 0.84rem; color: #57534e; line-height: 1.45; margin-bottom: 16px;">Panchdhatu Pixiu Wealth Rings, Sri Yantra Rings, and Pure Copper Mahadev Kadas.</p>
 
-        <!-- Category 2: Feng Shui & Panchdhatu Rings -->
-        <div style="background: #ffffff; border: 1.5px solid var(--dev-gold-border); border-radius: 18px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column;">
-          <div style="font-size: 2.8rem; margin-bottom: 12px; line-height: 1;">💰</div>
-          <h3 class="devatva-heading" style="font-size: 1.25rem; color: #1c1917; margin-bottom: 8px;">Panchdhatu Rings</h3>
-          <p style="font-size: 0.84rem; color: #57534e; line-height: 1.45; margin-bottom: 16px;">Panchdhatu wealth rings, Sri Yantra abundance rings, and Turtle rings.</p>
-          <a href="/collections/rings" class="devatva-gold-btn" style="margin-top: auto; padding: 10px; font-size: 0.85rem;">
-            Explore Rings ➔
-          </a>
-        </div>
+        <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.85rem; color: var(--dev-gold-dark); display: flex; flex-direction: column; gap: 6px;">
+          <li><a href="{{ routes.all_products_collection_url }}/pixiu-ring" style="color: inherit; text-decoration: none;">▸ Panchdhatu Pixiu Wealth Ring</a></li>
+          <li><a href="{{ routes.all_products_collection_url }}/sri-yantra-ring" style="color: inherit; text-decoration: none;">▸ Sri Yantra Abundance Ring</a></li>
+          <li><a href="{{ routes.all_products_collection_url }}/mahadev-kada" style="color: inherit; text-decoration: none;">▸ Pure Copper Trishul Kada</a></li>
+        </ul>
 
-        <!-- Category 3: Pure Copper Kadas -->
-        <div style="background: #ffffff; border: 1.5px solid var(--dev-gold-border); border-radius: 18px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column;">
-          <div style="font-size: 2.8rem; margin-bottom: 12px; line-height: 1;">⚡</div>
-          <h3 class="devatva-heading" style="font-size: 1.25rem; color: #1c1917; margin-bottom: 8px;">Pure Copper Kadas</h3>
-          <p style="font-size: 0.84rem; color: #57534e; line-height: 1.45; margin-bottom: 16px;">Pure copper Mahadev Om Trishul kadas & Panchdhatu bio-electricity bangles.</p>
-          <a href="/collections/kadas" class="devatva-gold-btn" style="margin-top: auto; padding: 10px; font-size: 0.85rem;">
-            Explore Kadas ➔
-          </a>
-        </div>
+        <a href="{{ routes.all_products_collection_url }}/rings-kadas" class="devatva-gold-btn" style="margin-top: auto; padding: 10px; font-size: 0.85rem;">
+          Explore Rings & Kadas ➔
+        </a>
+      </div>
 
-        <!-- Category 4: Gemstone & Crystal Bracelets -->
-        <div style="background: #ffffff; border: 1.5px solid var(--dev-gold-border); border-radius: 18px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column;">
-          <div style="font-size: 2.8rem; margin-bottom: 12px; line-height: 1;">🔮</div>
-          <h3 class="devatva-heading" style="font-size: 1.25rem; color: #1c1917; margin-bottom: 8px;">Healing Crystals</h3>
-          <p style="font-size: 0.84rem; color: #57534e; line-height: 1.45; margin-bottom: 16px;">7 Chakra balancing, Black Tourmaline Nazar Raksha, and Pyrite prosperity bracelets.</p>
-          <a href="/collections/gemstones" class="devatva-gold-btn" style="margin-top: auto; padding: 10px; font-size: 0.85rem;">
-            Explore Gemstones ➔
-          </a>
-        </div>
+      <!-- Collection 5: Pyramids, Yantras & Pooja Essentials -->
+      <div style="background: #ffffff; border: 1.5px solid var(--dev-gold-border); border-radius: 18px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column;">
+        <div style="font-size: 2.8rem; margin-bottom: 12px; line-height: 1;">🪔</div>
+        <h3 class="devatva-heading" style="font-size: 1.25rem; color: #1c1917; margin-bottom: 8px;">Pyramids & Yantras</h3>
+        <p style="font-size: 0.84rem; color: #57534e; line-height: 1.45; margin-bottom: 16px;">Energized Brass Yantras, Orgone Pyramids, Sphatik Malas, and Gemstone Trees.</p>
 
-        <!-- Category 5: Pyramids, Yantras & Pooja Essentials -->
-        <div style="background: #ffffff; border: 1.5px solid var(--dev-gold-border); border-radius: 18px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column;">
-          <div style="font-size: 2.8rem; margin-bottom: 12px; line-height: 1;">🪔</div>
-          <h3 class="devatva-heading" style="font-size: 1.25rem; color: #1c1917; margin-bottom: 8px;">Pyramids & Yantras</h3>
-          <p style="font-size: 0.84rem; color: #57534e; line-height: 1.45; margin-bottom: 16px;">Energized brass Yantras, Orgone pyramids, Sphatik malas, and home temple idols.</p>
-          <a href="/collections/pooja-yantras" class="devatva-gold-btn" style="margin-top: auto; padding: 10px; font-size: 0.85rem;">
-            Explore Yantras ➔
-          </a>
-        </div>
+        <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.85rem; color: var(--dev-gold-dark); display: flex; flex-direction: column; gap: 6px;">
+          <li><a href="{{ routes.all_products_collection_url }}/brass-yantras" style="color: inherit; text-decoration: none;">▸ Shree & Kubera Brass Yantras</a></li>
+          <li><a href="{{ routes.all_products_collection_url }}/crystal-pyramids" style="color: inherit; text-decoration: none;">▸ Orgone Crystal Pyramids</a></li>
+          <li><a href="{{ routes.all_products_collection_url }}/crystal-trees" style="color: inherit; text-decoration: none;">▸ Gemstone Prosperity Trees</a></li>
+        </ul>
 
-      {%- endif -%}
+        <a href="{{ routes.all_products_collection_url }}/pooja-essentials" class="devatva-gold-btn" style="margin-top: auto; padding: 10px; font-size: 0.85rem;">
+          Explore Yantras ➔
+        </a>
+      </div>
 
     </div>
 
@@ -100,60 +113,11 @@
 
 {% schema %}
 {
-  "name": "Devatva Collections Grid",
-  "settings": [
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Shop by Sacred Category"
-    },
-    {
-      "type": "textarea",
-      "id": "subtext",
-      "label": "Subtext",
-      "default": "Explore lab-certified Rudraksha, Panchdhatu wealth rings, copper kadas, and energized crystal gemstones."
-    }
-  ],
-  "blocks": [
-    {
-      "type": "collection_card",
-      "name": "Collection Card",
-      "settings": [
-        {
-          "type": "collection",
-          "id": "collection",
-          "label": "Shopify Admin Collection"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Card Title (Fallback)",
-          "default": "Sacred Collection"
-        },
-        {
-          "type": "text",
-          "id": "icon",
-          "label": "Emoji / Icon",
-          "default": "🔱"
-        },
-        {
-          "type": "textarea",
-          "id": "description",
-          "label": "Description",
-          "default": "Authentic Vedic spiritual products."
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Custom URL Link (Fallback)"
-        }
-      ]
-    }
-  ],
+  "name": "Devatva Collections Catalog",
+  "settings": [],
   "presets": [
     {
-      "name": "Devatva Collections Grid"
+      "name": "Devatva Collections Catalog"
     }
   ]
 }
