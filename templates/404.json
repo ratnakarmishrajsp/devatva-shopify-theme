@@ -40,12 +40,20 @@
       "type": "devatva-trust-badges",
       "name": "Devatva Trust Badges",
       "settings": {}
+    },
+    "devatva_astro_matchmaker_HqQ9BE": {
+      "type": "devatva-astro-matchmaker",
+      "name": "Devatva Astro Matchmaker",
+      "settings": {
+        "heading": "Find Your Sacred Astrological Remedy"
+      }
     }
   },
   "order": [
     "main",
     "devatva_hero_banner_FcPNgw",
     "devatva_featured_grid_gjJHgd",
-    "devatva_trust_badges_pbjDBb"
+    "devatva_trust_badges_pbjDBb",
+    "devatva_astro_matchmaker_HqQ9BE"
   ]
 }
