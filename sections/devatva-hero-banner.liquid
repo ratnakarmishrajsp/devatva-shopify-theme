@@ -1,37 +1,33 @@
 {% comment %}
-  DEVATVA.IN - SACRED HERO BANNER SECTION WITH HIGH-CONTRAST TEXT CAPSULE (OS 2.0)
+  DEVATVA.IN - SACRED HERO BANNER WITH VEDIC PRIEST & TEMPLE BACKGROUND (OS 2.0)
 {% endcomment %}
 
-<div class="devatva-hero-container" style="position: relative; background: url('{{ 'devatva_hero_bg.png' | asset_url }}') center/cover no-repeat; padding: 75px 20px 75px 20px; border-bottom: 1.5px solid var(--dev-gold-border); overflow: hidden;">
-  <!-- Subtle Soft Light Overlay for background depth -->
-  <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(252,250,245,0.72) 0%, rgba(247,242,230,0.78) 100%); backdrop-filter: blur(1px); z-index: 1;"></div>
+<div class="devatva-hero-container" style="position: relative; background: url('{{ 'devatva_priest_banner.png' | asset_url }}') center/cover no-repeat; padding: 95px 20px 85px 20px; border-bottom: 1.5px solid var(--dev-gold-border); overflow: hidden;">
+  <!-- Balanced Light Overlay allowing Priest & Temple Artwork to shine -->
+  <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(252,250,245,0.68) 0%, rgba(255,255,255,0.82) 100%); backdrop-filter: blur(0.5px); z-index: 1;"></div>
 
-  <!-- Radial Golden Aura Effect -->
-  <div style="position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(245,158,11,0.2) 0%, rgba(255,255,255,0) 70%); pointer-events: none; z-index: 1;"></div>
+  <!-- Radial Light Glow -->
+  <div style="position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(245,158,11,0.18) 0%, rgba(255,255,255,0) 70%); pointer-events: none; z-index: 1;"></div>
 
   <div style="max-width: 1120px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
     
     <!-- Top Badge -->
-    <div class="devatva-badge devatva-badge-glowing" style="margin-bottom: 22px; padding: 8px 22px; font-size: 0.9rem; background: #ffffff; border: 1.5px solid var(--dev-gold-main);">
+    <div class="devatva-badge devatva-badge-glowing" style="margin-bottom: 24px; padding: 8px 22px; font-size: 0.9rem; background: #ffffff; border: 1.5px solid var(--dev-gold-main);">
       ✨ {{ section.settings.subheading | default: '100% Authentic • Lab Certified • Kashi Vedic Priest Energized' }}
     </div>
 
-    <!-- High-Contrast Frosted Ivory Text Card Wrapper -->
-    <div style="background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(16px); border: 1.5px solid var(--dev-gold-main); border-radius: 24px; padding: 36px 28px; margin: 0 auto 36px auto; max-width: 960px; box-shadow: 0 15px 45px rgba(217, 119, 6, 0.15), 0 0 25px rgba(255, 255, 255, 0.9);">
-      
-      <h1 class="devatva-heading" style="font-size: clamp(2.3rem, 5.2vw, 4rem); font-weight: 800; line-height: 1.22; margin-bottom: 18px; color: #0c0a09;">
-        {{ section.settings.heading_line1 | default: 'Unlock Divine Energies with' }} <br/>
-        <span class="devatva-gold-text" style="text-shadow: 0 2px 8px rgba(180, 83, 9, 0.2);">{{ section.settings.heading_gold | default: 'Authentic Sacred Rudraksha & Gems' }}</span>
-      </h1>
+    <!-- Clean Typography Layout without heavy capsule box -->
+    <h1 class="devatva-heading" style="font-size: clamp(2.5rem, 5.5vw, 4.3rem); font-weight: 800; line-height: 1.18; margin-bottom: 20px; color: #1c1917; text-shadow: 0 2px 12px rgba(255, 255, 255, 0.95), 0 1px 4px rgba(0,0,0,0.15);">
+      {{ section.settings.heading_line1 | default: 'Unlock Divine Energies with' }} <br/>
+      <span class="devatva-gold-text" style="text-shadow: 0 2px 10px rgba(255,255,255,0.9);">{{ section.settings.heading_gold | default: 'Authentic Sacred Rudraksha & Gems' }}</span>
+    </h1>
 
-      <p style="font-size: clamp(1.05rem, 2vw, 1.25rem); color: #1c1917; max-width: 820px; margin: 0 auto; line-height: 1.65; font-weight: 600; text-shadow: 0 1px 2px rgba(255,255,255,0.8);">
-        {{ section.settings.description | default: 'Sacred beads, Panchdhatu abundance rings, and raw crystals sanctified via Kashi Vedic rituals (Pran Pratishtha) for wealth, protection, and spiritual aura.' }}
-      </p>
-
-    </div>
+    <p style="font-size: clamp(1.1rem, 2.1vw, 1.3rem); color: #292524; max-width: 820px; margin: 0 auto 40px auto; line-height: 1.65; font-weight: 600; text-shadow: 0 2px 8px rgba(255,255,255,0.95), 0 1px 2px rgba(0,0,0,0.1);">
+      {{ section.settings.description | default: 'Sacred beads, Panchdhatu abundance rings, and raw crystals sanctified via Kashi Vedic rituals (Pran Pratishtha) for wealth, protection, and spiritual aura.' }}
+    </p>
 
     <!-- Action Buttons -->
-    <div style="display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 52px;">
+    <div style="display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 56px;">
       <a href="{{ section.settings.primary_btn_link | default: '/collections/all' }}" class="devatva-gold-btn">
         🕉️ {{ section.settings.primary_btn_text | default: 'Explore Sacred Catalog' }}
       </a>
@@ -41,7 +37,7 @@
     </div>
 
     <!-- Sacred Statistics Counters (Light Glass Card) -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border: 1.5px solid var(--dev-gold-main); border-radius: 20px; padding: 26px; box-shadow: 0 15px 40px rgba(217, 119, 6, 0.12);">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(12px); border: 1.5px solid var(--dev-gold-main); border-radius: 20px; padding: 28px; box-shadow: 0 15px 40px rgba(217, 119, 6, 0.12);">
       <div>
         <div style="font-family: var(--dev-font-serif); font-size: 2.3rem; font-weight: 800; color: var(--dev-gold-dark);">50,000+</div>
         <div style="font-size: 0.9rem; color: #1c1917; font-weight: 700;">Happy Devotees</div>
