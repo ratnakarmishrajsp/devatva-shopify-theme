@@ -1,5 +1,5 @@
 /**
- * DEVATVA.IN - ASTRO & GEM MATCHMAKER QUIZ LOGIC
+ * DEVATVA.IN - ASTRO & GEM MATCHMAKER QUIZ LOGIC (LIGHT THEME)
  * Interactive step-by-step quiz to recommend Vedic items based on Intention, Rashi, and Metal choices.
  */
 
@@ -106,24 +106,24 @@
       if (QUIZ_STATE.step === 1) {
         container.innerHTML = `
           <div class="devatva-quiz-step">
-            <h3 style="color: var(--dev-gold-light); font-size: 1.2rem; margin-bottom: 8px;">Step 1 of 3: What is your primary spiritual intention?</h3>
-            <p style="color: var(--dev-text-muted); font-size: 0.9rem; margin-bottom: 20px;">Choose the primary blessing or energy field you wish to activate in your life.</p>
+            <h3 style="color: #1c1917; font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Step 1 of 3: What is your primary spiritual intention?</h3>
+            <p style="color: #57534e; font-size: 0.92rem; margin-bottom: 22px;">Choose the primary blessing or energy field you wish to activate in your life.</p>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px;">
-              <button onclick="DevatvaAstroQuiz.selectOption('intention', 'wealth')" class="devatva-outline-btn" style="padding: 16px; flex-direction: column; gap: 8px;">
-                <span style="font-size: 1.8rem;">💰</span>
+              <button onclick="DevatvaAstroQuiz.selectOption('intention', 'wealth')" class="devatva-outline-btn" style="padding: 18px; flex-direction: column; gap: 8px;">
+                <span style="font-size: 2rem;">💰</span>
                 <span>Wealth & Abundance</span>
               </button>
-              <button onclick="DevatvaAstroQuiz.selectOption('intention', 'protection')" class="devatva-outline-btn" style="padding: 16px; flex-direction: column; gap: 8px;">
-                <span style="font-size: 1.8rem;">🛡️</span>
+              <button onclick="DevatvaAstroQuiz.selectOption('intention', 'protection')" class="devatva-outline-btn" style="padding: 18px; flex-direction: column; gap: 8px;">
+                <span style="font-size: 2rem;">🛡️</span>
                 <span>Nazar & Protection</span>
               </button>
-              <button onclick="DevatvaAstroQuiz.selectOption('intention', 'wisdom')" class="devatva-outline-btn" style="padding: 16px; flex-direction: column; gap: 8px;">
-                <span style="font-size: 1.8rem;">📿</span>
+              <button onclick="DevatvaAstroQuiz.selectOption('intention', 'wisdom')" class="devatva-outline-btn" style="padding: 18px; flex-direction: column; gap: 8px;">
+                <span style="font-size: 2rem;">📿</span>
                 <span>Wisdom & Peace</span>
               </button>
-              <button onclick="DevatvaAstroQuiz.selectOption('intention', 'health')" class="devatva-outline-btn" style="padding: 16px; flex-direction: column; gap: 8px;">
-                <span style="font-size: 1.8rem;">🌿</span>
+              <button onclick="DevatvaAstroQuiz.selectOption('intention', 'health')" class="devatva-outline-btn" style="padding: 18px; flex-direction: column; gap: 8px;">
+                <span style="font-size: 2rem;">🌿</span>
                 <span>Health & Vitality</span>
               </button>
             </div>
@@ -138,12 +138,12 @@
 
         container.innerHTML = `
           <div class="devatva-quiz-step">
-            <h3 style="color: var(--dev-gold-light); font-size: 1.2rem; margin-bottom: 8px;">Step 2 of 3: What is your Zodiac Sign (Rashi)?</h3>
-            <p style="color: var(--dev-text-muted); font-size: 0.9rem; margin-bottom: 20px;">We match planetary ruling deities to ensure maximum planetary resonance.</p>
+            <h3 style="color: #1c1917; font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Step 2 of 3: What is your Zodiac Sign (Rashi)?</h3>
+            <p style="color: #57534e; font-size: 0.92rem; margin-bottom: 22px;">We match planetary ruling deities to ensure maximum planetary resonance.</p>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; max-height: 300px; overflow-y: auto; padding-right: 4px;">
               ${rashis.map(r => `
-                <button onclick="DevatvaAstroQuiz.selectOption('rashi', '${r}')" class="devatva-outline-btn" style="padding: 10px; font-size: 0.85rem;">
+                <button onclick="DevatvaAstroQuiz.selectOption('rashi', '${r}')" class="devatva-outline-btn" style="padding: 12px; font-size: 0.88rem;">
                   ${r}
                 </button>
               `).join('')}
@@ -153,51 +153,51 @@
       } else if (QUIZ_STATE.step === 3) {
         container.innerHTML = `
           <div class="devatva-quiz-step">
-            <h3 style="color: var(--dev-gold-light); font-size: 1.2rem; margin-bottom: 8px;">Step 3 of 3: Preferred Sacred Jewelry Style?</h3>
-            <p style="color: var(--dev-text-muted); font-size: 0.9rem; margin-bottom: 20px;">Select how you wish to wear your sanctified energy item.</p>
+            <h3 style="color: #1c1917; font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Step 3 of 3: Preferred Sacred Jewelry Style?</h3>
+            <p style="color: #57534e; font-size: 0.92rem; margin-bottom: 22px;">Select how you wish to wear your sanctified energy item.</p>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px;">
-              <button onclick="DevatvaAstroQuiz.selectOption('metal', 'silver')" class="devatva-outline-btn" style="padding: 16px; flex-direction: column;">
+              <button onclick="DevatvaAstroQuiz.selectOption('metal', 'silver')" class="devatva-outline-btn" style="padding: 18px; flex-direction: column;">
                 <span>✨ Silver Capped Beads</span>
               </button>
-              <button onclick="DevatvaAstroQuiz.selectOption('metal', 'panchdhatu')" class="devatva-outline-btn" style="padding: 16px; flex-direction: column;">
+              <button onclick="DevatvaAstroQuiz.selectOption('metal', 'panchdhatu')" class="devatva-outline-btn" style="padding: 18px; flex-direction: column;">
                 <span>🔱 Panchdhatu Metal Ring/Kada</span>
               </button>
-              <button onclick="DevatvaAstroQuiz.selectOption('metal', 'copper')" class="devatva-outline-btn" style="padding: 16px; flex-direction: column;">
+              <button onclick="DevatvaAstroQuiz.selectOption('metal', 'copper')" class="devatva-outline-btn" style="padding: 18px; flex-direction: column;">
                 <span>⚡ Pure Copper Mahadev Kada</span>
               </button>
-              <button onclick="DevatvaAstroQuiz.selectOption('metal', 'gemstone')" class="devatva-outline-btn" style="padding: 16px; flex-direction: column;">
+              <button onclick="DevatvaAstroQuiz.selectOption('metal', 'gemstone')" class="devatva-outline-btn" style="padding: 18px; flex-direction: column;">
                 <span>🔮 Crystal Gemstone Bracelet</span>
               </button>
             </div>
           </div>
         `;
       } else {
-        // Render Recommendation Output
+        // Render Recommendation Output (Light Card Style)
         const key = QUIZ_STATE.intention || 'wealth';
         const recs = MOCK_RECOMMENDATIONS[key] || MOCK_RECOMMENDATIONS.wealth;
 
         container.innerHTML = `
           <div class="devatva-quiz-step" style="text-align: center;">
-            <div style="font-size: 2.2rem; margin-bottom: 8px;">✨🕉️✨</div>
-            <h3 class="devatva-heading" style="font-size: 1.4rem; color: var(--dev-gold-light); margin-bottom: 4px;">
+            <div style="font-size: 2.4rem; margin-bottom: 8px;">✨🕉️✨</div>
+            <h3 class="devatva-heading" style="font-size: 1.45rem; color: #1c1917; margin-bottom: 6px;">
               Your Personalized Sacred Match
             </h3>
-            <p style="color: var(--dev-text-muted); font-size: 0.88rem; margin-bottom: 24px;">
-              Based on your Rashi (<strong>${QUIZ_STATE.rashi}</strong>) & intention for <strong>${QUIZ_STATE.intention.toUpperCase()}</strong>:
+            <p style="color: #57534e; font-size: 0.9rem; margin-bottom: 26px;">
+              Based on your Rashi (<strong>${QUIZ_STATE.rashi}</strong>) & intention for <strong style="color: var(--dev-gold-dark);">${QUIZ_STATE.intention.toUpperCase()}</strong>:
             </p>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; text-align: left;">
               ${recs.map(item => `
-                <div style="background: rgba(0,0,0,0.5); border: 1px solid var(--dev-gold-main); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="background: #fdfbf7; border: 1.5px solid var(--dev-gold-border); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
                   <div>
-                    <img src="${item.image}" alt="${item.title}" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 12px;" />
-                    <div class="devatva-badge" style="margin-bottom: 6px;">Planet: ${item.planet}</div>
-                    <h4 style="color: #fff; font-size: 1.05rem; margin-bottom: 6px;">${item.title}</h4>
-                    <p style="font-size: 0.82rem; color: var(--dev-text-muted); line-height: 1.4; margin-bottom: 12px;">${item.reason}</p>
+                    <img src="${item.image}" alt="${item.title}" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 12px;" />
+                    <div class="devatva-badge" style="margin-bottom: 8px;">Planet: ${item.planet}</div>
+                    <h4 style="color: #1c1917; font-size: 1.05rem; font-weight: 700; margin-bottom: 6px;">${item.title}</h4>
+                    <p style="font-size: 0.85rem; color: #57534e; line-height: 1.45; margin-bottom: 14px;">${item.reason}</p>
                   </div>
                   <div>
-                    <div style="font-weight: 700; font-size: 1.2rem; color: var(--dev-gold-light); margin-bottom: 12px;">${item.price}</div>
+                    <div style="font-weight: 800; font-size: 1.25rem; color: var(--dev-gold-dark); margin-bottom: 14px;">${item.price}</div>
                     <button onclick="Devatva.addToCart('${item.variantId}', 1)" class="devatva-gold-btn" style="width: 100%;">
                       🛒 Claim Energized Item
                     </button>
@@ -206,7 +206,7 @@
               `).join('')}
             </div>
 
-            <button onclick="DevatvaAstroQuiz.reset()" style="margin-top: 24px; background: none; border: none; color: var(--dev-gold-light); text-decoration: underline; cursor: pointer;">
+            <button onclick="DevatvaAstroQuiz.reset()" style="margin-top: 26px; background: none; border: none; color: var(--dev-gold-dark); font-weight: 600; text-decoration: underline; cursor: pointer;">
               🔄 Restart Astro Matchmaker
             </button>
           </div>

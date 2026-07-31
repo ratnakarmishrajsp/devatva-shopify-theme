@@ -1,26 +1,26 @@
 {% comment %}
-  DEVATVA.IN - SACRED HERO BANNER SECTION (OS 2.0)
+  DEVATVA.IN - SACRED HERO BANNER SECTION (OS 2.0 - LIGHT PREMIUM EDITION)
 {% endcomment %}
 
-<div class="devatva-hero-container" style="position: relative; background: linear-gradient(180deg, #120e0e 0%, #09090b 100%); padding: 80px 20px; border-bottom: 1px solid var(--dev-gold-border); overflow: hidden;">
-  <!-- Aura glow background element -->
-  <div style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); width: 450px; height: 450px; background: radial-gradient(circle, rgba(245,158,11,0.15) 0%, rgba(0,0,0,0) 70%); pointer-events: none;"></div>
+<div class="devatva-hero-container" style="position: relative; background: linear-gradient(180deg, #fdfbf7 0%, #f6f0e4 100%); padding: 85px 20px; border-bottom: 1px solid var(--dev-gold-border); overflow: hidden;">
+  <!-- Light Golden Aura background element -->
+  <div style="position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: 500px; background: radial-gradient(circle, rgba(245,158,11,0.18) 0%, rgba(255,255,255,0) 70%); pointer-events: none;"></div>
 
   <div style="max-width: 1100px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
-    <div class="devatva-badge" style="margin-bottom: 16px; padding: 6px 16px; font-size: 0.85rem;">
-      ✨ {{ section.settings.subheading | default: '100% Authentic • Lab Certified • Vedic Priest Energized' }}
+    <div class="devatva-badge" style="margin-bottom: 18px; padding: 7px 18px; font-size: 0.88rem; box-shadow: 0 4px 12px rgba(217,119,6,0.1);">
+      ✨ {{ section.settings.subheading | default: '100% Authentic • Lab Certified • Kashi Vedic Priest Energized' }}
     </div>
 
-    <h1 class="devatva-heading" style="font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.2; margin-bottom: 20px;">
+    <h1 class="devatva-heading" style="font-size: clamp(2.3rem, 5.2vw, 4rem); font-weight: 800; line-height: 1.22; margin-bottom: 22px; color: #1c1917;">
       {{ section.settings.heading_line1 | default: 'Unlock Divine Energies with' }} <br/>
       <span class="devatva-gold-text">{{ section.settings.heading_gold | default: 'Authentic Sacred Rudraksha & Gems' }}</span>
     </h1>
 
-    <p style="font-size: clamp(1rem, 2vw, 1.25rem); color: var(--dev-text-muted); max-width: 760px; margin: 0 auto 32px auto; line-height: 1.6;">
+    <p style="font-size: clamp(1.05rem, 2vw, 1.28rem); color: #57534e; max-width: 780px; margin: 0 auto 36px auto; line-height: 1.65; font-weight: 400;">
       {{ section.settings.description | default: 'Sacred beads, Panchdhatu abundance rings, and raw crystals sanctified via Kashi Vedic rituals (Pran Pratishtha) for wealth, protection, and spiritual aura.' }}
     </p>
 
-    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px;">
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 52px;">
       <a href="{{ section.settings.primary_btn_link | default: '/collections/all' }}" class="devatva-gold-btn">
         🕉️ {{ section.settings.primary_btn_text | default: 'Explore Sacred Catalog' }}
       </a>
@@ -29,23 +29,23 @@
       </a>
     </div>
 
-    <!-- Sacred Statistics Counters -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; background: rgba(24, 19, 19, 0.7); backdrop-filter: blur(10px); border: 1px solid var(--dev-gold-border); border-radius: 16px; padding: 24px;">
+    <!-- Sacred Statistics Counters (Light Glass Card) -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); border: 1.5px solid var(--dev-gold-border); border-radius: 18px; padding: 26px; box-shadow: 0 10px 30px rgba(180, 83, 9, 0.08);">
       <div>
-        <div style="font-family: var(--dev-font-serif); font-size: 2rem; font-weight: 800; color: var(--dev-gold-light);">50,000+</div>
-        <div style="font-size: 0.85rem; color: var(--dev-text-muted); font-weight: 500;">Happy Devotees</div>
+        <div style="font-family: var(--dev-font-serif); font-size: 2.2rem; font-weight: 800; color: var(--dev-gold-dark);">50,000+</div>
+        <div style="font-size: 0.88rem; color: #57534e; font-weight: 600;">Happy Devotees</div>
       </div>
       <div>
-        <div style="font-family: var(--dev-font-serif); font-size: 2rem; font-weight: 800; color: var(--dev-gold-light);">100%</div>
-        <div style="font-size: 0.85rem; color: var(--dev-text-muted); font-weight: 500;">Lab Certified Authentic</div>
+        <div style="font-family: var(--dev-font-serif); font-size: 2.2rem; font-weight: 800; color: var(--dev-gold-dark);">100%</div>
+        <div style="font-size: 0.88rem; color: #57534e; font-weight: 600;">Lab Certified Authentic</div>
       </div>
       <div>
-        <div style="font-family: var(--dev-font-serif); font-size: 2rem; font-weight: 800; color: var(--dev-gold-light);">Kashi</div>
-        <div style="font-size: 0.85rem; color: var(--dev-text-muted); font-weight: 500;">Vedic Priest Energized</div>
+        <div style="font-family: var(--dev-font-serif); font-size: 2.2rem; font-weight: 800; color: var(--dev-gold-dark);">Kashi</div>
+        <div style="font-size: 0.88rem; color: #57534e; font-weight: 600;">Vedic Priest Energized</div>
       </div>
       <div>
-        <div style="font-family: var(--dev-font-serif); font-size: 2rem; font-weight: 800; color: var(--dev-gold-light);">150+</div>
-        <div style="font-size: 0.85rem; color: var(--dev-text-muted); font-weight: 500;">Countries Delivered</div>
+        <div style="font-family: var(--dev-font-serif); font-size: 2.2rem; font-weight: 800; color: var(--dev-gold-dark);">150+</div>
+        <div style="font-size: 0.88rem; color: #57534e; font-weight: 600;">Countries Delivered</div>
       </div>
     </div>
   </div>

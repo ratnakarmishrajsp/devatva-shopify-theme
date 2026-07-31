@@ -1,56 +1,59 @@
 /* ==========================================================================
-   DEVATVA.IN - SACRED LUXURY CUSTOM STYLES (SHOPIFY TRADE THEME OVERRIDES)
+   DEVATVA.IN - LIGHT ELEGANT SACRED LUXURY STYLES (SHOPIFY TRADE THEME OVERRIDES)
    ========================================================================== */
 
 /* --- Google Fonts Import --- */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --dev-bg-obsidian: #09090b;
-  --dev-bg-surface: #120e0e;
-  --dev-bg-card: #181313;
-  --dev-bg-glass: rgba(24, 19, 19, 0.85);
+  --dev-bg-ivory: #fcfaf5;
+  --dev-bg-surface: #ffffff;
+  --dev-bg-card: #ffffff;
+  --dev-bg-subtle: #f7f3e9;
+  --dev-bg-glass: rgba(255, 255, 255, 0.95);
   
-  --dev-gold-main: #f59e0b;
-  --dev-gold-light: #fbbf24;
-  --dev-gold-dark: #d97706;
-  --dev-gold-glow: rgba(245, 158, 11, 0.35);
-  --dev-gold-border: rgba(245, 158, 11, 0.25);
+  --dev-gold-main: #d97706;
+  --dev-gold-light: #f59e0b;
+  --dev-gold-dark: #b45309;
+  --dev-gold-glow: rgba(217, 119, 6, 0.2);
+  --dev-gold-border: rgba(217, 119, 6, 0.22);
   
+  --dev-saffron-accent: #c2410c;
   --dev-crimson-accent: #991b1b;
-  --dev-saffron-accent: #7c2d12;
-  --dev-bronze-accent: #b45309;
+  --dev-amber-accent: #78350f;
 
-  --dev-text-bright: #fef08a;
-  --dev-text-main: #f3f4f6;
-  --dev-text-muted: #9ca3af;
+  --dev-text-heading: #1c1917;
+  --dev-text-main: #292524;
+  --dev-text-muted: #57534e;
+  --dev-text-subtle: #78716c;
 
   --dev-font-serif: 'Cinzel', serif;
   --dev-font-sans: 'Outfit', sans-serif;
   
-  --dev-radius: 12px;
-  --dev-shadow-gold: 0 0 25px rgba(245, 158, 11, 0.2);
+  --dev-radius: 14px;
+  --dev-shadow-soft: 0 10px 30px rgba(180, 83, 9, 0.08);
+  --dev-shadow-gold: 0 12px 35px rgba(217, 119, 6, 0.18);
 }
 
 /* Global Aesthetics & Overrides */
 body {
   font-family: var(--dev-font-sans);
-  background-color: var(--dev-bg-obsidian);
+  background-color: var(--dev-bg-ivory);
   color: var(--dev-text-main);
   overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, .devatva-heading {
   font-family: var(--dev-font-serif);
-  letter-spacing: 0.03em;
-  color: #ffffff;
+  letter-spacing: 0.02em;
+  color: var(--dev-text-heading);
 }
 
 .devatva-gold-text {
-  background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
+  background: linear-gradient(135deg, #9a3412 0%, #d97706 50%, #b45309 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .devatva-gold-btn {
@@ -58,25 +61,25 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
-  color: #000000;
+  background: linear-gradient(135deg, #d97706 0%, #9a3412 100%);
+  color: #ffffff !important;
   font-family: var(--dev-font-sans);
   font-weight: 700;
   font-size: 0.95rem;
-  padding: 12px 28px;
+  padding: 13px 30px;
   border-radius: 50px;
   border: 1px solid var(--dev-gold-light);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.28);
 }
 
 .devatva-gold-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
-  background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
-  color: #000000;
+  box-shadow: 0 10px 30px rgba(217, 119, 6, 0.4);
+  background: linear-gradient(135deg, #f59e0b 0%, #c2410c 100%);
+  color: #ffffff !important;
 }
 
 .devatva-outline-btn {
@@ -84,24 +87,25 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: rgba(18, 14, 14, 0.8);
-  color: var(--dev-gold-light);
+  background: #ffffff;
+  color: var(--dev-gold-dark);
   font-family: var(--dev-font-sans);
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 12px 28px;
+  padding: 13px 30px;
   border-radius: 50px;
-  border: 1px solid var(--dev-gold-border);
+  border: 1.5px solid var(--dev-gold-border);
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .devatva-outline-btn:hover {
   border-color: var(--dev-gold-main);
-  background: rgba(245, 158, 11, 0.1);
-  color: #ffffff;
-  box-shadow: var(--dev-shadow-gold);
+  background: #fffbf0;
+  color: var(--dev-saffron-accent);
+  box-shadow: var(--dev-shadow-soft);
 }
 
 /* Metafield Tags & Badges */
@@ -109,44 +113,45 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.76rem;
+  font-weight: 700;
   letter-spacing: 0.02em;
-  background: rgba(245, 158, 11, 0.12);
-  color: var(--dev-gold-light);
+  background: #fff8e6;
+  color: var(--dev-gold-dark);
   border: 1px solid var(--dev-gold-border);
 }
 
 .devatva-badge-crimson {
-  background: rgba(153, 27, 27, 0.2);
-  color: #fca5a5;
-  border-color: rgba(252, 165, 165, 0.3);
+  background: #fff1f2;
+  color: #9f1239;
+  border-color: #fecdd3;
 }
 
 .devatva-badge-green {
-  background: rgba(16, 185, 129, 0.15);
-  color: #6ee7b7;
-  border-color: rgba(110, 231, 183, 0.3);
+  background: #ecfdf5;
+  color: #047857;
+  border-color: #a7f3d0;
 }
 
-/* Product Card Styling */
+/* Product Card Styling (Light & Clean) */
 .devatva-card {
   background: var(--dev-bg-card);
-  border: 1px solid var(--dev-gold-border);
+  border: 1px solid #efe9dc;
   border-radius: var(--dev-radius);
   overflow: hidden;
   position: relative;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 
 .devatva-card:hover {
   border-color: var(--dev-gold-main);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.25);
+  transform: translateY(-5px);
+  box-shadow: var(--dev-shadow-gold);
 }
 
 .devatva-card-img-wrapper {
@@ -154,7 +159,7 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
   width: 100%;
   padding-top: 100%;
   overflow: hidden;
-  background: #0d0a0a;
+  background: #faf7f0;
 }
 
 .devatva-card-img {
@@ -172,49 +177,50 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
 }
 
 .devatva-card-content {
-  padding: 16px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  background: #ffffff;
 }
 
 .devatva-card-title {
   font-family: var(--dev-font-serif);
   font-size: 1.05rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin: 8px 0 6px 0;
+  font-weight: 700;
+  color: var(--dev-text-heading);
+  margin: 10px 0 6px 0;
   line-height: 1.35;
 }
 
 .devatva-card-price {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--dev-gold-light);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--dev-gold-dark);
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
 .devatva-compare-price {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   text-decoration: line-through;
-  color: var(--dev-text-muted);
+  color: var(--dev-text-subtle);
   font-weight: 400;
 }
 
 .devatva-card-actions {
   display: flex;
   gap: 8px;
-  margin-top: 14px;
+  margin-top: 16px;
 }
 
-/* Modals and Drawers */
+/* Light Modals and Drawers */
 .devatva-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(8px);
+  background: rgba(28, 25, 23, 0.6);
+  backdrop-filter: blur(6px);
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -231,15 +237,15 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
 
 .devatva-modal-box {
   background: var(--dev-bg-surface);
-  border: 1px solid var(--dev-gold-main);
-  box-shadow: 0 0 50px rgba(245, 158, 11, 0.3);
-  border-radius: 16px;
+  border: 1px solid var(--dev-gold-border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18), var(--dev-shadow-soft);
+  border-radius: 20px;
   width: 90%;
   max-width: 850px;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  padding: 24px;
+  padding: 28px;
   transform: scale(0.95);
   transition: transform 0.3s ease;
 }
@@ -250,11 +256,11 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
 
 .devatva-modal-close {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  background: rgba(255, 255, 255, 0.1);
+  top: 18px;
+  right: 18px;
+  background: var(--dev-bg-subtle);
   border: 1px solid var(--dev-gold-border);
-  color: #ffffff;
+  color: var(--dev-text-heading);
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -262,16 +268,16 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   transition: all 0.2s ease;
 }
 
 .devatva-modal-close:hover {
   background: var(--dev-gold-main);
-  color: #000000;
+  color: #ffffff;
 }
 
-/* Side Drawers */
+/* Light Side Drawers */
 .devatva-drawer {
   position: fixed;
   top: 0;
@@ -280,8 +286,8 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
   max-width: 480px;
   height: 100vh;
   background: var(--dev-bg-surface);
-  border-left: 1px solid var(--dev-gold-main);
-  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
+  border-left: 1px solid var(--dev-gold-border);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.12);
   z-index: 10000;
   transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -295,7 +301,8 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
 
 .devatva-drawer-header {
   padding: 20px;
-  border-bottom: 1px solid var(--dev-gold-border);
+  border-bottom: 1px solid #efe9dc;
+  background: #fdfbf7;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -305,9 +312,10 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
   padding: 20px;
   flex-grow: 1;
   overflow-y: auto;
+  background: #ffffff;
 }
 
-/* Chatbot Floating Widget */
+/* Light Chatbot Floating Widget */
 .devatva-chatbot-trigger {
   position: fixed;
   bottom: 24px;
@@ -315,9 +323,9 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #f59e0b 0%, #7c2d12 100%);
-  border: 2px solid var(--dev-gold-light);
-  box-shadow: 0 0 25px rgba(245, 158, 11, 0.5);
+  background: linear-gradient(135deg, #d97706 0%, #c2410c 100%);
+  border: 2px solid #ffffff;
+  box-shadow: 0 8px 25px rgba(217, 119, 6, 0.4);
   cursor: pointer;
   z-index: 9990;
   display: flex;
@@ -340,9 +348,9 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
   height: 540px;
   max-width: calc(100vw - 32px);
   background: var(--dev-bg-surface);
-  border: 1px solid var(--dev-gold-main);
+  border: 1px solid var(--dev-gold-border);
   border-radius: 20px;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(245, 158, 11, 0.25);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15), 0 0 25px rgba(217, 119, 6, 0.15);
   z-index: 9991;
   display: flex;
   flex-direction: column;
@@ -360,9 +368,9 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
 }
 
 .devatva-chatbot-header {
-  background: linear-gradient(135deg, #181313 0%, #7c2d12 100%);
+  background: linear-gradient(135deg, #fffbf0 0%, #fdf5e6 100%);
   padding: 16px;
-  border-bottom: 1px solid var(--dev-gold-border);
+  border-bottom: 1px solid #efe9dc;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -370,8 +378,8 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
 
 .devatva-chatbot-tabs {
   display: flex;
-  background: rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid var(--dev-gold-border);
+  background: #f7f3e9;
+  border-bottom: 1px solid #efe9dc;
 }
 
 .devatva-chat-tab {
@@ -380,16 +388,17 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
   text-align: center;
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--dev-text-muted);
+  color: var(--dev-text-subtle);
   cursor: pointer;
   border-bottom: 2px solid transparent;
   transition: all 0.2s ease;
 }
 
 .devatva-chat-tab.active {
-  color: var(--dev-gold-light);
+  color: var(--dev-gold-dark);
   border-bottom-color: var(--dev-gold-main);
-  background: rgba(245, 158, 11, 0.1);
+  background: #ffffff;
+  font-weight: 700;
 }
 
 .devatva-chat-messages {
@@ -399,6 +408,7 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  background: #faf7f0;
 }
 
 .devatva-chat-msg {
@@ -410,41 +420,44 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
 }
 
 .devatva-chat-msg.bot {
-  background: rgba(245, 158, 11, 0.12);
-  border: 1px solid var(--dev-gold-border);
-  color: #f3f4f6;
+  background: #ffffff;
+  border: 1px solid #efe9dc;
+  color: var(--dev-text-main);
   align-self: flex-start;
   border-bottom-left-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .devatva-chat-msg.user {
-  background: var(--dev-crimson-accent);
+  background: linear-gradient(135deg, #d97706 0%, #c2410c 100%);
   color: #ffffff;
   align-self: flex-end;
   border-bottom-right-radius: 2px;
+  box-shadow: 0 2px 8px rgba(217,119,6,0.25);
 }
 
 .devatva-chat-input-row {
   padding: 12px;
-  border-top: 1px solid var(--dev-gold-border);
+  border-top: 1px solid #efe9dc;
   display: flex;
   gap: 8px;
-  background: rgba(0, 0, 0, 0.3);
+  background: #ffffff;
 }
 
 .devatva-chat-input {
   flex-grow: 1;
-  background: #000000;
-  border: 1px solid var(--dev-gold-border);
+  background: #fdfbf7;
+  border: 1.5px solid #efe9dc;
   border-radius: 25px;
   padding: 8px 16px;
-  color: #ffffff;
+  color: var(--dev-text-heading);
   font-size: 0.88rem;
   outline: none;
 }
 
 .devatva-chat-input:focus {
   border-color: var(--dev-gold-main);
+  background: #ffffff;
 }
 
 .devatva-chat-send {
@@ -453,7 +466,7 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  color: #000000;
+  color: #ffffff;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -461,7 +474,7 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
   font-weight: bold;
 }
 
-/* Toast Notifications */
+/* Toast Notifications (Light) */
 .devatva-toast-container {
   position: fixed;
   top: 24px;
@@ -473,14 +486,14 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
 }
 
 .devatva-toast {
-  background: var(--dev-bg-surface);
+  background: #ffffff;
   border: 1px solid var(--dev-gold-main);
-  color: var(--dev-gold-light);
-  padding: 12px 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), var(--dev-shadow-gold);
-  font-size: 0.9rem;
-  font-weight: 500;
+  color: var(--dev-gold-dark);
+  padding: 14px 22px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), var(--dev-shadow-soft);
+  font-size: 0.92rem;
+  font-weight: 600;
   animation: devatvaSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

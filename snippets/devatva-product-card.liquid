@@ -1,6 +1,6 @@
 {% comment %}
-  DEVATVA.IN - SACRED PRODUCT CARD SNIPPET
-  Displays product with custom metafield badges, gold border glow, Quick View & Compare triggers
+  DEVATVA.IN - SACRED PRODUCT CARD SNIPPET (LIGHT EDITION)
+  Displays product with custom metafield badges, clean ivory background, Quick View & Compare triggers
 {% endcomment %}
 
 {%- liquid
@@ -37,7 +37,7 @@
     <button
       class="devatva-outline-btn"
       data-devatva-quickview="{{ product.handle }}"
-      style="position: absolute; bottom: 10px; right: 10px; padding: 6px 12px; font-size: 0.75rem; background: rgba(0,0,0,0.85); backdrop-filter: blur(4px);"
+      style="position: absolute; bottom: 10px; right: 10px; padding: 6px 12px; font-size: 0.75rem; background: rgba(255,255,255,0.92); backdrop-filter: blur(4px); border-color: var(--dev-gold-border);"
       title="Quick View"
     >
       👁️ Quick View
@@ -46,8 +46,8 @@
 
   <div class="devatva-card-content">
     <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
-      <span style="font-size: 0.75rem; color: var(--dev-gold-light); font-weight: 600;">✨ Lab Certified</span>
-      <div style="color: #fbbf24; font-size: 0.8rem;">★★★★★ <span style="color: var(--dev-text-muted);">(4.9)</span></div>
+      <span style="font-size: 0.75rem; color: var(--dev-gold-dark); font-weight: 700;">✨ Lab Certified</span>
+      <div style="color: #d97706; font-size: 0.8rem; font-weight: 600;">★★★★★ <span style="color: #78716c;">(4.9)</span></div>
     </div>
 
     <h3 class="devatva-card-title">
@@ -57,8 +57,8 @@
     </h3>
 
     {%- if deity != blank -%}
-      <div style="font-size: 0.78rem; color: var(--dev-text-muted); margin-bottom: 8px;">
-        Blessing Deity: <strong style="color: var(--dev-text-main);">{{ deity }}</strong>
+      <div style="font-size: 0.78rem; color: #78716c; margin-bottom: 8px;">
+        Blessing Deity: <strong style="color: #1c1917;">{{ deity }}</strong>
       </div>
     {%- endif -%}
 

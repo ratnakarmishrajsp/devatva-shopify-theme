@@ -1,5 +1,5 @@
 /**
- * DEVATVA.IN - CORE APPLICATION & INTERACTIVE MODULES
+ * DEVATVA.IN - CORE APPLICATION & INTERACTIVE MODULES (LIGHT ELEGANT THEME)
  * Handles Quick View, Side-by-Side Compare Drawer, and Ajax Cart Hooks
  */
 
@@ -39,9 +39,9 @@
 
     modalBackdrop.classList.add('is-active');
     container.innerHTML = `
-      <div style="text-align: center; padding: 40px; color: var(--dev-gold-light);">
-        <div style="font-size: 2rem; margin-bottom: 12px;">🕉️</div>
-        <div>Loading Divine Product Details...</div>
+      <div style="text-align: center; padding: 40px; color: var(--dev-gold-dark);">
+        <div style="font-size: 2.2rem; margin-bottom: 12px;">🕉️</div>
+        <div style="font-weight: 600;">Loading Divine Product Details...</div>
       </div>
     `;
 
@@ -55,17 +55,17 @@
       container.innerHTML = `
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
           <div>
-            <img src="${product.featured_image}" alt="${product.title}" style="width: 100%; border-radius: 12px; border: 1px solid var(--dev-gold-border);" />
+            <img src="${product.featured_image}" alt="${product.title}" style="width: 100%; border-radius: 12px; border: 1.5px solid #efe9dc;" />
           </div>
           <div>
             <div class="devatva-badge" style="margin-bottom: 8px;">100% Authentic & Energized</div>
-            <h2 class="devatva-heading" style="font-size: 1.5rem; margin-bottom: 12px;">${product.title}</h2>
+            <h2 class="devatva-heading" style="font-size: 1.5rem; margin-bottom: 12px; color: #1c1917;">${product.title}</h2>
             <div class="devatva-card-price" style="font-size: 1.4rem; margin-bottom: 16px;">
               ${formatMoney(product.price)}
               ${product.compare_at_price > product.price ? `<span class="devatva-compare-price">${formatMoney(product.compare_at_price)}</span>` : ''}
             </div>
             
-            <div style="font-size: 0.9rem; line-height: 1.6; color: var(--dev-text-muted); margin-bottom: 20px;">
+            <div style="font-size: 0.9rem; line-height: 1.6; color: #57534e; margin-bottom: 20px;">
               ${product.description.replace(/<[^>]*>?/gm, '').slice(0, 180)}...
             </div>
 
@@ -73,8 +73,8 @@
               product.variants.length > 1
                 ? `
               <div style="margin-bottom: 16px;">
-                <label style="display:block; font-size: 0.85rem; color: var(--dev-gold-light); margin-bottom: 6px;">Select Option:</label>
-                <select id="devatva-qv-variant-select" style="width: 100%; padding: 10px; background: #000; color: #fff; border: 1px solid var(--dev-gold-border); border-radius: 8px;">
+                <label style="display:block; font-size: 0.85rem; color: var(--dev-gold-dark); font-weight: 600; margin-bottom: 6px;">Select Option:</label>
+                <select id="devatva-qv-variant-select" style="width: 100%; padding: 10px; background: #fff; color: #1c1917; border: 1.5px solid #efe9dc; border-radius: 8px;">
                   ${product.variants.map((v) => `<option value="${v.id}">${v.title} - ${formatMoney(v.price)}</option>`).join('')}
                 </select>
               </div>
@@ -91,7 +91,7 @@
         </div>
       `;
     } catch (err) {
-      container.innerHTML = `<div style="color: #ef4444; padding: 20px; text-align: center;">Unable to load product preview.</div>`;
+      container.innerHTML = `<div style="color: #dc2626; padding: 20px; text-align: center;">Unable to load product preview.</div>`;
     }
   };
 
@@ -148,7 +148,7 @@
     const items = Devatva.getCompareItems();
     if (items.length === 0) {
       container.innerHTML = `
-        <div style="text-align: center; color: var(--dev-text-muted); padding: 40px 0;">
+        <div style="text-align: center; color: #78716c; padding: 40px 0;">
           <div style="font-size: 2.5rem; margin-bottom: 12px;">⚖️</div>
           <div>No products selected for comparison.</div>
           <div style="font-size: 0.8rem; margin-top: 6px;">Click "Compare" on any item to add it here.</div>
@@ -162,13 +162,13 @@
         ${items
           .map(
             (item) => `
-          <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--dev-gold-border); border-radius: 8px; padding: 12px; position: relative;">
-            <button onclick="Devatva.toggleCompare({handle: '${item.handle}'})" style="position: absolute; top: 4px; right: 4px; background: none; border: none; color: #ef4444; cursor: pointer; font-size: 1rem;">✕</button>
+          <div style="background: #fdfbf7; border: 1.5px solid #efe9dc; border-radius: 10px; padding: 12px; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+            <button onclick="Devatva.toggleCompare({handle: '${item.handle}'})" style="position: absolute; top: 4px; right: 4px; background: none; border: none; color: #dc2626; cursor: pointer; font-size: 1rem;">✕</button>
             <img src="${item.image}" alt="${item.title}" style="width: 100%; border-radius: 6px; margin-bottom: 8px;" />
-            <h4 style="font-size: 0.85rem; color: #fff; margin-bottom: 4px;">${item.title}</h4>
-            <div style="color: var(--dev-gold-light); font-weight: bold; font-size: 0.9rem; margin-bottom: 8px;">${item.price}</div>
+            <h4 style="font-size: 0.88rem; color: #1c1917; font-weight: 700; margin-bottom: 4px;">${item.title}</h4>
+            <div style="color: var(--dev-gold-dark); font-weight: 800; font-size: 0.95rem; margin-bottom: 8px;">${item.price}</div>
             
-            <div style="font-size: 0.75rem; color: var(--dev-text-muted); display: flex; flex-direction: column; gap: 4px;">
+            <div style="font-size: 0.78rem; color: #57534e; display: flex; flex-direction: column; gap: 4px;">
               <div><strong>Mukhi/Type:</strong> ${item.mukhi || 'N/A'}</div>
               <div><strong>Deity:</strong> ${item.deity || 'Vedic Blessings'}</div>
               <div><strong>Ruling Planet:</strong> ${item.planet || 'Universal'}</div>
@@ -209,12 +209,10 @@
 
       Devatva.showToast('Item successfully added to your Divine Cart!');
 
-      // Trigger Theme Cart Drawer update if cart JS is active
       document.dispatchEvent(new CustomEvent('cart:updated'));
       if (window.location.pathname.includes('/cart')) {
         window.location.reload();
       } else {
-        // Open standard cart drawer if trigger button exists
         const cartBtn = document.querySelector('[data-cart-trigger], .header__icon--cart, #cart-icon-bubble');
         if (cartBtn) cartBtn.click();
       }
@@ -224,7 +222,6 @@
   };
 
   document.addEventListener('DOMContentLoaded', () => {
-    // Bind click events on quick view and compare buttons
     document.addEventListener('click', (e) => {
       const qvBtn = e.target.closest('[data-devatva-quickview]');
       if (qvBtn) {
