@@ -776,3 +776,188 @@ label.form__label,
   font-size: 0.9rem !important;
 }
 
+/* ==========================================================================
+   HIGH-CONVERSION CRO PRODUCT PAGE ELEMENTS (SACRED LUXURY AESTHETICS)
+   ========================================================================== */
+
+/* 1. Scarcity & Live Social Proof Urgency Ticker */
+.devatva-cro-urgency-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fffbf0;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 0.86rem;
+  color: #92400e;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.08);
+}
+
+.devatva-cro-urgency-pulse {
+  width: 10px;
+  height: 10px;
+  background-color: #dc2626;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  animation: devatvaPulse 1.5s infinite;
+}
+
+@keyframes devatvaPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(220, 38, 38, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+  }
+}
+
+/* 2. Authenticity & Trust Guarantee Badges Grid */
+.devatva-cro-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.devatva-cro-trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #efe9dc;
+  border-radius: 12px;
+  padding: 12px 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.devatva-cro-trust-item:hover {
+  border-color: #d97706;
+  transform: translateY(-2px);
+}
+
+.devatva-cro-icon {
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+
+.devatva-cro-trust-item strong {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1c1917;
+  line-height: 1.25;
+}
+
+.devatva-cro-trust-item small {
+  display: block;
+  font-size: 0.7rem;
+  color: #78716c;
+  margin-top: 2px;
+}
+
+/* 3. Pincode Delivery Estimator */
+.devatva-cro-delivery-box {
+  background: #fdfbf7;
+  border: 1px dashed #d97706;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 18px;
+}
+
+.devatva-cro-delivery-box label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #78350f;
+  margin-bottom: 8px;
+}
+
+.devatva-cro-delivery-row {
+  display: flex;
+  gap: 8px;
+}
+
+.devatva-cro-delivery-row input {
+  flex: 1;
+  padding: 8px 14px !important;
+  border: 1px solid #efe9dc !important;
+  border-radius: 8px !important;
+  font-size: 0.88rem !important;
+  outline: none !important;
+  background: #ffffff !important;
+}
+
+.devatva-cro-delivery-row input:focus {
+  border-color: #d97706 !important;
+}
+
+.devatva-cro-delivery-row button {
+  background: #d97706 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 8px 18px !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  cursor: pointer !important;
+  transition: background 0.2s ease !important;
+}
+
+.devatva-cro-delivery-row button:hover {
+  background: #b45309 !important;
+}
+
+.devatva-cro-delivery-result {
+  font-size: 0.8rem;
+  color: #57534e;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* 4. Safe Checkout & Payment Trust Badges */
+.devatva-cro-payment-trust {
+  text-align: center;
+  background: #faf7f0;
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid #efe9dc;
+}
+
+.devatva-cro-payment-trust span {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #44403c;
+  margin-bottom: 8px;
+}
+
+.devatva-cro-payment-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.devatva-pay-badge {
+  background: #ffffff;
+  border: 1px solid #e7e5e4;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #292524;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+

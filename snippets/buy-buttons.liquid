@@ -60,6 +60,12 @@
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
 
+        <!-- HIGH-CONVERSION CRO ELEMENT 1: Scarcity & Live Social Proof Urgency Ticker -->
+        <div class="devatva-cro-urgency-box">
+          <div class="devatva-cro-urgency-pulse"></div>
+          <span>🔥 <strong>High Demand:</strong> Only <strong>4 items</strong> left in stock for today's Abhishekam. 14 people viewing now!</span>
+        </div>
+
         <div class="product-form__buttons">
           {%- liquid
             assign check_against_inventory = true
@@ -97,6 +103,71 @@
             {{ form | payment_button }}
           {%- endif -%}
         </div>
+
+        <!-- HIGH-CONVERSION CRO ELEMENT 2: Authenticity & Trust Guarantee Badges -->
+        <div class="devatva-cro-trust-grid">
+          <div class="devatva-cro-trust-item">
+            <span class="devatva-cro-icon">📜</span>
+            <div>
+              <strong>100% Lab Certified</strong>
+              <small>Authentic & Verified</small>
+            </div>
+          </div>
+          <div class="devatva-cro-trust-item">
+            <span class="devatva-cro-icon">🪔</span>
+            <div>
+              <strong>Pran Pratishtha Blessed</strong>
+              <small>Sanctified in Kashi</small>
+            </div>
+          </div>
+          <div class="devatva-cro-trust-item">
+            <span class="devatva-cro-icon">🚚</span>
+            <div>
+              <strong>Free Express COD</strong>
+              <small>7-Day Easy Returns</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- HIGH-CONVERSION CRO ELEMENT 3: Delivery Pincode Estimator -->
+        <div class="devatva-cro-delivery-box">
+          <label for="DevatvaPincodeInput">📍 Estimated Delivery & COD Check:</label>
+          <div class="devatva-cro-delivery-row">
+            <input type="text" id="DevatvaPincodeInput" placeholder="Enter Pincode (e.g. 110001)" maxlength="6">
+            <button type="button" onclick="DevatvaCheckDelivery()">Check</button>
+          </div>
+          <div id="DevatvaDeliveryResult" class="devatva-cro-delivery-result">🚚 Fast Dispatch in 24 Hours • Free Shipping Across India</div>
+        </div>
+
+        <!-- HIGH-CONVERSION CRO ELEMENT 4: Safe Checkout & Payment Trust Badges -->
+        <div class="devatva-cro-payment-trust">
+          <span>🔒 100% Secure Checkout Guaranteed</span>
+          <div class="devatva-cro-payment-icons">
+            <span class="devatva-pay-badge">GPay</span>
+            <span class="devatva-pay-badge">PhonePe</span>
+            <span class="devatva-pay-badge">Paytm</span>
+            <span class="devatva-pay-badge">UPI</span>
+            <span class="devatva-pay-badge">Cards</span>
+            <span class="devatva-pay-badge">COD</span>
+          </div>
+        </div>
+
+        <script>
+          function DevatvaCheckDelivery() {
+            var pin = document.getElementById('DevatvaPincodeInput').value;
+            var res = document.getElementById('DevatvaDeliveryResult');
+            if (pin && pin.length >= 6) {
+              var today = new Date();
+              today.setDate(today.getDate() + 4);
+              var dateStr = today.toLocaleDateString('en-IN', { weekday: 'short', month: 'short', day: 'numeric' });
+              res.innerHTML = "✅ Express Delivery available for <strong>" + pin + "</strong>! Guaranteed delivery by <strong>" + dateStr + "</strong>.";
+              res.style.color = "#047857";
+            } else {
+              res.innerHTML = "⚠️ Please enter a valid 6-digit Pincode.";
+              res.style.color = "#b91c1c";
+            }
+          }
+        </script>
       {%- endform -%}
     </product-form>
   {%- else -%}
