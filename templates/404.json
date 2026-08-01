@@ -32,7 +32,7 @@
       "name": "Devatva Featured Grid",
       "settings": {
         "heading": "Featured Energized Collections",
-        "collection": "",
+        "collection": "bracelets",
         "products_to_show": 8
       }
     },
