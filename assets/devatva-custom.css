@@ -36,15 +36,19 @@
 }
 
 /* Global Aesthetics & Overrides */
+*, body, button, input, select, textarea {
+  font-family: var(--dev-font-sans) !important;
+}
+
 body {
-  font-family: var(--dev-font-sans);
+  font-family: var(--dev-font-sans) !important;
   background-color: var(--dev-bg-ivory);
   color: var(--dev-text-main);
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6, .devatva-heading {
-  font-family: var(--dev-font-serif);
+h1, h2, h3, h4, h5, h6, .devatva-heading, .h0, .h1, .h2, .h3, .h4, .h5 {
+  font-family: var(--dev-font-serif) !important;
   letter-spacing: 0.02em;
   color: var(--dev-text-heading);
 }
@@ -589,13 +593,146 @@ h1, h2, h3, h4, h5, h6, .devatva-heading {
   animation: devatvaSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes devatvaSlideIn {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+/* ==========================================================================
+   PRODUCT PAGE (MAIN-PRODUCT) TYPOGRAPHY, COLOR & DESIGN SYSTEM MATCHING
+   ========================================================================== */
+product-info,
+.product-info,
+.product,
+.product__info-container,
+.product__info-wrapper {
+  font-family: var(--dev-font-sans) !important;
+  color: var(--dev-text-main) !important;
 }
+
+/* Product Titles */
+.product__title,
+.product-single__title,
+.product__title h1,
+.product__title h2,
+product-info .product__title h1,
+.product__info-container .product__title h1,
+.product__title * {
+  font-family: var(--dev-font-serif) !important;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem) !important;
+  font-weight: 800 !important;
+  color: var(--dev-text-heading) !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.3 !important;
+}
+
+/* Product Text & Descriptions */
+.product__text,
+.product__description,
+.product__description *,
+.product-single__description,
+.product__info-container p,
+.product__info-container span,
+.product-form__input,
+.product__tax,
+.product__sku {
+  font-family: var(--dev-font-sans) !important;
+  color: var(--dev-text-main) !important;
+  font-size: 0.98rem !important;
+  line-height: 1.65 !important;
+}
+
+/* Pricing Styling */
+.price,
+.price *,
+.price-item,
+.price-item *,
+.product__price,
+.price__regular,
+.price__sale {
+  font-family: var(--dev-font-sans) !important;
+  font-weight: 800 !important;
+}
+
+.price-item--regular,
+.price__regular .price-item--regular {
+  color: var(--dev-gold-dark) !important;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem) !important;
+}
+
+.price-item--sale {
+  color: #9a3412 !important;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem) !important;
+  font-weight: 800 !important;
+}
+
+.price-item--last,
+.price__sale .price-item--regular {
+  color: var(--dev-text-subtle) !important;
+  font-size: 1.05rem !important;
+  text-decoration: line-through !important;
+}
+
+/* Add to Cart & Buy Now Buttons Overrides */
+.product-form__submit,
+button.product-form__submit,
+.product-form__submit *,
+button.product-form__submit * {
+  font-family: var(--dev-font-sans) !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.04em !important;
+  background: linear-gradient(135deg, #d97706 0%, #9a3412 100%) !important;
+  color: #ffffff !important;
+  border-radius: 50px !important;
+  border: 1px solid var(--dev-gold-light) !important;
+  padding: 14px 28px !important;
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.28) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.product-form__submit:hover,
+button.product-form__submit:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 30px rgba(217, 119, 6, 0.4) !important;
+  background: linear-gradient(135deg, #f59e0b 0%, #c2410c 100%) !important;
+}
+
+/* Buy Now (Dynamic Checkout Button) Override */
+.shopify-payment-button,
+.shopify-payment-button__button,
+.shopify-payment-button__button--unbranded,
+.shopify-payment-button__button--branded,
+[data-shopify-buttoncontainer] button {
+  font-family: var(--dev-font-sans) !important;
+  font-weight: 700 !important;
+  border-radius: 50px !important;
+  background: linear-gradient(135deg, #9a3412 0%, #78350f 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid #c2410c !important;
+  box-shadow: 0 6px 20px rgba(154, 52, 18, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.shopify-payment-button__button:hover,
+[data-shopify-buttoncontainer] button:hover {
+  background: linear-gradient(135deg, #c2410c 0%, #9a3412 100%) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Product Tabs / Accordions / Collapsible content */
+.product__accordion .accordion__title,
+.product-block .accordion__title,
+.product__description h2,
+.product__description h3,
+.accordion__title {
+  font-family: var(--dev-font-serif) !important;
+  color: var(--dev-text-heading) !important;
+  font-weight: 700 !important;
+}
+
+.variant-picker__label,
+.form__label,
+label.form__label,
+.quantity__label {
+  font-family: var(--dev-font-sans) !important;
+  font-weight: 700 !important;
+  color: var(--dev-text-heading) !important;
+  font-size: 0.9rem !important;
+}
+
