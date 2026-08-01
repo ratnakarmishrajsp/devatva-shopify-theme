@@ -169,7 +169,35 @@
 }
 @media (max-width: 989px) {
   .devatva-header-nav {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 6px 12px;
+    background: #fffdf9;
+    border-bottom: 1px solid #efe9dc;
+  }
+  .devatva-header-nav::-webkit-scrollbar {
     display: none;
+  }
+  .devatva-main-menu {
+    gap: 8px;
+  }
+  .devatva-menu-link {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    background: #f7f3e9;
+    border: 1px solid #efe9dc;
+  }
+  .devatva-dropdown {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 88vw;
+    max-height: 75vh;
+    overflow-y: auto;
+    border-radius: 16px;
   }
 }
 </style>

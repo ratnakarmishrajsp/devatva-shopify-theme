@@ -21,118 +21,80 @@
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
-              {%- for link in section.settings.menu.links -%}
-                <li>
-                  {%- if link.links != blank -%}
-                    <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
-                      <summary
-                        id="HeaderDrawer-{{ link.handle }}"
-                        class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
-                      >
-                        {{ link.title | escape }}
-                        <span class="svg-wrapper">
-                          {{- 'icon-arrow.svg' | inline_asset_content -}}
-                        </span>
-                        <span class="svg-wrapper">
-                          {{- 'icon-caret.svg' | inline_asset_content -}}
-                        </span>
-                      </summary>
-                      <div
-                        id="link-{{ link.handle | escape }}"
-                        class="menu-drawer__submenu has-submenu gradient motion-reduce"
-                        tabindex="-1"
-                      >
-                        <div class="menu-drawer__inner-submenu">
-                          <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
-                            <span class="svg-wrapper">
-                              {{- 'icon-arrow.svg' | inline_asset_content -}}
-                            </span>
-                            {{ link.title | escape }}
-                          </button>
-                          <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
-                            {%- for childlink in link.links -%}
-                              <li>
-                                {%- if childlink.links == blank -%}
-                                  <a
-                                    id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
-                                    href="{{ childlink.url }}"
-                                    class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
-                                    {% if childlink.current %}
-                                      aria-current="page"
-                                    {% endif %}
-                                  >
-                                    {{ childlink.title | escape }}
-                                  </a>
-                                {%- else -%}
-                                  <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
-                                    <summary
-                                      id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
-                                      class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
-                                    >
-                                      {{ childlink.title | escape }}
-                                      <span class="svg-wrapper">
-                                        {{- 'icon-arrow.svg' | inline_asset_content -}}
-                                      </span>
-                                      <span class="svg-wrapper">
-                                        {{- 'icon-caret.svg' | inline_asset_content -}}
-                                      </span>
-                                    </summary>
-                                    <div
-                                      id="childlink-{{ childlink.handle | escape }}"
-                                      class="menu-drawer__submenu has-submenu gradient motion-reduce"
-                                    >
-                                      <button
-                                        class="menu-drawer__close-button link link--text focus-inset"
-                                        aria-expanded="true"
-                                      >
-                                        <span class="svg-wrapper">
-                                          {{- 'icon-arrow.svg' | inline_asset_content -}}
-                                        </span>
-                                        {{ childlink.title | escape }}
-                                      </button>
-                                      <ul
-                                        class="menu-drawer__menu list-menu"
-                                        role="list"
-                                        tabindex="-1"
-                                      >
-                                        {%- for grandchildlink in childlink.links -%}
-                                          <li>
-                                            <a
-                                              id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                              href="{{ grandchildlink.url }}"
-                                              class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
-                                              {% if grandchildlink.current %}
-                                                aria-current="page"
-                                              {% endif %}
-                                            >
-                                              {{ grandchildlink.title | escape }}
-                                            </a>
-                                          </li>
-                                        {%- endfor -%}
-                                      </ul>
-                                    </div>
-                                  </details>
-                                {%- endif -%}
-                              </li>
-                            {%- endfor -%}
-                          </ul>
-                        </div>
-                      </div>
-                    </details>
-                  {%- else -%}
-                    <a
-                      id="HeaderDrawer-{{ link.handle }}"
-                      href="{{ link.url }}"
-                      class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
-                      {% if link.current %}
-                        aria-current="page"
-                      {% endif %}
-                    >
-                      {{ link.title | escape }}
-                    </a>
-                  {%- endif -%}
-                </li>
-              {%- endfor -%}
+              <!-- MOBILE DRAWER SACRED CATEGORIES OVERRIDE -->
+              <li class="menu-drawer__menu-item-wrapper">
+                <a href="/" class="menu-drawer__menu-item list-menu__item link link--text focus-inset" style="font-weight: 800; color: #1c1917;">
+                  🏠 HOME
+                </a>
+              </li>
+              <li class="menu-drawer__menu-item-wrapper">
+                <details id="Details-menu-drawer-bracelets">
+                  <summary class="menu-drawer__menu-item list-menu__item link link--text focus-inset" style="font-weight: 800; color: #9a3412;">
+                    📿 BRACELETS & PI-XIU ▾
+                  </summary>
+                  <div class="menu-drawer__submenu gradient motion-reduce" style="padding: 10px 20px;">
+                    <ul class="menu-drawer__menu list-menu" role="list">
+                      <li><a href="/collections/bracelets" class="menu-drawer__menu-item link link--text">BRACELETS</a></li>
+                      <li><a href="/collections/zodiac-bracelets" class="menu-drawer__menu-item link link--text">ZODIAC BRACELETS</a></li>
+                      <li><a href="/collections/numerology-bracelets" class="menu-drawer__menu-item link link--text">NUMEROLOGY BRACELETS</a></li>
+                      <li><a href="/collections/pi-xiu-bracelets" class="menu-drawer__menu-item link link--text">PI-XIU BRACELETS</a></li>
+                      <li><a href="/collections/daily-essentials" class="menu-drawer__menu-item link link--text">DAILY ESSENTIALS</a></li>
+                      <li><a href="/collections/best-seller" class="menu-drawer__menu-item link link--text">BEST SELLER</a></li>
+                    </ul>
+                  </div>
+                </details>
+              </li>
+              <li class="menu-drawer__menu-item-wrapper">
+                <details id="Details-menu-drawer-rings">
+                  <summary class="menu-drawer__menu-item list-menu__item link link--text focus-inset" style="font-weight: 800; color: #9a3412;">
+                    💍 RINGS & PENDANTS ▾
+                  </summary>
+                  <div class="menu-drawer__submenu gradient motion-reduce" style="padding: 10px 20px;">
+                    <ul class="menu-drawer__menu list-menu" role="list">
+                      <li><a href="/collections/crystal-rings" class="menu-drawer__menu-item link link--text">CRYSTAL RINGS</a></li>
+                      <li><a href="/collections/pi-xiu-rings" class="menu-drawer__menu-item link link--text">PI-XIU RINGS</a></li>
+                      <li><a href="/collections/gem-rings" class="menu-drawer__menu-item link link--text">GEM RINGS</a></li>
+                      <li><a href="/collections/pendants" class="menu-drawer__menu-item link link--text">PENDANTS</a></li>
+                    </ul>
+                  </div>
+                </details>
+              </li>
+              <li class="menu-drawer__menu-item-wrapper">
+                <details id="Details-menu-drawer-rudraksha">
+                  <summary class="menu-drawer__menu-item list-menu__item link link--text focus-inset" style="font-weight: 800; color: #9a3412;">
+                    📿 RUDRAKSHA & MALAS ▾
+                  </summary>
+                  <div class="menu-drawer__submenu gradient motion-reduce" style="padding: 10px 20px;">
+                    <ul class="menu-drawer__menu list-menu" role="list">
+                      <li><a href="/collections/rudraksha-karungalis" class="menu-drawer__menu-item link link--text">RUDRAKSHA & KARUNGALIS</a></li>
+                      <li><a href="/collections/jaap-malas" class="menu-drawer__menu-item link link--text">JAAP MALAS</a></li>
+                      <li><a href="/collections/gemstones" class="menu-drawer__menu-item link link--text">GEMSTONES</a></li>
+                    </ul>
+                  </div>
+                </details>
+              </li>
+              <li class="menu-drawer__menu-item-wrapper">
+                <details id="Details-menu-drawer-pyramids">
+                  <summary class="menu-drawer__menu-item list-menu__item link link--text focus-inset" style="font-weight: 800; color: #9a3412;">
+                    🛕 PYRAMIDS, TREES & POOJA ▾
+                  </summary>
+                  <div class="menu-drawer__submenu gradient motion-reduce" style="padding: 10px 20px;">
+                    <ul class="menu-drawer__menu list-menu" role="list">
+                      <li><a href="/collections/pyramid-rows" class="menu-drawer__menu-item link link--text">PYRAMID & ROWS</a></li>
+                      <li><a href="/collections/pyrite-frames" class="menu-drawer__menu-item link link--text">PYRITE FRAMES</a></li>
+                      <li><a href="/collections/crystal-trees" class="menu-drawer__menu-item link link--text">CRYSTAL TREES</a></li>
+                      <li><a href="/collections/roller-guashas" class="menu-drawer__menu-item link link--text">ROLLER & GUASHAS</a></li>
+                      <li><a href="/collections/god-divine-idols" class="menu-drawer__menu-item link link--text">GOD DIVINE IDOLS</a></li>
+                      <li><a href="/collections/crystal-water-bottles" class="menu-drawer__menu-item link link--text">CRYSTAL WATER BOTTLES</a></li>
+                    </ul>
+                  </div>
+                </details>
+              </li>
+              <li class="menu-drawer__menu-item-wrapper">
+                <a href="#devatva-astro-quiz-section" class="menu-drawer__menu-item list-menu__item link link--text focus-inset" style="font-weight: 800; color: #b45309;">
+                  🔮 ASTRO QUIZ
+                </a>
+              </li>
             </ul>
           </nav>
           <div class="menu-drawer__utility-links">
