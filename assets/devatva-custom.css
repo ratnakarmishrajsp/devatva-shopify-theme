@@ -351,11 +351,11 @@ h1, h2, h3, h4, h5, h6, .devatva-heading, .h0, .h1, .h2, .h3, .h4, .h5 {
 product-info .product__title h1,
 .product__info-container .product__title h1 {
   font-family: var(--dev-font-serif) !important;
-  font-size: clamp(1.85rem, 4vw, 2.7rem) !important;
-  font-weight: 800 !important;
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem) !important;
+  font-weight: 900 !important;
   color: var(--dev-text-heading) !important;
   letter-spacing: 0.02em !important;
-  line-height: 1.3 !important;
+  line-height: 1.25 !important;
 }
 
 .product__text,
@@ -363,13 +363,14 @@ product-info .product__title h1,
 .product__description *,
 .product-single__description,
 .product__info-container p,
+.product__info-container span,
 .product-form__input,
 .product__tax,
 .product__sku {
   font-family: var(--dev-font-sans) !important;
   color: var(--dev-text-main) !important;
-  font-size: 1.12rem !important;
-  line-height: 1.75 !important;
+  font-size: 1.25rem !important;
+  line-height: 1.8 !important;
 }
 
 /* Pricing Clean Styling */
@@ -377,25 +378,25 @@ product-info .product__title h1,
 .price *,
 .price-item {
   font-family: var(--dev-font-sans) !important;
-  font-weight: 800 !important;
+  font-weight: 900 !important;
 }
 
 .price-item--regular,
 .price__regular .price-item--regular {
   color: var(--dev-gold-dark) !important;
-  font-size: 1.7rem !important;
+  font-size: 2.1rem !important;
 }
 
 .price-item--sale {
   color: #9a3412 !important;
-  font-size: 1.7rem !important;
-  font-weight: 800 !important;
+  font-size: 2.1rem !important;
+  font-weight: 900 !important;
 }
 
 .price-item--last,
 .price__sale .price-item--regular {
   color: var(--dev-text-subtle) !important;
-  font-size: 1.2rem !important;
+  font-size: 1.35rem !important;
   text-decoration: line-through !important;
 }
 
@@ -405,8 +406,8 @@ product-info .product__title h1,
 .accordion__title {
   font-family: var(--dev-font-serif) !important;
   color: var(--dev-text-heading) !important;
-  font-size: 1.18rem !important;
-  font-weight: 700 !important;
+  font-size: 1.3rem !important;
+  font-weight: 800 !important;
 }
 
 .variant-picker__label,
@@ -414,9 +415,9 @@ product-info .product__title h1,
 label.form__label,
 .quantity__label {
   font-family: var(--dev-font-sans) !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
   color: var(--dev-text-heading) !important;
-  font-size: 1.05rem !important;
+  font-size: 1.15rem !important;
 }
 
 .header__menu-item:hover {
