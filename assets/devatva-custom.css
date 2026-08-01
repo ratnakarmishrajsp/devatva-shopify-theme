@@ -35,7 +35,23 @@
   --dev-shadow-gold: 0 12px 35px rgba(217, 119, 6, 0.18);
 }
 
-/* Global Aesthetics & Overrides */
+.devatva-custom-brand-logo {
+  max-width: 170px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  transition: transform 0.3s ease;
+}
+
+.devatva-custom-brand-logo:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 749px) {
+  .devatva-custom-brand-logo {
+    max-width: 125px !important;
+  }
+}
 *, body, button, input, select, textarea {
   font-family: var(--dev-font-sans) !important;
 }
