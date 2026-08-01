@@ -35,21 +35,27 @@
   --dev-shadow-gold: 0 12px 35px rgba(217, 119, 6, 0.18);
 }
 
+.devatva-brand-logo-container {
+  display: flex !important;
+  align-items: center !important;
+}
+
 .devatva-custom-brand-logo {
-  max-width: 170px !important;
+  max-width: 100px !important;
   height: auto !important;
   object-fit: contain !important;
   display: block !important;
+  mix-blend-mode: multiply !important;
   transition: transform 0.3s ease;
 }
 
 .devatva-custom-brand-logo:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
 @media (max-width: 749px) {
   .devatva-custom-brand-logo {
-    max-width: 125px !important;
+    max-width: 75px !important;
   }
 }
 *, body, button, input, select, textarea {
