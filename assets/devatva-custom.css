@@ -594,15 +594,15 @@ h1, h2, h3, h4, h5, h6, .devatva-heading, .h0, .h1, .h2, .h3, .h4, .h5 {
 }
 
 /* ==========================================================================
-   PRODUCT PAGE (MAIN-PRODUCT) SLEEK LUXURY BUTTONS & TYPOGRAPHY REDESIGN
+   PRODUCT PAGE (MAIN-PRODUCT) VIBRANT LUXURY BUTTONS & AMBIENT GLOW
    ========================================================================== */
 .product-form__buttons {
   display: flex !important;
   flex-direction: column !important;
-  gap: 12px !important;
+  gap: 14px !important;
   max-width: 100% !important;
-  margin-top: 20px !important;
-  margin-bottom: 20px !important;
+  margin-top: 22px !important;
+  margin-bottom: 22px !important;
   padding: 0 !important;
   background: transparent !important;
   border: none !important;
@@ -614,74 +614,85 @@ h1, h2, h3, h4, h5, h6, .devatva-heading, .h0, .h1, .h2, .h3, .h4, .h5 {
 .product-form__submit,
 button.product-form__submit,
 .shopify-payment-button__button,
-.shopify-payment-button__button--unbranded {
-  min-height: 48px !important;
-  height: 48px !important;
-  padding: 0 24px !important;
-  border-radius: 12px !important;
+.shopify-payment-button__button--unbranded,
+.shopify-payment-button__button--branded,
+[data-shopify-buttoncontainer] button {
+  min-height: 52px !important;
+  height: 52px !important;
+  padding: 0 28px !important;
+  border-radius: 50px !important;
   font-family: var(--dev-font-sans) !important;
-  font-weight: 700 !important;
-  font-size: 0.95rem !important;
-  letter-spacing: 0.03em !important;
-  text-transform: none !important;
+  font-weight: 800 !important;
+  font-size: 1.02rem !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   cursor: pointer !important;
-  transition: all 0.25s ease-in-out !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
   margin: 0 !important;
   width: 100% !important;
   box-sizing: border-box !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
-/* 1. Add to Cart Button - Sleek Gold/Saffron Primary Button */
+/* 1. Add to Cart Button - Vibrant Saffron Gold Gradient with Subtle Glow */
 .product-form__submit,
 button.product-form__submit {
-  background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+  background: linear-gradient(135deg, #d97706 0%, #c2410c 50%, #9a3412 100%) !important;
   color: #ffffff !important;
-  border: 1px solid #d97706 !important;
-  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.25) !important;
-  outline: none !important;
+  border: 1.5px solid #f59e0b !important;
+  box-shadow: 0 8px 25px rgba(217, 119, 6, 0.35) !important;
 }
 
 .product-form__submit:hover,
 button.product-form__submit:hover {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
-  transform: translateY(-1.5px) !important;
-  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.35) !important;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #c2410c 100%) !important;
+  transform: translateY(-2px) scale(1.01) !important;
+  box-shadow: 0 12px 32px rgba(217, 119, 6, 0.5) !important;
   color: #ffffff !important;
 }
 
-/* 2. Buy Now (Dynamic Checkout) - Elegant Dark Saffron Secondary Button */
+/* 2. Buy it now Button - Vibrant Glowing Sacred Flame Button */
 .shopify-payment-button,
 .shopify-payment-button__button,
 .shopify-payment-button__button--unbranded,
 .shopify-payment-button__button--branded,
 [data-shopify-buttoncontainer] button {
-  background: #1c1917 !important;
+  background: linear-gradient(135deg, #9a3412 0%, #78350f 50%, #451a03 100%) !important;
   color: #ffffff !important;
-  border: 1px solid #292524 !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12) !important;
-  outline: none !important;
+  border: 1.5px solid #ea580c !important;
+  box-shadow: 0 8px 25px rgba(154, 52, 18, 0.4), 0 0 15px rgba(234, 88, 12, 0.25) !important;
+  animation: devatvaButtonGlow 3s infinite ease-in-out !important;
 }
 
 .shopify-payment-button__button:hover,
 .shopify-payment-button__button--unbranded:hover,
 [data-shopify-buttoncontainer] button:hover {
-  background: #292524 !important;
+  background: linear-gradient(135deg, #c2410c 0%, #9a3412 50%, #78350f 100%) !important;
   color: #ffffff !important;
-  transform: translateY(-1.5px) !important;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2) !important;
+  transform: translateY(-2px) scale(1.01) !important;
+  box-shadow: 0 12px 35px rgba(194, 65, 12, 0.6), 0 0 25px rgba(245, 158, 11, 0.4) !important;
 }
 
-/* Remove Shopify default button container outer borders/shadows */
+@keyframes devatvaButtonGlow {
+  0%, 100% {
+    box-shadow: 0 6px 20px rgba(154, 52, 18, 0.35), 0 0 10px rgba(234, 88, 12, 0.2);
+  }
+  50% {
+    box-shadow: 0 10px 30px rgba(194, 65, 12, 0.55), 0 0 20px rgba(245, 158, 11, 0.45);
+  }
+}
+
+/* Remove Shopify default button container outer wrappers */
 .shopify-payment-button__button--hidden,
 .product-form__buttons::before,
 .product-form__buttons::after {
   display: none !important;
 }
 
-/* Clean up button wrappers */
 .product-form__buttons > * {
   margin: 0 !important;
   padding: 0 !important;
@@ -690,7 +701,7 @@ button.product-form__submit:hover {
   box-shadow: none !important;
 }
 
-/* Typography Matching for Product Titles & Text */
+/* Typography & Layout Matching for Product Titles & Text */
 .product__title,
 .product-single__title,
 .product__title h1,
@@ -698,7 +709,7 @@ button.product-form__submit:hover {
 product-info .product__title h1,
 .product__info-container .product__title h1 {
   font-family: var(--dev-font-serif) !important;
-  font-size: clamp(1.5rem, 3vw, 2.2rem) !important;
+  font-size: clamp(1.6rem, 3.2vw, 2.3rem) !important;
   font-weight: 800 !important;
   color: var(--dev-text-heading) !important;
   letter-spacing: 0.02em !important;
@@ -715,8 +726,8 @@ product-info .product__title h1,
 .product__sku {
   font-family: var(--dev-font-sans) !important;
   color: var(--dev-text-main) !important;
-  font-size: 0.95rem !important;
-  line-height: 1.6 !important;
+  font-size: 0.98rem !important;
+  line-height: 1.65 !important;
 }
 
 /* Pricing Clean Styling */
@@ -730,19 +741,19 @@ product-info .product__title h1,
 .price-item--regular,
 .price__regular .price-item--regular {
   color: var(--dev-gold-dark) !important;
-  font-size: 1.4rem !important;
+  font-size: 1.45rem !important;
 }
 
 .price-item--sale {
   color: #9a3412 !important;
-  font-size: 1.4rem !important;
+  font-size: 1.45rem !important;
   font-weight: 800 !important;
 }
 
 .price-item--last,
 .price__sale .price-item--regular {
   color: var(--dev-text-subtle) !important;
-  font-size: 1rem !important;
+  font-size: 1.02rem !important;
   text-decoration: line-through !important;
 }
 
@@ -762,6 +773,6 @@ label.form__label,
   font-family: var(--dev-font-sans) !important;
   font-weight: 700 !important;
   color: var(--dev-text-heading) !important;
-  font-size: 0.88rem !important;
+  font-size: 0.9rem !important;
 }
 
