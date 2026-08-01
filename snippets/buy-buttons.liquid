@@ -60,12 +60,48 @@
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
 
-        <!-- HIGH-CONVERSION CRO ELEMENT 1: Scarcity & Live Social Proof Urgency Ticker -->
-        <div class="devatva-cro-urgency-box">
-          <div class="devatva-cro-urgency-pulse"></div>
-          <span>🔥 <strong>High Demand:</strong> Only <strong>4 items</strong> left in stock for today's Abhishekam. 14 people viewing now!</span>
+        <!-- 1. URGENCY & SOCIAL PROOF BOX -->
+        <div class="devatva-cro-urgency-container">
+          <div class="devatva-cro-urgency-row">
+            <span class="devatva-fire-icon">🔥</span>
+            <span><strong>High Demand:</strong> Only <strong>4 items</strong> left in stock for today's Abhishekam.</span>
+          </div>
+          <div class="devatva-cro-urgency-row devatva-viewers-row">
+            <div class="devatva-user-avatars">
+              <span class="devatva-avatar">👤</span>
+              <span class="devatva-avatar">👤</span>
+              <span class="devatva-avatar">👤</span>
+            </div>
+            <span><strong>14 people</strong> viewing now</span>
+          </div>
         </div>
 
+        <!-- 2. 3-COLUMN TRUST BADGES GRID -->
+        <div class="devatva-cro-trust-grid">
+          <div class="devatva-cro-trust-item">
+            <span class="devatva-cro-icon">📜</span>
+            <div>
+              <strong>100% Lab Certified</strong>
+              <small>Authentic & Verified</small>
+            </div>
+          </div>
+          <div class="devatva-cro-trust-item">
+            <span class="devatva-cro-icon">🪔</span>
+            <div>
+              <strong>Pran Pratishtha Blessed</strong>
+              <small>Sanctified in Kashi</small>
+            </div>
+          </div>
+          <div class="devatva-cro-trust-item">
+            <span class="devatva-cro-icon">🚚</span>
+            <div>
+              <strong>Free Express COD</strong>
+              <small>7-Day Easy Returns</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. BUY BUTTONS (ADD TO CART & BUY IT NOW) -->
         <div class="product-form__buttons">
           {%- liquid
             assign check_against_inventory = true
@@ -94,7 +130,7 @@
               {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
-                {{ 'products.product.add_to_cart' | t }}
+                ADD TO CART 🛒
               {%- endif -%}
             </span>
             {%- render 'loading-spinner' -%}
@@ -104,51 +140,33 @@
           {%- endif -%}
         </div>
 
-        <!-- HIGH-CONVERSION CRO ELEMENT 2: Authenticity & Trust Guarantee Badges -->
-        <div class="devatva-cro-trust-grid">
-          <div class="devatva-cro-trust-item">
-            <span class="devatva-cro-icon">📜</span>
-            <div>
-              <strong>100% Lab Certified</strong>
-              <small>Authentic & Verified</small>
-            </div>
-          </div>
-          <div class="devatva-cro-trust-item">
-            <span class="devatva-cro-icon">🪔</span>
-            <div>
-              <strong>Pran Pratishtha Blessed</strong>
-              <small>Sanctified in Kashi</small>
-            </div>
-          </div>
-          <div class="devatva-cro-trust-item">
-            <span class="devatva-cro-icon">🚚</span>
-            <div>
-              <strong>Free Express COD</strong>
-              <small>7-Day Easy Returns</small>
-            </div>
-          </div>
+        <!-- 4. SECURE PACKAGING & EASY RETURNS STRIP -->
+        <div class="devatva-cro-features-strip">
+          <span>🛡️ Secure Packaging</span>
+          <span class="devatva-strip-divider">|</span>
+          <span>🔄 7-Day Easy Returns</span>
         </div>
 
-        <!-- HIGH-CONVERSION CRO ELEMENT 3: Delivery Pincode Estimator -->
+        <!-- 5. ESTIMATED DELIVERY & COD CHECKER -->
         <div class="devatva-cro-delivery-box">
           <label for="DevatvaPincodeInput">📍 Estimated Delivery & COD Check:</label>
           <div class="devatva-cro-delivery-row">
             <input type="text" id="DevatvaPincodeInput" placeholder="Enter Pincode (e.g. 110001)" maxlength="6">
             <button type="button" onclick="DevatvaCheckDelivery()">Check</button>
           </div>
-          <div id="DevatvaDeliveryResult" class="devatva-cro-delivery-result">🚚 Fast Dispatch in 24 Hours • Free Shipping Across India</div>
+          <div id="DevatvaDeliveryResult" class="devatva-cro-delivery-result">⚡ Fast Dispatch in 24 Hours • Free Shipping Across India</div>
         </div>
 
-        <!-- HIGH-CONVERSION CRO ELEMENT 4: Safe Checkout & Payment Trust Badges -->
+        <!-- 6. 100% SECURE CHECKOUT GUARANTEED & PAYMENTS BADGES -->
         <div class="devatva-cro-payment-trust">
-          <span>🔒 100% Secure Checkout Guaranteed</span>
+          <div class="devatva-pay-title">🔒 <strong>100% Secure Checkout Guaranteed</strong></div>
           <div class="devatva-cro-payment-icons">
-            <span class="devatva-pay-badge">GPay</span>
-            <span class="devatva-pay-badge">PhonePe</span>
-            <span class="devatva-pay-badge">Paytm</span>
-            <span class="devatva-pay-badge">UPI</span>
-            <span class="devatva-pay-badge">Cards</span>
-            <span class="devatva-pay-badge">COD</span>
+            <span class="devatva-pay-badge gpay">GPay</span>
+            <span class="devatva-pay-badge phonepe">PhonePe</span>
+            <span class="devatva-pay-badge paytm">Paytm</span>
+            <span class="devatva-pay-badge upi">UPI</span>
+            <span class="devatva-pay-badge cards">Cards</span>
+            <span class="devatva-pay-badge cod">COD</span>
           </div>
         </div>
 
