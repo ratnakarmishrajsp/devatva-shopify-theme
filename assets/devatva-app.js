@@ -221,7 +221,96 @@
     }
   };
 
+  // --- Dynamic Live Viewers Counter Loop (14 to 100+) ---
+  function initLiveViewersCounter() {
+    const viewersEl = document.querySelector('.devatva-viewers-count');
+    if (!viewersEl) return;
+
+    let currentViewers = 14;
+    viewersEl.textContent = currentViewers;
+
+    setInterval(() => {
+      // Gradually increase up to 100+ with occasional realistic fluctuation
+      const change = Math.floor(Math.random() * 4) + 1; // +1 to +4
+      currentViewers += change;
+      if (currentViewers > 108) {
+        currentViewers = 84 + Math.floor(Math.random() * 10);
+      }
+      viewersEl.textContent = currentViewers;
+      viewersEl.style.transition = 'color 0.3s ease, transform 0.3s ease';
+      viewersEl.style.color = '#c2410c';
+      viewersEl.style.transform = 'scale(1.15)';
+      setTimeout(() => {
+        viewersEl.style.color = 'inherit';
+        viewersEl.style.transform = 'scale(1)';
+      }, 350);
+    }, 4000);
+  }
+
+  // --- Dynamic Live Sales Popup Notification System ---
+  function initSalesPopups() {
+    const indianCities = ['Mumbai', 'Delhi NCR', 'Bengaluru', 'Ahmedabad', 'Jaipur', 'Kolkata', 'Pune', 'Surat', 'Lucknow', 'Hyderabad', 'Indore', 'Varanasi', 'Chandigarh'];
+    const indianNames = ['Rahul M.', 'Priya S.', 'Amit K.', 'Vikram R.', 'Ananya P.', 'Suresh G.', 'Neha V.', 'Rohan T.', 'Pooja B.', 'Deepak M.'];
+
+    let popupContainer = document.querySelector('.devatva-sales-popup');
+    if (!popupContainer) {
+      popupContainer = document.createElement('div');
+      popupContainer.className = 'devatva-sales-popup';
+      document.body.appendChild(popupContainer);
+    }
+
+    function showRandomSale() {
+      // Get current product title if on product page, otherwise use default
+      let productTitle = 'Natural Sulemani Hakik Bracelet';
+      let productImage = '';
+      
+      const pageTitleEl = document.querySelector('.product__title h1, .product-single__title, .dev10-title');
+      if (pageTitleEl) {
+        productTitle = pageTitleEl.textContent.trim().split('\n')[0].slice(0, 35) + '...';
+      }
+      
+      const imgEl = document.querySelector('.product__media img, .product-single__photo img');
+      if (imgEl && imgEl.src) {
+        productImage = imgEl.src;
+      }
+
+      const randomName = indianNames[Math.floor(Math.random() * indianNames.length)];
+      const randomCity = indianCities[Math.floor(Math.random() * indianCities.length)];
+      const randomMins = Math.floor(Math.random() * 12) + 2;
+
+      popupContainer.innerHTML = `
+        <div class="devatva-sales-popup-card">
+          <div class="devatva-sales-popup-img">
+            ${productImage ? `<img src="${productImage}" alt="Product" />` : '📿'}
+          </div>
+          <div class="devatva-sales-popup-info">
+            <div class="devatva-sales-popup-buyer"><strong>${randomName}</strong> from ${randomCity}</div>
+            <div class="devatva-sales-popup-title">Purchased <strong>${productTitle}</strong></div>
+            <div class="devatva-sales-popup-time">⚡ Verified Order • ${randomMins} mins ago</div>
+          </div>
+        </div>
+      `;
+
+      popupContainer.classList.add('is-visible');
+
+      setTimeout(() => {
+        popupContainer.classList.remove('is-visible');
+      }, 5000);
+    }
+
+    // Trigger first popup after 5 seconds, then repeat every 18-28 seconds
+    setTimeout(() => {
+      showRandomSale();
+      setInterval(() => {
+        showRandomSale();
+      }, Math.floor(Math.random() * 10000) + 18000);
+    }, 5000);
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
+    initLiveViewersCounter();
+    initSalesPopups();
+
     document.addEventListener('click', (e) => {
       const qvBtn = e.target.closest('[data-devatva-quickview]');
       if (qvBtn) {
