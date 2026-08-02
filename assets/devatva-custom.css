@@ -165,33 +165,44 @@ html, body {
   }
 }
 
-/* --- Mobile 2-Products Per Row Grid Optimization (Strictly Home Page & Collection Grids) --- */
+/* --- Mobile 2-Products Per Row Grid Optimization (Home Page & Collection Pages) --- */
 @media screen and (max-width: 749px) {
-  /* Target Home Page Sections specifically so Product Page single product gallery/info stays untouched */
-  .template-index .product-grid,
-  .template-index ul.product-grid,
+  /* Target Shopify Dawn featured collection & collection product grids */
   .template-index .featured-collection .grid,
-  .template-index .devatva-category-grid,
-  .collection .product-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px 10px !important;
+  .template-index .product-grid,
+  .collection .product-grid,
+  .template-index .grid--2-col-tablet-down,
+  .template-index .grid--1-col-tablet-down {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    flex-direction: row !important;
+    row-gap: 12px !important;
+    column-gap: 10px !important;
     padding-left: 10px !important;
     padding-right: 10px !important;
     margin: 0 !important;
     width: 100% !important;
   }
 
+  .template-index .featured-collection .grid__item,
   .template-index .product-grid .grid__item,
-  .template-index ul.product-grid > li,
-  .collection .product-grid .grid__item {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    flex: none !important;
+  .collection .product-grid .grid__item,
+  .template-index .grid--2-col-tablet-down .grid__item,
+  .template-index .grid--1-col-tablet-down .grid__item {
+    width: calc(50% - 5px) !important;
+    max-width: calc(50% - 5px) !important;
+    min-width: calc(50% - 5px) !important;
+    flex: 0 0 calc(50% - 5px) !important;
     margin: 0 !important;
     padding: 0 !important;
     box-sizing: border-box !important;
+  }
+
+  /* Disable slider overflow horizontal scroll peek to ensure crisp 2-grid display */
+  .template-index .slider.slider--tablet {
+    position: relative !important;
+    flex-wrap: wrap !important;
+    overflow: visible !important;
   }
 
   /* Elegant Card Styling with Gold Border & Glowing Ambient Shadow for Home Page Cards */
