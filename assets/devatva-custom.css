@@ -35,6 +35,25 @@
   --dev-shadow-gold: 0 12px 35px rgba(217, 119, 6, 0.18);
 }
 
+/* --- Global Typography & Font Size Boost --- */
+html {
+  font-size: 68.75% !important; /* Scaled base font from 62.5% to 68.75% for clearer medium-large readability */
+}
+
+body {
+  font-size: 1.65rem !important; /* Increased body font size from 1.5rem */
+  line-height: 1.6 !important;
+}
+
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 75% !important; /* Scaled desktop base font for optimal comfortable reading */
+  }
+  body {
+    font-size: 1.75rem !important; /* Increased desktop body font size */
+  }
+}
+
 .devatva-brand-logo-container {
   display: flex !important;
   align-items: center !important;
