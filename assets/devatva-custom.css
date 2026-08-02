@@ -949,7 +949,7 @@ product-info .product__title h1,
   line-height: 1.65 !important;
 }
 
-/* Pricing Clean Styling */
+/* Pricing Clean & Precise Strikethrough Styling */
 .price,
 .price *,
 .price-item {
@@ -957,23 +957,55 @@ product-info .product__title h1,
   font-weight: 800 !important;
 }
 
-.price-item--regular,
+/* Regular Price (When NOT on Sale) */
 .price__regular .price-item--regular {
   color: var(--dev-gold-dark) !important;
   font-size: 1.45rem !important;
+  text-decoration: none !important;
 }
 
-.price-item--sale {
-  color: #9a3412 !important;
-  font-size: 1.45rem !important;
+/* Sale Price (Current Discounted Price - NO STRIKETHROUGH) */
+.price-item--sale,
+.price--on-sale .price-item--sale,
+.price__sale .price-item--sale {
+  color: #c2410c !important;
+  font-size: 1.55rem !important;
   font-weight: 800 !important;
+  text-decoration: none !important;
 }
 
-.price-item--last,
+/* Compare At Price (Old Original Price - ONLY THIS GETS STRIKETHROUGH) */
+.price--on-sale .price-item--regular,
+.price__sale s.price-item--regular,
 .price__sale .price-item--regular {
-  color: var(--dev-text-subtle) !important;
-  font-size: 1.02rem !important;
+  color: #78716c !important;
+  font-size: 1.05rem !important;
   text-decoration: line-through !important;
+  text-decoration-color: #9a3412 !important;
+  text-decoration-thickness: 2px !important;
+  margin-right: 8px !important;
+  opacity: 0.8 !important;
+}
+
+/* Luxury Sacred Sale Badge Styling */
+.badge.price__badge-sale,
+.badge--sale,
+.price__badge-sale,
+span.badge.price__badge-sale {
+  background: linear-gradient(135deg, #c2410c 0%, #9a3412 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid #f59e0b !important;
+  border-radius: 30px !important;
+  padding: 4px 12px !important;
+  font-family: var(--dev-font-sans) !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 4px 12px rgba(194, 65, 12, 0.25) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  vertical-align: middle !important;
 }
 
 /* Product Tabs / Accordions */
