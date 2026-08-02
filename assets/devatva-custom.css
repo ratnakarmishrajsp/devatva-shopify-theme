@@ -811,17 +811,17 @@ label.form__label,
 .product-form__buttons {
   display: flex !important;
   flex-direction: column !important;
-  gap: 14px !important;
+  gap: 12px !important;
   max-width: 100% !important;
-  margin-top: 22px !important;
-  margin-bottom: 22px !important;
+  margin-top: 18px !important;
+  margin-bottom: 18px !important;
   padding: 0 !important;
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
 }
 
-/* Base button cleanup */
+/* Base button cleanup - Refined compact height & clear white typography */
 .product-form__buttons button,
 .product-form__submit,
 button.product-form__submit,
@@ -829,14 +829,14 @@ button.product-form__submit,
 .shopify-payment-button__button--unbranded,
 .shopify-payment-button__button--branded,
 [data-shopify-buttoncontainer] button {
-  min-height: 52px !important;
-  height: 52px !important;
-  padding: 0 28px !important;
-  border-radius: 50px !important;
+  min-height: 46px !important;
+  height: 46px !important;
+  padding: 0 22px !important;
+  border-radius: 40px !important;
   font-family: var(--dev-font-sans) !important;
   font-weight: 800 !important;
-  font-size: 1.02rem !important;
-  letter-spacing: 0.04em !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.05em !important;
   text-transform: uppercase !important;
   display: flex !important;
   align-items: center !important;
@@ -850,51 +850,58 @@ button.product-form__submit,
   overflow: hidden !important;
 }
 
-/* 1. Add to Cart Button - Vibrant Saffron Gold Gradient with Subtle Glow */
+.product-form__submit *,
+button.product-form__submit *,
+.shopify-payment-button__button *,
+[data-shopify-buttoncontainer] button * {
+  color: #ffffff !important;
+}
+
+/* 1. Add to Cart Button - Rich Saffron Amber Gradient with Pure White Text */
 .product-form__submit,
 button.product-form__submit {
-  background: linear-gradient(135deg, #d97706 0%, #c2410c 50%, #9a3412 100%) !important;
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
   color: #ffffff !important;
-  border: 1.5px solid #f59e0b !important;
-  box-shadow: 0 8px 25px rgba(217, 119, 6, 0.35) !important;
+  border: 1px solid #f59e0b !important;
+  box-shadow: 0 6px 18px rgba(217, 119, 6, 0.25) !important;
 }
 
 .product-form__submit:hover,
 button.product-form__submit:hover {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #c2410c 100%) !important;
-  transform: translateY(-2px) scale(1.01) !important;
-  box-shadow: 0 12px 32px rgba(217, 119, 6, 0.5) !important;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.4) !important;
   color: #ffffff !important;
 }
 
-/* 2. Buy it now Button - Vibrant Glowing Sacred Flame Button */
+/* 2. Buy it now Button - Sacred Crimson Gold Gradient with Ambient Glow */
 .shopify-payment-button,
 .shopify-payment-button__button,
 .shopify-payment-button__button--unbranded,
 .shopify-payment-button__button--branded,
 [data-shopify-buttoncontainer] button {
-  background: linear-gradient(135deg, #9a3412 0%, #78350f 50%, #451a03 100%) !important;
+  background: linear-gradient(135deg, #c2410c 0%, #991b1b 100%) !important;
   color: #ffffff !important;
-  border: 1.5px solid #ea580c !important;
-  box-shadow: 0 8px 25px rgba(154, 52, 18, 0.4), 0 0 15px rgba(234, 88, 12, 0.25) !important;
+  border: 1px solid #f97316 !important;
+  box-shadow: 0 6px 20px rgba(194, 65, 12, 0.3), 0 0 12px rgba(249, 115, 22, 0.2) !important;
   animation: devatvaButtonGlow 3s infinite ease-in-out !important;
 }
 
 .shopify-payment-button__button:hover,
 .shopify-payment-button__button--unbranded:hover,
 [data-shopify-buttoncontainer] button:hover {
-  background: linear-gradient(135deg, #c2410c 0%, #9a3412 50%, #78350f 100%) !important;
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%) !important;
   color: #ffffff !important;
-  transform: translateY(-2px) scale(1.01) !important;
-  box-shadow: 0 12px 35px rgba(194, 65, 12, 0.6), 0 0 25px rgba(245, 158, 11, 0.4) !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 8px 28px rgba(234, 88, 12, 0.5), 0 0 18px rgba(245, 158, 11, 0.35) !important;
 }
 
 @keyframes devatvaButtonGlow {
   0%, 100% {
-    box-shadow: 0 6px 20px rgba(154, 52, 18, 0.35), 0 0 10px rgba(234, 88, 12, 0.2);
+    box-shadow: 0 5px 15px rgba(194, 65, 12, 0.25), 0 0 8px rgba(249, 115, 22, 0.2);
   }
   50% {
-    box-shadow: 0 10px 30px rgba(194, 65, 12, 0.55), 0 0 20px rgba(245, 158, 11, 0.45);
+    box-shadow: 0 8px 24px rgba(234, 88, 12, 0.45), 0 0 16px rgba(245, 158, 11, 0.4);
   }
 }
 
@@ -992,20 +999,16 @@ label.form__label,
    HIGH-CONVERSION CRO PRODUCT PAGE ELEMENTS (SACRED LUXURY AESTHETICS)
    ========================================================================== */
 
-/* ==========================================================================
-   EXACT CRO DESIGN SYSTEM (MATCHING REFERENCE SPECIFICATIONS)
-   ========================================================================== */
-
 /* 1. Urgency Container & Viewers Count */
 .devatva-cro-urgency-container {
   background: #fffdf5;
   border: 1px solid #fef3c7;
   border-radius: 14px;
-  padding: 14px 16px;
-  margin-bottom: 18px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   box-shadow: 0 2px 10px rgba(217, 119, 6, 0.06);
 }
 
@@ -1013,7 +1016,7 @@ label.form__label,
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: #1c1917;
 }
 
@@ -1023,8 +1026,8 @@ label.form__label,
 
 .devatva-viewers-row {
   border-top: 1px dashed #fde68a;
-  padding-top: 8px;
-  font-size: 0.88rem;
+  padding-top: 6px;
+  font-size: 0.85rem;
   color: #44403c;
 }
 
@@ -1046,26 +1049,36 @@ label.form__label,
   font-size: 0.72rem;
 }
 
-/* 2. 3-Column Trust Grid */
+/* 2. Responsive Trust Grid */
 .devatva-cro-trust-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 16px;
-  margin-bottom: 20px;
+  gap: 8px;
+  margin-top: 14px;
+  margin-bottom: 18px;
 }
 
 .devatva-cro-trust-item {
   display: flex;
-  flex-direction: flex-start;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
+  text-align: center;
+  gap: 6px;
   background: #ffffff;
   border: 1.5px solid #efe9dc;
-  border-radius: 14px;
-  padding: 14px 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  border-radius: 12px;
+  padding: 10px 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   transition: all 0.25s ease;
+}
+
+@media (min-width: 750px) {
+  .devatva-cro-trust-item {
+    flex-direction: row;
+    text-align: left;
+    padding: 12px 10px;
+    gap: 8px;
+  }
 }
 
 .devatva-cro-trust-item:hover {
@@ -1074,23 +1087,24 @@ label.form__label,
 }
 
 .devatva-cro-icon {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   flex-shrink: 0;
 }
 
 .devatva-cro-trust-item strong {
   display: block;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 800;
   color: #1c1917;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
 .devatva-cro-trust-item small {
   display: block;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: #78716c;
   margin-top: 2px;
+  line-height: 1.25;
 }
 
 /* 3. Secure Packaging & Returns Strip */
@@ -1098,10 +1112,10 @@ label.form__label,
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
-  margin-top: 14px;
-  margin-bottom: 18px;
-  font-size: 0.92rem;
+  gap: 12px;
+  margin-top: 12px;
+  margin-bottom: 16px;
+  font-size: 0.88rem;
   font-weight: 700;
   color: #292524;
 }
@@ -1114,30 +1128,30 @@ label.form__label,
 .devatva-cro-delivery-box {
   background: #fffbf0;
   border: 1.5px dashed #c2410c;
-  border-radius: 16px;
-  padding: 18px;
-  margin-bottom: 20px;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 18px;
 }
 
 .devatva-cro-delivery-box label {
   display: block;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 800;
   color: #9a3412;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .devatva-cro-delivery-row {
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
 
 .devatva-cro-delivery-row input {
   flex: 1;
-  padding: 10px 16px !important;
+  padding: 8px 14px !important;
   border: 1.5px solid #fed7aa !important;
-  border-radius: 10px !important;
-  font-size: 0.95rem !important;
+  border-radius: 8px !important;
+  font-size: 0.9rem !important;
   outline: none !important;
   background: #ffffff !important;
 }
@@ -1150,13 +1164,13 @@ label.form__label,
   background: linear-gradient(135deg, #c2410c 0%, #9a3412 100%) !important;
   color: #ffffff !important;
   border: none !important;
-  border-radius: 10px !important;
-  padding: 10px 24px !important;
+  border-radius: 8px !important;
+  padding: 8px 18px !important;
   font-weight: 800 !important;
-  font-size: 0.95rem !important;
+  font-size: 0.9rem !important;
   cursor: pointer !important;
   transition: all 0.2s ease !important;
-  box-shadow: 0 4px 12px rgba(194, 65, 12, 0.25) !important;
+  box-shadow: 0 4px 12px rgba(194, 65, 12, 0.2) !important;
 }
 
 .devatva-cro-delivery-row button:hover {
@@ -1164,33 +1178,42 @@ label.form__label,
 }
 
 .devatva-cro-delivery-result {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: #57534e;
-  margin-top: 10px;
+  margin-top: 8px;
   line-height: 1.4;
   font-weight: 600;
 }
 
-/* 5. Safe Payment Guarantee Box */
+/* 5. Safe Payment Guarantee Box & Mobile 2-Row Layout */
 .devatva-cro-payment-trust {
   text-align: center;
   background: #fcfaf5;
-  border-radius: 16px;
-  padding: 16px;
+  border-radius: 14px;
+  padding: 14px 12px;
   border: 1.5px solid #efe9dc;
 }
 
 .devatva-pay-title {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #1c1917;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .devatva-cro-payment-icons {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   gap: 8px;
+}
+
+.devatva-pay-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .devatva-pay-badge {
