@@ -167,47 +167,53 @@ html, body {
 
 /* --- Mobile 2-Products Per Row Grid Optimization (Home Page & Collection Pages) --- */
 @media screen and (max-width: 749px) {
-  /* Target Shopify Dawn featured collection & collection product grids */
-  .template-index .featured-collection .grid,
-  .template-index .product-grid,
-  .collection .product-grid,
-  .template-index .grid--2-col-tablet-down,
-  .template-index .grid--1-col-tablet-down {
+  /* Comprehensive mobile 2-column grid targeting for home page & collection grids */
+  body.template-index .featured-collection .grid,
+  body.template-index .product-grid,
+  body.template-index .contains-card--product,
+  body.template-index slider-component ul.grid,
+  .shopify-section-featured-collection .grid,
+  .featured-collection .grid,
+  .collection .product-grid {
     display: flex !important;
     flex-wrap: wrap !important;
     flex-direction: row !important;
     row-gap: 12px !important;
-    column-gap: 10px !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+    column-gap: 8px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
     margin: 0 !important;
     width: 100% !important;
   }
 
-  .template-index .featured-collection .grid__item,
-  .template-index .product-grid .grid__item,
-  .collection .product-grid .grid__item,
-  .template-index .grid--2-col-tablet-down .grid__item,
-  .template-index .grid--1-col-tablet-down .grid__item {
-    width: calc(50% - 5px) !important;
-    max-width: calc(50% - 5px) !important;
-    min-width: calc(50% - 5px) !important;
-    flex: 0 0 calc(50% - 5px) !important;
+  body.template-index .featured-collection .grid__item,
+  body.template-index .product-grid .grid__item,
+  body.template-index .contains-card--product .grid__item,
+  body.template-index slider-component ul.grid > li,
+  .shopify-section-featured-collection .grid__item,
+  .featured-collection .grid__item,
+  .collection .product-grid .grid__item {
+    width: calc(50% - 4px) !important;
+    max-width: calc(50% - 4px) !important;
+    min-width: calc(50% - 4px) !important;
+    flex: 0 0 calc(50% - 4px) !important;
     margin: 0 !important;
     padding: 0 !important;
     box-sizing: border-box !important;
   }
 
-  /* Disable slider overflow horizontal scroll peek to ensure crisp 2-grid display */
-  .template-index .slider.slider--tablet {
+  /* Disable single-item slider scroll snap on mobile */
+  body.template-index .slider.slider--tablet,
+  .featured-collection .slider.slider--tablet {
     position: relative !important;
     flex-wrap: wrap !important;
     overflow: visible !important;
+    scroll-snap-type: none !important;
   }
 
-  /* Elegant Card Styling with Gold Border & Glowing Ambient Shadow for Home Page Cards */
-  .template-index .card-wrapper,
-  .template-index .card,
+  /* Elegant Card Styling with Gold Border & Glowing Ambient Shadow */
+  body.template-index .card-wrapper,
+  body.template-index .card,
   .collection .card-wrapper,
   .collection .card {
     border-radius: 14px !important;
@@ -217,20 +223,20 @@ html, body {
     transition: all 0.3s ease !important;
   }
 
-  .template-index .card-wrapper:hover,
-  .template-index .card:hover,
+  body.template-index .card-wrapper:hover,
+  body.template-index .card:hover,
   .collection .card-wrapper:hover,
   .collection .card:hover {
     border-color: #d97706 !important;
     box-shadow: 0 8px 25px rgba(217, 119, 6, 0.22), 0 0 15px rgba(245, 158, 11, 0.15) !important;
   }
 
-  .template-index .card-information,
+  body.template-index .card-information,
   .collection .card-information {
     padding: 10px 8px !important;
   }
 
-  .template-index .card__heading,
+  body.template-index .card__heading,
   .collection .card__heading {
     font-size: 0.88rem !important;
     line-height: 1.3 !important;
