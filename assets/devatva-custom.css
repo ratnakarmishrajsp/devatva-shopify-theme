@@ -165,45 +165,40 @@ html, body {
   }
 }
 
-/* --- Mobile 2-Products Per Row Grid Optimization & Ambient Glowing Cards --- */
+/* --- Mobile 2-Products Per Row Grid Optimization (Strictly Home Page & Collection Grids) --- */
 @media screen and (max-width: 749px) {
-  .grid,
-  .product-grid,
-  ul.product-grid,
-  .contains-card--product,
-  .slider--tablet {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    flex-direction: row !important;
-    gap: 10px !important;
-    padding-left: 8px !important;
-    padding-right: 8px !important;
+  /* Target Home Page Sections specifically so Product Page single product gallery/info stays untouched */
+  .template-index .product-grid,
+  .template-index ul.product-grid,
+  .template-index .featured-collection .grid,
+  .template-index .devatva-category-grid,
+  .collection .product-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px 10px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
     margin: 0 !important;
+    width: 100% !important;
   }
 
-  .grid__item,
-  .product-grid .grid__item,
-  ul.product-grid > li,
-  .slider__slide {
-    width: calc(50% - 5px) !important;
-    max-width: calc(50% - 5px) !important;
-    min-width: calc(50% - 5px) !important;
-    flex: 0 0 calc(50% - 5px) !important;
+  .template-index .product-grid .grid__item,
+  .template-index ul.product-grid > li,
+  .collection .product-grid .grid__item {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: none !important;
     margin: 0 !important;
     padding: 0 !important;
     box-sizing: border-box !important;
   }
 
-  /* Force slider list to grid on mobile if needed */
-  slider-component .slider--tablet.grid--peek {
-    scroll-snap-type: none !important;
-  }
-
-  /* Elegant Card Styling with Gold Border & Glowing Ambient Shadow */
-  .card-wrapper,
-  .card,
-  .card--card,
-  .card--standard .card__inner {
+  /* Elegant Card Styling with Gold Border & Glowing Ambient Shadow for Home Page Cards */
+  .template-index .card-wrapper,
+  .template-index .card,
+  .collection .card-wrapper,
+  .collection .card {
     border-radius: 14px !important;
     border: 1.5px solid #efe9dc !important;
     background: #ffffff !important;
@@ -211,17 +206,21 @@ html, body {
     transition: all 0.3s ease !important;
   }
 
-  .card-wrapper:hover,
-  .card:hover {
+  .template-index .card-wrapper:hover,
+  .template-index .card:hover,
+  .collection .card-wrapper:hover,
+  .collection .card:hover {
     border-color: #d97706 !important;
     box-shadow: 0 8px 25px rgba(217, 119, 6, 0.22), 0 0 15px rgba(245, 158, 11, 0.15) !important;
   }
 
-  .card-information {
+  .template-index .card-information,
+  .collection .card-information {
     padding: 10px 8px !important;
   }
 
-  .card__heading {
+  .template-index .card__heading,
+  .collection .card__heading {
     font-size: 0.88rem !important;
     line-height: 1.3 !important;
     font-weight: 700 !important;
