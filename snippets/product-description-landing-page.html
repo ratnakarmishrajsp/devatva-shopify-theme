@@ -1,251 +1,464 @@
-<!-- DIVYATVA SACRED LANDING PAGE PRODUCT DESCRIPTION (COPY & PASTE INTO SHOPIFY PRODUCT DESCRIPTION HTML MODE) -->
+<!-- DIVYATva SACRED 10.0 ULTRA HIGH-CONVERTING LANDING PAGE PRODUCT DESCRIPTION -->
+<!-- Copy & Paste directly into Shopify Product Description (HTML Mode) -->
+
 <style>
-  .devatva-pdesc-container {
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+  .dev10-wrapper {
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: #292524;
-    background: #fffcf7;
-    border: 1.5px solid #efe9dc;
-    border-radius: 20px;
-    padding: 28px 22px;
-    margin: 24px 0;
-    box-shadow: 0 10px 30px rgba(180, 83, 9, 0.05);
+    color: #1c1917;
+    background: #ffffff;
+    border: 1.5px solid #e7dfd0;
+    border-radius: 24px;
+    padding: 32px 24px;
+    margin: 28px 0;
+    box-shadow: 0 15px 40px rgba(180, 83, 9, 0.08);
+    position: relative;
+    overflow: hidden;
   }
 
-  .devatva-pdesc-hero-badge {
+  /* Decorative Ambient Glow in background */
+  .dev10-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, rgba(255,255,255,0) 70%);
+    pointer-events: none;
+  }
+
+  /* Top Hero Pill Badge with Pulse Animation */
+  .dev10-badge-hero {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     background: linear-gradient(135deg, #fff8e6 0%, #fef3c7 100%);
-    border: 1px solid #f59e0b;
+    border: 1.5px solid #f59e0b;
     color: #9a3412;
     font-weight: 800;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     letter-spacing: 0.04em;
-    padding: 7px 18px;
+    padding: 8px 20px;
     border-radius: 50px;
-    margin-bottom: 16px;
-    text-transform: uppercase;
-    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.25);
+    animation: dev10Pulse 2.5s infinite ease-in-out;
   }
 
-  .devatva-pdesc-headline {
+  @keyframes dev10Pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(245, 158, 11, 0.25); }
+    50% { transform: scale(1.02); box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4); }
+  }
+
+  .dev10-title {
     font-family: 'Cinzel', Georgia, serif;
-    font-size: 1.65rem;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
     font-weight: 800;
     color: #1c1917;
-    line-height: 1.35;
-    margin: 0 0 14px 0;
+    line-height: 1.3;
+    margin: 0 0 16px 0;
   }
 
-  .devatva-pdesc-lead {
+  .dev10-title-hindi {
+    display: block;
+    font-family: 'Outfit', sans-serif;
     font-size: 1.15rem;
-    line-height: 1.7;
-    color: #44403c;
-    margin-bottom: 24px;
+    font-weight: 700;
+    color: #c2410c;
+    margin-top: 6px;
+    letter-spacing: 0;
   }
 
-  /* Grid of Benefits */
-  .devatva-pdesc-benefits-grid {
+  .dev10-lead {
+    font-size: 1.12rem;
+    line-height: 1.75;
+    color: #44403c;
+    margin-bottom: 30px;
+    background: #fdfbf7;
+    border-left: 4px solid #d97706;
+    padding: 16px 20px;
+    border-radius: 0 14px 14px 0;
+  }
+
+  /* Section Titles with Sacred Symbol Divider */
+  .dev10-section-title {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #1c1917;
+    margin: 32px 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .dev10-section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, #f59e0b 0%, rgba(245, 158, 11, 0) 100%);
+  }
+
+  /* 4 Grid Benefit Cards with Glow & Hover Micro-Interactions */
+  .dev10-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    margin-bottom: 28px;
+    gap: 16px;
+    margin-bottom: 32px;
   }
 
-  @media (max-width: 640px) {
-    .devatva-pdesc-benefits-grid {
+  @media (max-width: 680px) {
+    .dev10-grid {
       grid-template-columns: 1fr;
     }
   }
 
-  .devatva-pdesc-benefit-card {
+  .dev10-card {
     background: #ffffff;
-    border: 1px solid #f5e6cf;
-    border-radius: 14px;
-    padding: 16px;
+    border: 1.5px solid #f3ebd9;
+    border-radius: 16px;
+    padding: 20px 18px;
     display: flex;
     gap: 14px;
     align-items: flex-start;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.03);
-    transition: transform 0.25s ease, border-color 0.25s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .devatva-pdesc-benefit-card:hover {
+  .dev10-card:hover {
     border-color: #d97706;
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(217, 119, 6, 0.15);
   }
 
-  .devatva-pdesc-bicon {
-    font-size: 1.8rem;
-    flex-shrink: 0;
+  .dev10-card-icon {
+    font-size: 2rem;
     line-height: 1;
+    flex-shrink: 0;
+    background: #fdfaf3;
+    border: 1px solid #fed7aa;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .devatva-pdesc-btitle {
+  .dev10-card-heading {
     font-family: 'Cinzel', Georgia, serif;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: #9a3412;
     margin-bottom: 4px;
   }
 
-  .devatva-pdesc-bdesc {
-    font-size: 0.92rem;
+  .dev10-card-subhead-hindi {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #c2410c;
+    margin-bottom: 6px;
+  }
+
+  .dev10-card-text {
+    font-size: 0.93rem;
     color: #57534e;
-    line-height: 1.5;
+    line-height: 1.55;
     margin: 0;
   }
 
-  /* Sacred Ritual & Wearing Instructions Accordion Box */
-  .devatva-pdesc-ritual-box {
-    background: linear-gradient(135deg, #fffbf0 0%, #fef3c7 100%);
-    border: 1.5px dashed #d97706;
-    border-radius: 16px;
-    padding: 20px;
-    margin-bottom: 28px;
+  /* 3 Sacred Properties Comparison Box */
+  .dev10-specs-box {
+    background: #fffdf9;
+    border: 1.5px solid #efe5d3;
+    border-radius: 18px;
+    padding: 22px;
+    margin-bottom: 32px;
   }
 
-  .devatva-pdesc-rtitle {
+  .dev10-spec-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px dashed #e7dfd0;
+    font-size: 0.95rem;
+  }
+
+  .dev10-spec-row:last-child {
+    border-bottom: none;
+  }
+
+  .dev10-spec-label {
+    font-weight: 700;
+    color: #78350f;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .dev10-spec-val {
+    color: #292524;
+    font-weight: 600;
+  }
+
+  /* How to Wear Ritual Box (धारण करने की विधि) */
+  .dev10-ritual-box {
+    background: linear-gradient(135deg, #fffbf0 0%, #fef3c7 100%);
+    border: 1.5px dashed #c2410c;
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 32px;
+    box-shadow: 0 6px 20px rgba(194, 65, 12, 0.08);
+  }
+
+  .dev10-ritual-header {
     font-family: 'Cinzel', Georgia, serif;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-weight: 800;
     color: #78350f;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
   }
 
-  .devatva-pdesc-rlist {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .dev10-ritual-steps {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 14px;
   }
 
-  .devatva-pdesc-rlist li {
+  .dev10-step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #ffffff;
+    border: 1px solid #fde68a;
+    padding: 14px 16px;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+  }
+
+  .dev10-step-num {
+    background: linear-gradient(135deg, #c2410c 0%, #9a3412 100%);
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 0.85rem;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #451a03;
-  }
-
-  .devatva-pdesc-rlist li span.icon {
-    background: #ffffff;
-    border: 1px solid #f59e0b;
-    border-radius: 50%;
-    width: 26px;
-    height: 26px;
-    display: inline-flex;
-    align-items: center;
     justify-content: center;
-    font-size: 0.82rem;
     flex-shrink: 0;
   }
 
-  /* Authenticity Guarantee Banner */
-  .devatva-pdesc-auth-banner {
-    background: #1c1917;
-    color: #ffffff;
-    border-radius: 16px;
-    padding: 20px;
+  .dev10-step-content {
+    font-size: 0.96rem;
+    color: #292524;
+    line-height: 1.5;
+  }
+
+  .dev10-step-content strong {
+    color: #9a3412;
+  }
+
+  .dev10-mantra-box {
+    background: #fff8e6;
+    border: 1px solid #f59e0b;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-top: 8px;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #78350f;
     text-align: center;
   }
 
-  .devatva-pdesc-atitle {
-    font-family: 'Cinzel', Georgia, serif;
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: #f59e0b;
-    margin-bottom: 8px;
+  /* 100% Authentic Kashi Blessed Certificate Banner */
+  .dev10-cert-banner {
+    background: linear-gradient(135deg, #1c1917 0%, #292524 100%);
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 26px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   }
 
-  .devatva-pdesc-adesc {
-    font-size: 0.92rem;
-    color: #e7e5e4;
-    line-height: 1.6;
-    margin: 0;
+  .dev10-cert-title {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #f59e0b;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .dev10-cert-text {
+    font-size: 0.96rem;
+    color: #d6d3d1;
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+
+  .dev10-cert-badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .dev10-cert-pill {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    color: #fef3c7;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 30px;
   }
 </style>
 
-<div class="devatva-pdesc-container">
-  <div class="devatva-pdesc-hero-badge">
-    ✨ Sacred Energies • 100% Original Natural Sulemani Hakik
+<div class="dev10-wrapper">
+  
+  <!-- 1. Hero Badge -->
+  <div class="dev10-badge-hero">
+    🔱 Vedic Certified • 100% Original Natural Sulemani Hakik
   </div>
 
-  <h2 class="devatva-pdesc-headline">
-    Natural Hakik Sulemani Wealth Charm Bracelet – Calmness, Peace & Wealth Protection
+  <!-- 2. Main Title (Bilingual English + Hindi) -->
+  <h2 class="dev10-title">
+    Natural Hakik Sulemani Wealth Protection Bracelet
+    <span class="dev10-title-hindi">प्राकृतिक सुलेमानी हकीक ब्रेसलेट – धन वृद्धि, सुरक्षा एवं मानसिक शांति</span>
   </h2>
 
-  <p class="devatva-pdesc-lead">
-    <strong>Hakik Sulemani (Agate)</strong> is revered in Vedic tradition as one of the most potent protective gemstones. Known as the <em>"Shield Against Negative Energies & Evil Eye"</em>, this divine bracelet is meticulously crafted to attract financial prosperity, relieve anxiety, and align your root chakra.
-  </p>
+  <!-- 3. Lead Introduction -->
+  <div class="dev10-lead">
+    <strong>Sulemani Hakik (Agate)</strong> is known in authentic Vedic Astrology as the ultimate <em>"Protection & Prosperity Gemstone"</em>. Blessed with intense grounding energies, this sacred bracelet absorbs negative vibrations, shields against evil eye (Buri Nazar), and unlocks financial prosperity.
+  </div>
 
-  <!-- 4 POWERFUL BENEFIT CARDS -->
-  <div class="devatva-pdesc-benefits-grid">
-    <div class="devatva-pdesc-benefit-card">
-      <div class="devatva-pdesc-bicon">💰</div>
+  <!-- 4. Section Title & 4 Powerful Benefits Grid -->
+  <div class="dev10-section-title">
+    ✨ Divine Benefits (दिव्य लाभ एवं विशेषताएं)
+  </div>
+
+  <div class="dev10-grid">
+    <div class="dev10-card">
+      <div class="dev10-card-icon">💰</div>
       <div>
-        <div class="devatva-pdesc-btitle">Attracts Wealth & Prosperity</div>
-        <p class="devatva-pdesc-bdesc">Opens new financial avenues, protects business investments, and stabilizes income flow.</p>
+        <div class="dev10-card-heading">Financial Growth & Wealth</div>
+        <div class="dev10-card-subhead-hindi">धन आगमन एवं व्यापार वृद्धि</div>
+        <p class="dev10-card-text">Attracts steady financial opportunities, eliminates sudden losses, and stabilizes cash flow in business & career.</p>
       </div>
     </div>
 
-    <div class="devatva-pdesc-benefit-card">
-      <div class="devatva-pdesc-bicon">🛡️</div>
+    <div class="dev10-card">
+      <div class="dev10-card-icon">🛡️</div>
       <div>
-        <div class="devatva-pdesc-btitle">Buri Nazar & Rahu Protection</div>
-        <p class="devatva-pdesc-bdesc">Absorbs negative vibrations, black magic, and wards off the malefic effects of Rahu-Ketu.</p>
+        <div class="dev10-card-heading">Buri Nazar & Evil Eye Protection</div>
+        <div class="dev10-card-subhead-hindi">नज़र दोष एवं राहु-केतु शांति</div>
+        <p class="dev10-card-text">Acts as an indestructible energetic shield against jealousy, black magic, envy, and malefic Rahu-Ketu planetary effects.</p>
       </div>
     </div>
 
-    <div class="devatva-pdesc-benefit-card">
-      <div class="devatva-pdesc-bicon">🧘</div>
+    <div class="dev10-card">
+      <div class="dev10-card-icon">🧘</div>
       <div>
-        <div class="devatva-pdesc-btitle">Stress & Anxiety Relief</div>
-        <p class="devatva-pdesc-bdesc">Promotes inner mental peace, calms erratic thoughts, and enhances emotional stability.</p>
+        <div class="dev10-card-heading">Mental Peace & Anxiety Relief</div>
+        <p class="dev10-card-subhead-hindi">मानसिक तनाव एवं चिंता से मुक्ति</p>
+        <p class="dev10-card-text">Calms an overactive mind, relieves insomnia, reduces stress, and fosters deep emotional composure and positivity.</p>
       </div>
     </div>
 
-    <div class="devatva-pdesc-benefit-card">
-      <div class="devatva-pdesc-bicon">⚖️</div>
+    <div class="dev10-card">
+      <div class="dev10-card-icon">⚖️</div>
       <div>
-        <div class="devatva-pdesc-btitle">Chakra Alignment</div>
-        <p class="devatva-pdesc-bdesc">Balances the Root (Muladhara) Chakra, instilling immense courage, focus, and confidence.</p>
+        <div class="dev10-card-heading">Root Chakra Activation</div>
+        <div class="dev10-card-subhead-hindi">मूलाधार चक्र जागृति एवं आत्मविश्वास</div>
+        <p class="dev10-card-text">Balances the Muladhara (Root) Chakra, enhancing courage, physical stamina, willpower, and decision-making clarity.</p>
       </div>
     </div>
   </div>
 
-  <!-- HOW TO WEAR & RITUAL BOX -->
-  <div class="devatva-pdesc-ritual-box">
-    <div class="devatva-pdesc-rtitle">
-      🪔 How to Wear & Sacred Ritual (धारण करने की विधि)
-    </div>
-    <ul class="devatva-pdesc-rlist">
-      <li>
-        <span class="icon">📅</span>
-        <strong>Auspicious Day:</strong> Wear on Saturday or Wednesday morning after bathing.
-      </li>
-      <li>
-        <span class="icon">🖐️</span>
-        <strong>Which Hand:</strong> Wear on your Right Hand wrist for maximum protective energy.
-      </li>
-      <li>
-        <span class="icon">🕉️</span>
-        <strong>Sacred Mantra:</strong> Chant <em>"Om Sham Shanaishcharaya Namah"</em> or <em>"Om Namah Shivaya"</em> 11 times before wearing.
-      </li>
-    </ul>
+  <!-- 5. Key Specifications Table -->
+  <div class="dev10-section-title">
+    💎 Sacred Gemstone Specifications (उत्पाद विनिर्देश)
   </div>
 
-  <!-- AUTHENTICITY GUARANTEED BANNER -->
-  <div class="devatva-pdesc-auth-banner">
-    <div class="devatva-pdesc-atitle">📜 100% Authentic & Kashi Blessed</div>
-    <p class="devatva-pdesc-adesc">
-      Every Sulemani Hakik gemstone is individually inspected, lab-certified for purity, and sanctified with Vedic Mantras by learned Priests in Kashi before dispatch to deliver maximum spiritual benefits.
+  <div class="dev10-specs-box">
+    <div class="dev10-spec-row">
+      <div class="dev10-spec-label">📿 Gemstone Type:</div>
+      <div class="dev10-spec-val">100% Natural & Untreated Sulemani Hakik (Black Banded Agate)</div>
+    </div>
+    <div class="dev10-spec-row">
+      <div class="dev10-spec-label">🪐 Ruling Planet:</div>
+      <div class="dev10-spec-val">Rahu, Ketu & Saturn (शनि, राहु एवं केतु शांति)</div>
+    </div>
+    <div class="dev10-spec-row">
+      <div class="dev10-spec-label">🕉️ Ruling Deity:</div>
+      <div class="dev10-spec-val">Lord Shiva & Lord Bhairava</div>
+    </div>
+    <div class="dev10-spec-row">
+      <div class="dev10-spec-label">📜 Certification:</div>
+      <div class="dev10-spec-val">Government Approved Gemological Lab Certificate Included</div>
+    </div>
+  </div>
+
+  <!-- 6. How to Wear & Sacred Ritual (धारण करने की विधि) -->
+  <div class="dev10-ritual-box">
+    <div class="dev10-ritual-header">
+      🪔 Sacred Wearing Ritual (धारण करने की सही विधि)
+    </div>
+
+    <div class="dev10-ritual-steps">
+      <div class="dev10-step-item">
+        <div class="dev10-step-num">1</div>
+        <div class="dev10-step-content">
+          <strong>Auspicious Day & Time (शुभ दिन):</strong> Wear on <strong>Saturday or Wednesday morning</strong> during Brahma Muhurta after bathing and cleansing.
+        </div>
+      </div>
+
+      <div class="dev10-step-item">
+        <div class="dev10-step-num">2</div>
+        <div class="dev10-step-content">
+          <strong>Which Hand (धारण का हाथ):</strong> Wear on the <strong>Right Hand wrist</strong> for men and career/business professionals to maximize protective strength.
+        </div>
+      </div>
+
+      <div class="dev10-step-item">
+        <div class="dev10-step-num">3</div>
+        <div class="dev10-step-content">
+          <strong>Energizing Mantra (सिद्ध मंत्र जाप):</strong> Light a diya/incense and chant the sacred Shiv or Rahu Mantra 108 times before wearing:
+          <div class="dev10-mantra-box">
+            "ॐ नमः शिवाय" • "ॐ शं शनैश्चराय नमः"
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Authenticity & Kashi Pran-Pratishtha Certificate Banner -->
+  <div class="dev10-cert-banner">
+    <div class="dev10-cert-title">
+      📜 100% Lab Certified & Kashi Pran Pratishtha Blessed
+    </div>
+    <p class="dev10-cert-text">
+      Every Sulemani Hakik bracelet is individually tested for natural mineral authenticity and energised through Vedic <strong>Pran Pratishtha Rituals</strong> by Vedic Priests on the holy banks of the Ganges in Kashi (Varanasi) before being dispatched to your doorstep.
     </p>
+    <div class="dev10-cert-badges">
+      <span class="dev10-cert-pill">✓ 100% Natural Gemstone</span>
+      <span class="dev10-cert-pill">✓ Lab Certificate Included</span>
+      <span class="dev10-cert-pill">✓ Energized in Kashi</span>
+      <span class="dev10-cert-pill">✓ 7-Day Easy Returns</span>
+    </div>
   </div>
+
 </div>
