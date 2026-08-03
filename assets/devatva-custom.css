@@ -1661,27 +1661,36 @@ span.japam-pill-subtitle {
   color: #bc3939;
 }
 
-/* 5. Custom Button Styling (Add to Cart & Buy Now - Inheriting Order Now Typography & Sizing) */
+/* 5. Custom Button Styling (Add to Cart - Smaller, Buy Now - Larger & Glowing) */
 .product-form__buttons {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-/* Base button styling inheriting Order Now font, size, padding, border-radius */
+@keyframes japamBuyNowGlow {
+  0% {
+    box-shadow: 0 4px 18px rgba(188, 57, 57, 0.45), 0 0 20px rgba(200, 70, 70, 0.3);
+  }
+  50% {
+    box-shadow: 0 6px 26px rgba(188, 57, 57, 0.75), 0 0 32px rgba(245, 158, 11, 0.55);
+  }
+  100% {
+    box-shadow: 0 4px 18px rgba(188, 57, 57, 0.45), 0 0 20px rgba(200, 70, 70, 0.3);
+  }
+}
+
+/* Add to Cart Button (Slightly Smaller & Subtle) */
 .japam-btn-add-cart,
-.japam-btn-buy-now,
-.product-form__submit,
-.shopify-payment-button__button,
-.shopify-payment-button__button--unbranded {
+.product-form__submit {
   width: 100% !important;
   font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif !important;
-  font-weight: 800 !important;
-  font-size: 1.6rem !important;
-  letter-spacing: 0.5px !important;
+  font-weight: 700 !important;
+  font-size: 1.35rem !important;
+  letter-spacing: 0.4px !important;
   text-transform: uppercase !important;
-  padding: 15px 20px !important;
-  min-height: 52px !important;
+  padding: 12px 18px !important;
+  min-height: 46px !important;
   border-radius: 10px !important;
   border: none !important;
   cursor: pointer !important;
@@ -1689,39 +1698,48 @@ span.japam-pill-subtitle {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15) !important;
-  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease !important;
-}
-
-/* Add to Cart Button (Charcoal / Dark Navy) */
-.japam-btn-add-cart,
-.product-form__submit {
   background-color: #25242d !important;
   color: #ffffff !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12) !important;
+  transition: background-color 0.2s ease, transform 0.15s ease !important;
 }
 
 .japam-btn-add-cart:hover,
 .product-form__submit:hover {
   background-color: #1a1921 !important;
   transform: translateY(-1px) !important;
-  box-shadow: 0 6px 18px rgba(37, 36, 45, 0.25) !important;
 }
 
-/* Buy Now / Dynamic Checkout Button (Rust Red - Color Grading of Order Now) */
+/* Buy Now / Dynamic Checkout Button (Larger, High-Priority, Animated Glow Effect) */
 .japam-btn-buy-now,
 .shopify-payment-button__button,
 .shopify-payment-button__button--unbranded {
-  background-color: #bc3939 !important;
+  width: 100% !important;
+  font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 1.8rem !important;
+  letter-spacing: 0.6px !important;
+  text-transform: uppercase !important;
+  padding: 16px 22px !important;
+  min-height: 56px !important;
+  border-radius: 10px !important;
+  border: none !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(135deg, #c84646 0%, #bc3939 50%, #a32a2a 100%) !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(188, 57, 57, 0.3) !important;
+  animation: japamBuyNowGlow 2.5s infinite ease-in-out !important;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease !important;
 }
 
 .japam-btn-buy-now:hover,
 .shopify-payment-button__button:hover,
 .shopify-payment-button__button--unbranded:hover {
-  background-color: #a72e2e !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 6px 18px rgba(188, 57, 57, 0.4) !important;
+  background: linear-gradient(135deg, #d34a4a 0%, #c53c3c 50%, #b23030 100%) !important;
+  transform: translateY(-2px) scale(1.01) !important;
 }
 
 .japam-btn-add-cart *,
@@ -1729,7 +1747,6 @@ span.japam-pill-subtitle {
 .shopify-payment-button__button * {
   color: #ffffff !important;
   font-family: inherit !important;
-  font-weight: 800 !important;
 }
 
 /* 6. Japam-Style Estimated Delivery Date Box */
