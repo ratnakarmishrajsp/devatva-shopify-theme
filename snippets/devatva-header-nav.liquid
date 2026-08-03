@@ -1,74 +1,41 @@
 {% comment %}
-  DEVATVA.IN - SACRED NAVIGATION MENU BAR (EXACT 20 AUMCHAKRA ITEMS MAPPED INTO 4 MAIN CATEGORIES)
+  DEVATVA.IN - DYNAMIC MAIN HEADER NAVIGATION (SHOPIFY BACKEND LINKLIST & CLEAN FALLBACK)
 {% endcomment %}
+
+{%- assign main_menu = section.settings.menu | default: linklists['main-menu'] -%}
 
 <nav class="devatva-header-nav" aria-label="Main Navigation">
   <ul class="devatva-main-menu">
-    <li>
-      <a href="/" class="devatva-menu-link">HOME</a>
-    </li>
-
-    <!-- 1. BRACELETS & PI-XIU ▾ (Contains: Bracelets, Zodiac, Numerology, Pi-Xiu Bracelets, Daily Essentials, Best Seller) -->
-    <li class="devatva-has-dropdown">
-      <a href="/collections/bracelets" class="devatva-menu-link">
-        BRACELETS & PI-XIU <span class="devatva-arrow">▾</span>
-      </a>
-      <ul class="devatva-dropdown">
-        <li><a href="/collections/bracelets">BRACELETS</a></li>
-        <li><a href="/collections/zodiac-bracelets">ZODIAC BRACELETS</a></li>
-        <li><a href="/collections/numerology-bracelets">NUMEROLOGY BRACELETS</a></li>
-        <li><a href="/collections/pi-xiu-bracelets">PI-XIU BRACELETS</a></li>
-        <li><a href="/collections/daily-essentials">DAILY ESSENTIALS</a></li>
-        <li><a href="/collections/best-seller">BEST SELLER</a></li>
-      </ul>
-    </li>
-
-    <!-- 2. RINGS & PENDANTS ▾ (Contains: Crystal Rings, Pi-Xiu Rings, Gem Rings, Pendants) -->
-    <li class="devatva-has-dropdown">
-      <a href="/collections/rings" class="devatva-menu-link">
-        RINGS & PENDANTS <span class="devatva-arrow">▾</span>
-      </a>
-      <ul class="devatva-dropdown">
-        <li><a href="/collections/crystal-rings">CRYSTAL RINGS</a></li>
-        <li><a href="/collections/pi-xiu-rings">PI-XIU RINGS</a></li>
-        <li><a href="/collections/gem-rings">GEM RINGS</a></li>
-        <li><a href="/collections/pendants">PENDANTS</a></li>
-      </ul>
-    </li>
-
-    <!-- 3. RUDRAKSHA & MALAS ▾ (Contains: Rudraksha & Karungalis, Jaap Malas, Gemstones) -->
-    <li class="devatva-has-dropdown">
-      <a href="/collections/rudraksha" class="devatva-menu-link">
-        RUDRAKSHA & MALAS <span class="devatva-arrow">▾</span>
-      </a>
-      <ul class="devatva-dropdown">
-        <li><a href="/collections/rudraksha-karungalis">RUDRAKSHA & KARUNGALIS</a></li>
-        <li><a href="/collections/jaap-malas">JAAP MALAS</a></li>
-        <li><a href="/collections/gemstones">GEMSTONES</a></li>
-      </ul>
-    </li>
-
-    <!-- 4. PYRAMIDS, TREES & POOJA ▾ (Contains: Pyramid & Rows, Pyrite Frames, Roller & Guashas, Crystal Trees, God Divine Idols, Crystal Water Bottles) -->
-    <li class="devatva-has-dropdown">
-      <a href="/collections/pyramids-pooja" class="devatva-menu-link">
-        PYRAMIDS, TREES & POOJA <span class="devatva-arrow">▾</span>
-      </a>
-      <ul class="devatva-dropdown">
-        <li><a href="/collections/pyramid-rows">PYRAMID & ROWS</a></li>
-        <li><a href="/collections/pyrite-frames">PYRITE FRAMES</a></li>
-        <li><a href="/collections/crystal-trees">CRYSTAL TREES</a></li>
-        <li><a href="/collections/roller-guashas">ROLLER & GUASHAS</a></li>
-        <li><a href="/collections/god-divine-idols">GOD DIVINE IDOLS</a></li>
-        <li><a href="/collections/crystal-water-bottles">CRYSTAL WATER BOTTLES</a></li>
-      </ul>
-    </li>
-
-    <!-- ASTRO QUIZ CTA -->
-    <li>
-      <a href="#devatva-astro-quiz-section" class="devatva-menu-link devatva-highlight-link">
-        🔮 ASTRO QUIZ
-      </a>
-    </li>
+    {%- if main_menu != blank and main_menu.links.size > 0 -%}
+      {%- for link in main_menu.links -%}
+        {%- if link.links != blank -%}
+          <li class="devatva-has-dropdown">
+            <a href="{{ link.url }}" class="devatva-menu-link">
+              {{ link.title | escape }} <span class="devatva-arrow">▾</span>
+            </a>
+            <ul class="devatva-dropdown">
+              {%- for childlink in link.links -%}
+                <li>
+                  <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </li>
+        {%- else -%}
+          <li>
+            <a href="{{ link.url }}" class="devatva-menu-link">{{ link.title | escape }}</a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    {%- else -%}
+      <!-- DEFAULT FALLBACK MAIN MENU ITEMS -->
+      <li><a href="/" class="devatva-menu-link">Home</a></li>
+      <li><a href="/collections/crystal-bracelets" class="devatva-menu-link">Crystal Braceletes</a></li>
+      <li><a href="/collections/frames" class="devatva-menu-link">Frames</a></li>
+      <li><a href="/collections/pixiu-rings" class="devatva-menu-link">Pixiu Rings</a></li>
+      <li><a href="/collections/pyramids" class="devatva-menu-link">Pyramids</a></li>
+      <li><a href="/collections/rudrakshas-and-karungalis" class="devatva-menu-link">Rudrakshas and Karungalis</a></li>
+    {%- endif -%}
   </ul>
 </nav>
 
@@ -85,19 +52,19 @@
   list-style: none;
   margin: 0 auto;
   padding: 0;
-  gap: 22px;
+  gap: 24px;
   align-items: center;
   flex-wrap: nowrap;
   white-space: nowrap;
 }
 .devatva-menu-link {
   font-family: var(--dev-font-sans);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   color: #1c1917;
   text-decoration: none;
-  padding: 8px 14px;
+  padding: 8px 16px;
   border-radius: 20px;
   transition: all 0.25s ease;
   display: inline-flex;
@@ -108,14 +75,6 @@
 .devatva-menu-link:hover {
   color: var(--dev-gold-dark);
   background: #fff8e6;
-}
-.devatva-highlight-link {
-  color: #9a3412 !important;
-  background: #fff1f2;
-  border: 1px solid #fecdd3;
-}
-.devatva-highlight-link:hover {
-  background: #ffe4e6;
 }
 .devatva-has-dropdown {
   position: relative;
@@ -132,7 +91,7 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
-  min-width: 250px;
+  min-width: 230px;
   background: #ffffff;
   border: 1.5px solid var(--dev-gold-border);
   border-radius: 14px;
@@ -154,7 +113,7 @@
 .devatva-dropdown li a {
   display: block;
   padding: 10px 22px;
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.03em;
   color: #292524;
