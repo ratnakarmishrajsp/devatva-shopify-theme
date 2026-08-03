@@ -101,15 +101,7 @@
           </div>
         </div>
 
-        <!-- JAPAM SIDDH / ENERGIZED PRODUCT CHECKBOX ADDON -->
-        <label class="japam-siddh-box" for="JapamSiddhAddon">
-          <input type="checkbox" id="JapamSiddhAddon" name="properties[Sanctified/Energized]" value="Yes (+₹100)">
-          <span class="japam-siddh-badge">॥ सिद्ध ॥</span>
-          <span class="japam-siddh-text">Get Siddh/Energized Product (Pran Pratishta)</span>
-          <span class="japam-siddh-price">+ ₹100</span>
-        </label>
-
-        <!-- 3. JAPAM ACTION BUTTONS (ADD TO CART & ORDER NOW - CASH ON DELIVERY) -->
+        <!-- ACTION BUTTONS (ADD TO CART & BUY NOW) -->
         <div class="product-form__buttons">
           {%- liquid
             assign check_against_inventory = true
@@ -144,24 +136,23 @@
             {%- render 'loading-spinner' -%}
           </button>
 
-          <!-- JAPAM RUST RED ORDER NOW - CASH ON DELIVERY BUTTON -->
-          <button
-            type="submit"
-            name="add"
-            class="japam-btn-cod"
-            onclick="document.getElementById('ProductSubmitButton-{{ section_id }}').click(); return false;"
-            {% if product.selected_or_first_available_variant.available == false
-              or quantity_rule_soldout
-              or product.selected_or_first_available_variant == null
-            %}
-              disabled
-            {% endif %}
-          >
-            Order Now - Cash On Delivery
-          </button>
-
           {%- if show_dynamic_checkout -%}
             {{ form | payment_button }}
+          {%- else -%}
+            <button
+              type="submit"
+              name="add"
+              class="japam-btn-buy-now button button--full-width"
+              onclick="document.getElementById('ProductSubmitButton-{{ section_id }}').click(); return false;"
+              {% if product.selected_or_first_available_variant.available == false
+                or quantity_rule_soldout
+                or product.selected_or_first_available_variant == null
+              %}
+                disabled
+              {% endif %}
+            >
+              BUY IT NOW
+            </button>
           {%- endif -%}
         </div>
 

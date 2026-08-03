@@ -1661,48 +1661,75 @@ span.japam-pill-subtitle {
   color: #bc3939;
 }
 
-/* 5. Custom Button Styling (Add to Cart & COD Order Now) */
+/* 5. Custom Button Styling (Add to Cart & Buy Now - Inheriting Order Now Typography & Sizing) */
 .product-form__buttons {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
-.japam-btn-add-cart {
-  background-color: #25242d !important;
-  color: #ffffff !important;
-  font-weight: 800 !important;
-  font-size: 1.5rem !important;
-  letter-spacing: 0.5px !important;
-  border-radius: 10px !important;
-  padding: 14px 20px !important;
-  border: none !important;
-  transition: background-color 0.2s ease, transform 0.15s ease !important;
-}
-
-.japam-btn-add-cart:hover {
-  background-color: #1a1921 !important;
-}
-
-.japam-btn-cod {
+/* Base button styling inheriting Order Now font, size, padding, border-radius */
+.japam-btn-add-cart,
+.japam-btn-buy-now,
+.product-form__submit,
+.shopify-payment-button__button,
+.shopify-payment-button__button--unbranded {
   width: 100% !important;
-  background-color: #bc3939 !important;
-  color: #ffffff !important;
+  font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif !important;
   font-weight: 800 !important;
   font-size: 1.6rem !important;
-  letter-spacing: 0.3px !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
   padding: 15px 20px !important;
+  min-height: 52px !important;
   border-radius: 10px !important;
   border: none !important;
   cursor: pointer !important;
-  box-shadow: 0 4px 14px rgba(188, 57, 57, 0.3) !important;
-  transition: background-color 0.2s ease, transform 0.15s ease !important;
   text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15) !important;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease !important;
 }
 
-.japam-btn-cod:hover {
+/* Add to Cart Button (Charcoal / Dark Navy) */
+.japam-btn-add-cart,
+.product-form__submit {
+  background-color: #25242d !important;
+  color: #ffffff !important;
+}
+
+.japam-btn-add-cart:hover,
+.product-form__submit:hover {
+  background-color: #1a1921 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 18px rgba(37, 36, 45, 0.25) !important;
+}
+
+/* Buy Now / Dynamic Checkout Button (Rust Red - Color Grading of Order Now) */
+.japam-btn-buy-now,
+.shopify-payment-button__button,
+.shopify-payment-button__button--unbranded {
+  background-color: #bc3939 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(188, 57, 57, 0.3) !important;
+}
+
+.japam-btn-buy-now:hover,
+.shopify-payment-button__button:hover,
+.shopify-payment-button__button--unbranded:hover {
   background-color: #a72e2e !important;
   transform: translateY(-1px) !important;
+  box-shadow: 0 6px 18px rgba(188, 57, 57, 0.4) !important;
+}
+
+.japam-btn-add-cart *,
+.japam-btn-buy-now *,
+.shopify-payment-button__button * {
+  color: #ffffff !important;
+  font-family: inherit !important;
+  font-weight: 800 !important;
 }
 
 /* 6. Japam-Style Estimated Delivery Date Box */
