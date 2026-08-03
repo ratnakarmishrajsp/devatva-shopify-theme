@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "devatva-refund-policy",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

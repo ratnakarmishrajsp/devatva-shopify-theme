@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "devatva-terms-conditions",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

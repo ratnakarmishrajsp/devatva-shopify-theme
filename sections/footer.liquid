@@ -9,9 +9,15 @@
       
       <!-- Col 1: Brand Story & Sacred Commitment -->
       <div>
-        <h3 class="devatva-heading" style="font-size: 1.4rem; color: var(--dev-text-heading); margin-bottom: 14px;">
-          দেवतत्व <span class="devatva-gold-text">Devatva</span>
-        </h3>
+        <div style="margin-bottom: 12px;">
+          <img
+            src="{{ 'divyatva-logo-transparent.png' | asset_url }}"
+            alt="Devatva Logo"
+            style="max-width: 145px; height: auto; object-fit: contain; mix-blend-mode: multiply; display: block;"
+            width="145"
+            height="50"
+          >
+        </div>
         <p style="font-size: 0.9rem; color: #57534e; line-height: 1.65; margin-bottom: 20px;">
           Worldwide provider of 100% authentic, Govt. Lab-Certified Rudraksha beads, Panchdhatu wealth rings, and healing gemstone jewelry sanctified via Kashi Vedic rituals (Pran Pratishtha).
         </p>
@@ -36,16 +42,17 @@
         </ul>
       </div>
 
-      <!-- Col 3: Devotion & Customer Support -->
+      <!-- Col 3: Customer Devotion & Legal Policies -->
       <div>
         <h4 class="devatva-heading" style="font-size: 1.1rem; color: var(--dev-gold-dark); margin-bottom: 16px;">
-          Customer Devotion
+          Policies & Support
         </h4>
         <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem;">
+          <li><a href="/pages/privacy-policy" style="color: #57534e; text-decoration: none; transition: color 0.2s;">🛡️ Privacy Policy</a></li>
+          <li><a href="/pages/refund-policy" style="color: #57534e; text-decoration: none; transition: color 0.2s;">🔄 Refund & Return Policy</a></li>
+          <li><a href="/pages/terms-conditions" style="color: #57534e; text-decoration: none; transition: color 0.2s;">📜 Terms & Conditions</a></li>
           <li><a href="javascript:void(0)" onclick="DevatvaChatbot.toggle()" style="color: #57534e; text-decoration: none;">📦 Track Your Order Status</a></li>
           <li><a href="javascript:void(0)" onclick="DevatvaChatbot.setTab('callback'); DevatvaChatbot.toggle()" style="color: #57534e; text-decoration: none;">📞 Request Vedic Priest Call</a></li>
-          <li><a href="{{ routes.all_products_collection_url }}" style="color: #57534e; text-decoration: none;">✈️ Shipping & COD Policy</a></li>
-          <li><a href="{{ routes.all_products_collection_url }}" style="color: #57534e; text-decoration: none;">📜 Lab Certificate Guarantee</a></li>
           <li><a href="javascript:void(0)" onclick="DevatvaChatbot.toggle()" style="color: #57534e; text-decoration: none;">🙏 Contact Us (24/7 Support)</a></li>
         </ul>
       </div>
@@ -81,7 +88,7 @@
     <!-- Bottom Footer Bar -->
     <div style="border-top: 1px solid #efe9dc; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 0.82rem; color: #78716c;">
       <div>
-        © {{ 'now' | date: '%Y' }} <strong>Devatva.in</strong> (দেवतत्व). All Sacred Rights Reserved. Sanctified in Kashi, India.
+        © {{ 'now' | date: '%Y' }} <strong>Devatva.in</strong>. All Sacred Rights Reserved. Sanctified in Kashi, India.
       </div>
       <div style="display: flex; gap: 12px; font-size: 0.8rem;">
         <span>🔒 256-Bit SSL Encrypted</span>
