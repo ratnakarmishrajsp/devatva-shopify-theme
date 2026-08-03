@@ -101,7 +101,15 @@
           </div>
         </div>
 
-        <!-- 3. BUY BUTTONS (ADD TO CART & BUY IT NOW) -->
+        <!-- JAPAM SIDDH / ENERGIZED PRODUCT CHECKBOX ADDON -->
+        <label class="japam-siddh-box" for="JapamSiddhAddon">
+          <input type="checkbox" id="JapamSiddhAddon" name="properties[Sanctified/Energized]" value="Yes (+₹100)">
+          <span class="japam-siddh-badge">॥ सिद्ध ॥</span>
+          <span class="japam-siddh-text">Get Siddh/Energized Product (Pran Pratishta)</span>
+          <span class="japam-siddh-price">+ ₹100</span>
+        </label>
+
+        <!-- 3. JAPAM ACTION BUTTONS (ADD TO CART & ORDER NOW - CASH ON DELIVERY) -->
         <div class="product-form__buttons">
           {%- liquid
             assign check_against_inventory = true
@@ -116,7 +124,7 @@
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            class="product-form__submit button button--full-width japam-btn-add-cart"
             {% if product.selected_or_first_available_variant.available == false
               or quantity_rule_soldout
               or product.selected_or_first_available_variant == null
@@ -130,65 +138,110 @@
               {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
-                ADD TO CART 🛒
+                ADD TO CART
               {%- endif -%}
             </span>
             {%- render 'loading-spinner' -%}
           </button>
+
+          <!-- JAPAM RUST RED ORDER NOW - CASH ON DELIVERY BUTTON -->
+          <button
+            type="submit"
+            name="add"
+            class="japam-btn-cod"
+            onclick="document.getElementById('ProductSubmitButton-{{ section_id }}').click(); return false;"
+            {% if product.selected_or_first_available_variant.available == false
+              or quantity_rule_soldout
+              or product.selected_or_first_available_variant == null
+            %}
+              disabled
+            {% endif %}
+          >
+            Order Now - Cash On Delivery
+          </button>
+
           {%- if show_dynamic_checkout -%}
             {{ form | payment_button }}
           {%- endif -%}
         </div>
 
-        <!-- 4. SECURE PACKAGING & EASY RETURNS STRIP -->
-        <div class="devatva-cro-features-strip">
-          <span>🛡️ Secure Packaging</span>
-          <span class="devatva-strip-divider">|</span>
-          <span>🔄 7-Day Easy Returns</span>
-        </div>
-
-        <!-- 5. ESTIMATED DELIVERY & COD CHECKER -->
-        <div class="devatva-cro-delivery-box">
-          <label for="DevatvaPincodeInput">📍 Estimated Delivery & COD Check:</label>
-          <div class="devatva-cro-delivery-row">
-            <input type="text" id="DevatvaPincodeInput" placeholder="Enter Pincode (e.g. 110001)" maxlength="6">
-            <button type="button" onclick="DevatvaCheckDelivery()">Check</button>
-          </div>
-          <div id="DevatvaDeliveryResult" class="devatva-cro-delivery-result">⚡ Fast Dispatch in 24 Hours • Free Shipping Across India</div>
-        </div>
-
-        <!-- 6. 100% SECURE CHECKOUT GUARANTEED & PAYMENTS BADGES -->
-        <div class="devatva-cro-payment-trust">
-          <div class="devatva-pay-title">🔒 <strong>100% Secure Checkout Guaranteed</strong></div>
-          <div class="devatva-cro-payment-icons">
-            <div class="devatva-pay-row">
-              <span class="devatva-pay-badge gpay">📱 GPay</span>
-              <span class="devatva-pay-badge phonepe">🟣 PhonePe</span>
-              <span class="devatva-pay-badge paytm">🔷 Paytm</span>
-              <span class="devatva-pay-badge upi">⚡ UPI</span>
+        <!-- JAPAM ESTIMATED DELIVERY DATE (EDD) CARD -->
+        <div class="japam-edd-container">
+          <div class="japam-edd-header">
+            <svg class="japam-edd-clock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <div class="japam-edd-titles">
+              <span class="japam-edd-title">Estimated Delivery Date</span>
+              <span class="japam-edd-subtitle">Prepaid orders are delivered on priority.</span>
             </div>
-            <div class="devatva-pay-row">
-              <span class="devatva-pay-badge cards">💳 Cards</span>
-              <span class="devatva-pay-badge cod">💵 Cash on Delivery</span>
+          </div>
+
+          <div class="japam-edd-input-wrap">
+            <svg class="japam-edd-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <input type="text" id="JapamPincodeInput" class="japam-edd-input" value="110001" placeholder="Enter 6-digit Pincode" maxlength="6">
+            <button type="button" class="japam-edd-change-btn" onclick="JapamUpdateDelivery()">Change</button>
+          </div>
+
+          <div id="JapamDeliveryResult" class="japam-edd-result">
+            <span class="japam-edd-check-icon">✓</span>
+            <span id="JapamDeliveryText">Delivery between <strong>Tue, 4 Aug – Wed, 5 Aug</strong> — if ordered within <strong>51 mins</strong></span>
+          </div>
+
+          <div class="japam-edd-footer-badges">
+            <div class="japam-edd-footer-badge">
+              <svg class="japam-edd-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="8" width="18" height="13" rx="2"></rect>
+                <path d="M12 8v13M3 12h18M12 8C10.5 5 7 4.5 7 7c0 2 5 1 5 1M12 8c1.5-3 5-3.5 5-1 0 2-5 1-5 1"></path>
+              </svg>
+              <div class="japam-edd-badge-text">
+                <span class="japam-edd-badge-title">100% Cashback</span>
+                <span class="japam-edd-badge-sub">pay via UPI</span>
+              </div>
+            </div>
+
+            <div class="japam-edd-footer-badge">
+              <svg class="japam-edd-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="1" y="3" width="15" height="13" rx="2"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+              <div class="japam-edd-badge-text">
+                <span class="japam-edd-badge-title">FREE Shipping</span>
+                <span class="japam-edd-badge-sub">above ₹299</span>
+              </div>
             </div>
           </div>
         </div>
 
         <script>
-          function DevatvaCheckDelivery() {
-            var pin = document.getElementById('DevatvaPincodeInput').value;
-            var res = document.getElementById('DevatvaDeliveryResult');
+          function JapamUpdateDelivery() {
+            var pin = document.getElementById('JapamPincodeInput').value.trim();
+            var textElem = document.getElementById('JapamDeliveryText');
             if (pin && pin.length >= 6) {
-              var today = new Date();
-              today.setDate(today.getDate() + 4);
-              var dateStr = today.toLocaleDateString('en-IN', { weekday: 'short', month: 'short', day: 'numeric' });
-              res.innerHTML = "✅ Express Delivery available for <strong>" + pin + "</strong>! Guaranteed delivery by <strong>" + dateStr + "</strong>.";
-              res.style.color = "#047857";
+              var date1 = new Date();
+              date1.setDate(date1.getDate() + 3);
+              var date2 = new Date();
+              date2.setDate(date2.getDate() + 4);
+              
+              var options = { weekday: 'short', day: 'numeric', month: 'short' };
+              var str1 = date1.toLocaleDateString('en-IN', options);
+              var str2 = date2.toLocaleDateString('en-IN', options);
+              
+              textElem.innerHTML = "Delivery between <strong>" + str1 + " – " + str2 + "</strong> — if ordered within <strong>45 mins</strong>";
+              textElem.style.color = "#1e854a";
             } else {
-              res.innerHTML = "⚠️ Please enter a valid 6-digit Pincode.";
-              res.style.color = "#b91c1c";
+              textElem.innerHTML = "<span style='color:#bc3939;'>Please enter a valid 6-digit Pincode.</span>";
             }
           }
+          // Initialize live calculation on load
+          if (document.readyState !== 'loading') { JapamUpdateDelivery(); }
+          else { document.addEventListener('DOMContentLoaded', JapamUpdateDelivery); }
         </script>
       {%- endform -%}
     </product-form>

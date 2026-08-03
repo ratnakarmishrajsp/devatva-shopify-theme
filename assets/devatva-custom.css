@@ -3,36 +3,41 @@
    ========================================================================== */
 
 /* --- Google Fonts Import --- */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
 
 :root {
-  --dev-bg-ivory: #fcfaf5;
+  --dev-bg-ivory: #faf6ef;
   --dev-bg-surface: #ffffff;
-  --dev-bg-card: #ffffff;
-  --dev-bg-subtle: #f7f3e9;
-  --dev-bg-glass: rgba(255, 255, 255, 0.95);
+  --dev-bg-card: #f9f5ee;
+  --dev-bg-subtle: #efe9de;
+  --dev-bg-glass: rgba(250, 246, 239, 0.95);
   
-  --dev-gold-main: #d97706;
-  --dev-gold-light: #f59e0b;
-  --dev-gold-dark: #b45309;
-  --dev-gold-glow: rgba(217, 119, 6, 0.25);
-  --dev-gold-border: rgba(217, 119, 6, 0.25);
+  --dev-gold-main: #d4a93a;
+  --dev-gold-light: #f5d67b;
+  --dev-gold-dark: #b8832a;
+  --dev-gold-glow: rgba(212, 169, 58, 0.25);
+  --dev-gold-border: rgba(184, 131, 42, 0.35);
   
-  --dev-saffron-accent: #c2410c;
-  --dev-crimson-accent: #991b1b;
+  --dev-saffron-accent: #c84646;
+  --dev-crimson-accent: #bc3939;
   --dev-amber-accent: #78350f;
 
-  --dev-text-heading: #1c1917;
+  --dev-text-heading: #1c1a17;
   --dev-text-main: #292524;
   --dev-text-muted: #57534e;
   --dev-text-subtle: #78716c;
 
   --dev-font-serif: 'Cinzel', serif;
-  --dev-font-sans: 'Outfit', sans-serif;
+  --dev-font-sans: 'Plus Jakarta Sans', 'Outfit', system-ui, -apple-system, sans-serif;
   
   --dev-radius: 14px;
-  --dev-shadow-soft: 0 10px 30px rgba(180, 83, 9, 0.08);
-  --dev-shadow-gold: 0 12px 35px rgba(217, 119, 6, 0.18);
+  --dev-shadow-soft: 0 10px 30px rgba(184, 131, 42, 0.08);
+  --dev-shadow-gold: 0 12px 35px rgba(212, 169, 58, 0.18);
+}
+
+/* Base Body Font Override for Japam aesthetic */
+body, button, input, select, textarea {
+  font-family: 'Plus Jakarta Sans', 'Outfit', system-ui, -apple-system, sans-serif !important;
 }
 
 /* --- Global Typography & Font Size Boost --- */
@@ -1465,5 +1470,341 @@ label.form__label,
   .devatva-sales-popup-card {
     max-width: 100%;
   }
+}
+
+/* ==========================================================================
+   JAPAM.IN INSPIRED PRODUCT PAGE & COLOR GRADINGS STYLES
+   ========================================================================== */
+
+/* 1. Global Background Warmth Override */
+body, .gradient, main, .product {
+  background-color: #faf6ef !important;
+}
+
+.product__info-container {
+  font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif !important;
+}
+
+/* 2. Discount Badge (Japam Tag Style) */
+.japam-discount-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #c84646;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  letter-spacing: 0.2px;
+}
+.japam-discount-tag svg {
+  width: 13px;
+  height: 13px;
+  fill: currentColor;
+}
+
+/* 3. Japam Trust Pills (Below Price) */
+.japam-trust-pills-wrapper {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.japam-trust-pill {
+  flex: 1 1 calc(50% - 6px);
+  min-width: 175px;
+  background: linear-gradient(135deg, #1c150c 0%, #2b1e08 50%, #1c150c 100%);
+  border: 1px solid #b8832a;
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.japam-trust-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(184, 131, 42, 0.25);
+}
+
+.japam-pill-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(212, 169, 58, 0.2);
+  border: 1px solid rgba(212, 169, 58, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5d67b;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.japam-pill-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.japam-pill-title {
+  color: #d4a93a;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.japam-pill-subtitle {
+  color: #f5e8c0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* 4. Siddh / Energized Product Checkbox Addon */
+.japam-siddh-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid #e5dbcb;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.japam-siddh-box:hover {
+  border-color: #b8832a;
+}
+
+.japam-siddh-box input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #bc3939;
+  cursor: pointer;
+}
+
+.japam-siddh-badge {
+  background: #fdf8ed;
+  border: 1px solid #d4a93a;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #78350f;
+}
+
+.japam-siddh-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1c1a17;
+  flex: 1;
+}
+
+.japam-siddh-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #bc3939;
+}
+
+/* 5. Custom Button Styling (Add to Cart & COD Order Now) */
+.product-form__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.japam-btn-add-cart {
+  background-color: #25242d !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-size: 1.5rem !important;
+  letter-spacing: 0.5px !important;
+  border-radius: 10px !important;
+  padding: 14px 20px !important;
+  border: none !important;
+  transition: background-color 0.2s ease, transform 0.15s ease !important;
+}
+
+.japam-btn-add-cart:hover {
+  background-color: #1a1921 !important;
+}
+
+.japam-btn-cod {
+  width: 100% !important;
+  background-color: #bc3939 !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-size: 1.6rem !important;
+  letter-spacing: 0.3px !important;
+  padding: 15px 20px !important;
+  border-radius: 10px !important;
+  border: none !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 14px rgba(188, 57, 57, 0.3) !important;
+  transition: background-color 0.2s ease, transform 0.15s ease !important;
+  text-align: center !important;
+}
+
+.japam-btn-cod:hover {
+  background-color: #a72e2e !important;
+  transform: translateY(-1px) !important;
+}
+
+/* 6. Japam-Style Estimated Delivery Date Box */
+.japam-edd-container {
+  background-color: #efe9de;
+  border: 1px solid #e2d9cb;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.japam-edd-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.japam-edd-clock-icon {
+  width: 26px;
+  height: 26px;
+  color: #bc3939;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.japam-edd-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.japam-edd-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1c1a17;
+  line-height: 1.2;
+}
+
+.japam-edd-subtitle {
+  font-size: 1.2rem;
+  color: #66615b;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.japam-edd-input-wrap {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d4ccbf;
+  border-radius: 10px;
+  padding: 4px 4px 4px 12px;
+  margin-bottom: 14px;
+}
+
+.japam-edd-pin-icon {
+  width: 18px;
+  height: 18px;
+  color: #78716c;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.japam-edd-input {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  font-size: 1.4rem !important;
+  font-weight: 600 !important;
+  color: #1c1a17 !important;
+  background: transparent !important;
+  width: 100% !important;
+  padding: 8px 0 !important;
+}
+
+.japam-edd-change-btn {
+  background-color: #bc3939;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.japam-edd-change-btn:hover {
+  background-color: #a72e2e;
+}
+
+.japam-edd-result {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #1e854a;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.japam-edd-check-icon {
+  color: #1e854a;
+  font-weight: 800;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.japam-edd-footer-badges {
+  display: flex;
+  gap: 16px;
+  border-top: 1px dashed #d8cfbe;
+  padding-top: 14px;
+}
+
+.japam-edd-footer-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.japam-edd-badge-icon {
+  width: 28px;
+  height: 28px;
+  color: #1c1a17;
+  flex-shrink: 0;
+}
+
+.japam-edd-badge-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.japam-edd-badge-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1c1a17;
+  line-height: 1.2;
+}
+
+.japam-edd-badge-sub {
+  font-size: 1.1rem;
+  color: #66615b;
+  line-height: 1.2;
 }
 
