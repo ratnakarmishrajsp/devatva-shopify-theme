@@ -170,16 +170,14 @@ html, body {
   }
 }
 
-/* --- Mobile 2-Products Per Row Grid Optimization (Home Page & Collection Pages) --- */
+/* --- Mobile 2-Products Per Row Grid Optimization (Home Page & Collection Pages ONLY) --- */
 @media screen and (max-width: 749px) {
-  /* Bulletproof 2-Column Mobile Grid for All Featured Collections & Sliders */
-  .featured-collection .grid,
+  /* Bulletproof 2-Column Mobile Grid for Featured Collections & Collection Pages */
+  .featured-collection .grid.product-grid,
   .featured-collection ul.product-grid,
-  .shopify-section-featured-collection .grid,
-  .grid.product-grid,
-  ul.product-grid,
-  slider-component .grid,
-  slider-component ul.product-grid {
+  .shopify-section-featured-collection ul.product-grid,
+  .collection ul.product-grid,
+  ul.product-grid:not(.product__media-list) {
     display: flex !important;
     flex-wrap: wrap !important;
     flex-direction: row !important;
@@ -192,14 +190,11 @@ html, body {
     width: 100% !important;
   }
 
-  .featured-collection .grid__item,
+  .featured-collection .grid.product-grid > .grid__item,
   .featured-collection ul.product-grid > li,
-  .featured-collection .slider__slide,
-  .shopify-section-featured-collection .grid__item,
-  .grid.product-grid > li,
-  .grid.product-grid .grid__item,
-  slider-component ul.grid > li,
-  slider-component .slider__slide {
+  .shopify-section-featured-collection ul.product-grid > li,
+  .collection ul.product-grid > li,
+  ul.product-grid:not(.product__media-list) > li.grid__item {
     width: calc(50% - 4px) !important;
     max-width: calc(50% - 4px) !important;
     min-width: calc(50% - 4px) !important;
@@ -209,13 +204,47 @@ html, body {
     box-sizing: border-box !important;
   }
 
-  /* Disable slider overflow horizontal scroll peek to force 2-grid display on mobile */
-  .slider.slider--tablet,
-  slider-component .slider.slider--tablet {
+  /* Disable slider overflow horizontal scroll peek for collection grids on mobile */
+  .featured-collection .slider.slider--tablet,
+  .collection .slider.slider--tablet {
     position: relative !important;
     flex-wrap: wrap !important;
     overflow: visible !important;
     scroll-snap-type: none !important;
+  }
+
+  /* --- Product Media Gallery Mobile Slider Fix (Restore 1-Image Swipe Carousel) --- */
+  media-gallery .slider.slider--mobile,
+  .product__media-wrapper .slider.slider--mobile,
+  .product__media-list.slider--mobile,
+  slider-component[id^="GalleryViewer"] .slider.slider--mobile,
+  ul.product__media-list {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    width: 100% !important;
+    column-gap: 0 !important;
+    row-gap: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  media-gallery .product__media-item,
+  .product__media-wrapper .product__media-item,
+  .product__media-list .product__media-item,
+  slider-component[id^="GalleryViewer"] .slider__slide,
+  ul.product__media-list > li.product__media-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    flex: 0 0 100% !important;
+    scroll-snap-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
   }
 
   /* Elegant Card Styling with Gold Border & Glowing Ambient Shadow */
