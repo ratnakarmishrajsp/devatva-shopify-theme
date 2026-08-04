@@ -501,7 +501,7 @@ product-info .product__title h1,
 .product__tax,
 .product__sku {
   font-family: var(--dev-font-sans) !important;
-  color: var(--dev-text-main) !important;
+  color: var(--dev-text-main);
   font-size: 1.25rem !important;
   line-height: 1.8 !important;
 }

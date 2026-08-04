@@ -138,6 +138,8 @@
 
           {%- if show_dynamic_checkout -%}
             {{ form | payment_button }}
+            <input type="hidden" value="true" id="fastrrCollectionPage" />
+            <input type="hidden" value={{ product.url }} name="productUrl" />
           {%- else -%}
             <button
               type="submit"
