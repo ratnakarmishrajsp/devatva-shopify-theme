@@ -128,8 +128,8 @@
     {%- endif -%}
   </div>
 
-  <!-- Devatva Trust Pills (FLAT UPTO ₹100 OFF & BUY 1 GET 1 FREE - Product Page Only) -->
-  {%- if template.name == 'product' or request.page_type == 'product' or template contains 'product' -%}
+  <!-- Devatva Trust Pills (FLAT UPTO ₹100 OFF & BUY 1 GET 1 FREE - Product & Landing Pages) -->
+  {%- unless price_class == '' or show_badges == false -%}
     <div class="japam-trust-pills-wrapper" style="display: flex !important; gap: 10px !important; margin-top: 14px !important; margin-bottom: 16px !important; flex-wrap: wrap !important; align-items: stretch !important;">
       <!-- Pill 1: FLAT UPTO ₹100 OFF -->
       <div class="japam-trust-pill" style="flex: 1 1 calc(50% - 6px) !important; min-width: 155px !important; background: linear-gradient(135deg, #1c150c 0%, #2c1e0c 100%) !important; border: 1.5px solid #d4a93a !important; border-radius: 10px !important; padding: 10px 12px !important; display: flex !important; align-items: center !important; gap: 10px !important; box-shadow: 0 4px 15px rgba(212, 169, 58, 0.3) !important;">
@@ -149,5 +149,5 @@
         </div>
       </div>
     </div>
-  {%- endif -%}
+  {%- endunless -%}
 {% endunless %}
